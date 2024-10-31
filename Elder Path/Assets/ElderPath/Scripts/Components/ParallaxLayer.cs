@@ -5,28 +5,45 @@ public class ParallaxLayer : MonoBehaviour
     [SerializeField, Range(0f,0.5f)] private float speedFactor = 0.06f;
     [SerializeField] private Renderer rend;
     [SerializeField] private Camera cam;
+    [SerializeField] private Transform target;
     private Vector2 position = Vector2.zero;
-    private Vector2 cameraOldPosition;
+    private Vector2 targetOldPosition;
 
     private void Awake() 
     {
-        if (!cam) cam = Camera.main;
-        if (!rend) rend = GetComponent<Renderer>();
+        CheckReferences();
     }
 
     private void Start() 
     {
-        cameraOldPosition = cam.transform.position;
-        Vector2 backgroundHalfSize = new Vector2(cam.orthographicSize * Screen.width / Screen.height, cam.orthographicSize);
-        transform.localScale = new Vector3(backgroundHalfSize.x * 2, backgroundHalfSize.y * 2, transform.localScale.z);
-        rend.material.SetTextureScale(Constants.MATERIAL_PROPERTY_MAIN_TEXTURE, backgroundHalfSize);
+        InitializeScales();
     }   
 
     private void Update() 
     {
-        Vector2 camVariation = new Vector2(cam.transform.position.x - cameraOldPosition.x, cam.transform.position.y - cameraOldPosition.y);
-        position.Set(position.x + camVariation.x * speedFactor, position.y + camVariation.y * speedFactor);
+        MoveLayer();
+    }
+
+    private void CheckReferences()
+    {
+        if (!cam) cam = Camera.main;
+        if (!target) Debug.LogError($"Parallax layer {name} has not target asigned");
+        if (!rend) rend = GetComponent<Renderer>();
+    }
+
+    private void InitializeScales()
+    {
+        targetOldPosition = target.position;
+        Vector2 backgroundHalfSize = new Vector2(cam.orthographicSize * Screen.width / Screen.height, cam.orthographicSize);
+        transform.localScale = new Vector3(backgroundHalfSize.x * 2, backgroundHalfSize.y * 2, transform.localScale.z);
+        rend.material.SetTextureScale(Constants.MATERIAL_PROPERTY_MAIN_TEXTURE, backgroundHalfSize);
+    }
+
+    private void MoveLayer()
+    {
+        Vector2 posVariation = new Vector2(target.position.x - targetOldPosition.x, target.position.y - targetOldPosition.y);
+        position.Set(position.x + posVariation.x * speedFactor, position.y + posVariation.y * speedFactor);
         rend.material.SetTextureOffset(Constants.MATERIAL_PROPERTY_MAIN_TEXTURE, position);
-        cameraOldPosition = cam.transform.position;
+        targetOldPosition = target.position;
     }
 }
