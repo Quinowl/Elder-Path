@@ -100,7 +100,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -659,7 +659,29 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fauna_spritesheet_0: -2114555789899138116
+      fauna_spritesheet_1: 976004579201158216
+      fauna_spritesheet_10: -2045073429480008358
+      fauna_spritesheet_11: -7142798815530704515
+      fauna_spritesheet_12: 6697213845499986583
+      fauna_spritesheet_13: -7337073671100443211
+      fauna_spritesheet_14: -4038252795133324364
+      fauna_spritesheet_15: 5246939755114276600
+      fauna_spritesheet_16: -3812692654283612290
+      fauna_spritesheet_17: 3340221668610929946
+      fauna_spritesheet_18: -529674120471637837
+      fauna_spritesheet_19: 8157560520719359100
+      fauna_spritesheet_2: -3574980646730000942
+      fauna_spritesheet_20: -4300932987470513080
+      fauna_spritesheet_21: -7158112287463303015
+      fauna_spritesheet_3: 1558512673613724033
+      fauna_spritesheet_4: 2523928922894142486
+      fauna_spritesheet_5: 248473805926540041
+      fauna_spritesheet_6: -6775873866635497736
+      fauna_spritesheet_7: 4165454996531467012
+      fauna_spritesheet_8: 2008494100244279927
+      fauna_spritesheet_9: -3946793811876913233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -88,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -559,7 +559,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      trap_suspended_anim_strip_18_0: 6782458123959412808
+      trap_suspended_anim_strip_18_1: 4429818497583414520
+      trap_suspended_anim_strip_18_10: -2354111680471342376
+      trap_suspended_anim_strip_18_11: 4521207015666020279
+      trap_suspended_anim_strip_18_12: 7787030385759691179
+      trap_suspended_anim_strip_18_13: -6752857629480871278
+      trap_suspended_anim_strip_18_14: -2600381812262764595
+      trap_suspended_anim_strip_18_15: 6643189836663336534
+      trap_suspended_anim_strip_18_16: -5641805808809206225
+      trap_suspended_anim_strip_18_17: -8393683731355118909
+      trap_suspended_anim_strip_18_2: 9059850130054237318
+      trap_suspended_anim_strip_18_3: 3895677650216918021
+      trap_suspended_anim_strip_18_4: -4200403697739519434
+      trap_suspended_anim_strip_18_5: 5422600506294722241
+      trap_suspended_anim_strip_18_6: -3458414997968490293
+      trap_suspended_anim_strip_18_7: 188567066741601211
+      trap_suspended_anim_strip_18_8: 2671618440806799345
+      trap_suspended_anim_strip_18_9: -2239109628542883412
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

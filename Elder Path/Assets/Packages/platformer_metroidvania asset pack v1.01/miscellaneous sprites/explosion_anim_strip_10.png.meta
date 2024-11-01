@@ -88,7 +88,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -559,7 +559,25 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      explosion_anim_strip_10_0: 3794741136824393815
+      explosion_anim_strip_10_1: -1812644004245757434
+      explosion_anim_strip_10_10: -8763636568531595538
+      explosion_anim_strip_10_11: 3975875919844036524
+      explosion_anim_strip_10_12: -2297352930941868037
+      explosion_anim_strip_10_13: -7061045587013711350
+      explosion_anim_strip_10_14: -8365623595683466546
+      explosion_anim_strip_10_15: 1569467553467479381
+      explosion_anim_strip_10_16: 2024654266088255920
+      explosion_anim_strip_10_17: -2246447069499760580
+      explosion_anim_strip_10_2: 8582992290833687542
+      explosion_anim_strip_10_3: -133856749009764635
+      explosion_anim_strip_10_4: -7246479247531812022
+      explosion_anim_strip_10_5: -8857902445303239351
+      explosion_anim_strip_10_6: 164194932813563683
+      explosion_anim_strip_10_7: 207275019965553561
+      explosion_anim_strip_10_8: -1604327309140018598
+      explosion_anim_strip_10_9: 1174469044622197487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

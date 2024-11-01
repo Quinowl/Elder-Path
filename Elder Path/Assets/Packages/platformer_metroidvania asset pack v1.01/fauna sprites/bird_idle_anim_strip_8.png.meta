@@ -58,7 +58,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bird_idle_anim_strip_8_0: 3213043600480582373
+      bird_idle_anim_strip_8_1: -4508641593508124757
+      bird_idle_anim_strip_8_2: -7859783773984599856
+      bird_idle_anim_strip_8_3: 8739040261334718995
+      bird_idle_anim_strip_8_4: 1219628742111692023
+      bird_idle_anim_strip_8_5: -5650113870570182938
+      bird_idle_anim_strip_8_6: 534631574021865932
+      bird_idle_anim_strip_8_7: 3651884615572048772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

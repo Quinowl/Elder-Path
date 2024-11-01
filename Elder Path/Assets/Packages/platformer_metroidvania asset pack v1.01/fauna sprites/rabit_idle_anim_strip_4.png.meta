@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rabit_idle_anim_strip_4_0: 1494933274880506986
+      rabit_idle_anim_strip_4_1: 4739521612578187279
+      rabit_idle_anim_strip_4_2: 8984766343880804360
+      rabit_idle_anim_strip_4_3: -6505570158180688833
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

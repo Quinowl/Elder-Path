@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
-{
-    private void Start() 
-    {
+public class CharacterMovement : MonoBehaviour {
+    private void Start() {
         
     }
 }

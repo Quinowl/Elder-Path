@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -159,7 +159,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      vase_breaking_anim_strip_5_0: -205174907844451088
+      vase_breaking_anim_strip_5_1: -5097765867964552812
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

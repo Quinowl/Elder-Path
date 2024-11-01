@@ -52,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      rabit_walk_anim_strip_6_0: -4396757117205551246
+      rabit_walk_anim_strip_6_1: 1817162161373697200
+      rabit_walk_anim_strip_6_2: -7352990378217250470
+      rabit_walk_anim_strip_6_3: -4381893981809239015
+      rabit_walk_anim_strip_6_4: -2608700416546084914
+      rabit_walk_anim_strip_6_5: -3861126605065498923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

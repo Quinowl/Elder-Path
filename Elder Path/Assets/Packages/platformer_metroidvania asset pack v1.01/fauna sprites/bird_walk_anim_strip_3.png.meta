@@ -43,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bird_walk_anim_strip_3_0: -6503389934845916026
+      bird_walk_anim_strip_3_1: -2639092456156135558
+      bird_walk_anim_strip_3_2: -1121593322743991343
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
