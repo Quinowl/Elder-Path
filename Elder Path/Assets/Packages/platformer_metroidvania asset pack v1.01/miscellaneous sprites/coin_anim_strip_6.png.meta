@@ -112,9 +112,9 @@ TextureImporter:
       name: coin_anim_strip_6_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 6
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -156,9 +156,9 @@ TextureImporter:
       name: coin_anim_strip_6_2
       rect:
         serializedVersion: 2
-        x: 15
+        x: 16
         y: 0
-        width: 26
+        width: 8
         height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -178,7 +178,7 @@ TextureImporter:
       name: coin_anim_strip_6_3
       rect:
         serializedVersion: 2
-        x: 40
+        x: 24
         y: 0
         width: 8
         height: 8
@@ -196,11 +196,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: coin_anim_strip_6_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 200f626810065ba42adfb3bd65296f2b
+      internalID: 306915471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin_anim_strip_6_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96824a91238e4b4b9e90a3c8aebbe06
+      internalID: -1606937937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e76a27e24d64d524c9772bb2ff03a9d9
     internalID: 0
     vertices: []
     indices: 
@@ -214,6 +258,8 @@ TextureImporter:
       coin_anim_strip_6_1: 6101928269482547967
       coin_anim_strip_6_2: -8289930951752328157
       coin_anim_strip_6_3: -3285289925518966143
+      coin_anim_strip_6_4: 306915471
+      coin_anim_strip_6_5: -1606937937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

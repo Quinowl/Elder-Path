@@ -5,4 +5,5 @@ public static class Constants {
     public const string PLAYER_DASH_ACTION = "Dash";
     public const string PLAYER_ATTACK_ACTION = "Attack";
     public const string PLAYER_ANIMATOR_X_SPEED = "speed-x";
+    public const string COIN_ANIMATION_PICK_UP = "pickUp";
 }

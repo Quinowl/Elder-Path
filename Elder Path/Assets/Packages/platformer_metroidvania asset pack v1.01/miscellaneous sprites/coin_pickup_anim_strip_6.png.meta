@@ -115,7 +115,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 8
-        height: 9
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,9 +135,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8
-        y: 6
+        y: 0
         width: 8
-        height: 10
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,9 +157,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 8
+        y: 0
         width: 8
-        height: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: coin_pickup_anim_strip_6_3
       rect:
         serializedVersion: 2
-        x: 23
-        y: 7
-        width: 25
-        height: 9
+        x: 24
+        y: 0
+        width: 8
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,11 +196,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: coin_pickup_anim_strip_6_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53445f8bc4c3e9644aa85afdd8d3396d
+      internalID: 447273812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coin_pickup_anim_strip_6_5
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86765dc635a896f45b007c74bf69cba0
+      internalID: -2050037351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 54629ce89726d6b41a29e6b1a620d2f3
     internalID: 0
     vertices: []
     indices: 
@@ -214,6 +258,8 @@ TextureImporter:
       coin_pickup_anim_strip_6_1: -679227021632654480
       coin_pickup_anim_strip_6_2: 2364531806408166509
       coin_pickup_anim_strip_6_3: -4911090849469897614
+      coin_pickup_anim_strip_6_4: 447273812
+      coin_pickup_anim_strip_6_5: -2050037351
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
