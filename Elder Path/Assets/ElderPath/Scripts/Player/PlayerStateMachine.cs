@@ -7,7 +7,7 @@ public class PlayerStateMachine : MonoBehaviour {
     private PlayerConfiguration playerConfiguration;
     public PlayerState CurrentState { get; private set; }
     public PlayerController PlayerController { get; private set; }
-    
+
     public void ConfigureStateMachine(PlayerConfiguration configuration, PlayerController controller) { 
         playerConfiguration = configuration;
         PlayerController = controller;
@@ -26,9 +26,6 @@ public class PlayerStateMachine : MonoBehaviour {
         if (CurrentState == null) return;
         CurrentState.StateInputs();
         CurrentState.StateStep();
-        if (EPInputManager.Instance.JumpInput) Debug.Log("Jump");            
-        if (EPInputManager.Instance.AttackInput) Debug.Log("Attack");            
-        if (EPInputManager.Instance.DashInput) Debug.Log("Dash");            
     }
 
     public void PhysicsStep() {
