@@ -44,10 +44,10 @@ public class EPInputManager : MonoBehaviour {
     }
 
     private void InitializeInputActions() {
-        movementInputAction = playerInput.actions[Constants.PLAYER_MOVE_ACTION];
+        // movementInputAction = playerInput.actions[Constants.PLAYER_MOVE_ACTION];
     }
 
     private void ReadInputs() {
-        MoveInput = movementInputAction.ReadValue<float>();
+        // MoveInput = movementInputAction.ReadValue<float>();
     }
 }
