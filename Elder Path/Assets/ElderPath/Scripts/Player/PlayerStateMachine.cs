@@ -4,14 +4,21 @@ using UnityEngine;
 public class PlayerStateMachine : MonoBehaviour {
 
     [SerializeField] private PlayerState[] states;
+    private PlayerConfiguration playerConfiguration;
     public PlayerState CurrentState { get; private set; }
+    public PlayerController PlayerController { get; private set; }
+    
+    public void ConfigureStateMachine(PlayerConfiguration configuration, PlayerController controller) { 
+        playerConfiguration = configuration;
+        PlayerController = controller;
+    }
 
     public void Initialize() {
         if (states == null || states.Length <= 0) {
             Debug.LogError("Player state machine has not states added.");
             return;
         }
-        foreach (PlayerState state in states) state.SetStateMachine(this);
+        foreach (PlayerState state in states) state.Configure(this, playerConfiguration);
         ChangeState(states[0].GetType());
     }
 
@@ -19,12 +26,16 @@ public class PlayerStateMachine : MonoBehaviour {
         if (CurrentState == null) return;
         CurrentState.StateInputs();
         CurrentState.StateStep();
+        if (EPInputManager.Instance.JumpInput) Debug.Log("Jump");            
+        if (EPInputManager.Instance.AttackInput) Debug.Log("Attack");            
+        if (EPInputManager.Instance.DashInput) Debug.Log("Dash");            
     }
 
     public void PhysicsStep() {
         if (CurrentState == null) return;
         CurrentState.StatePhysicsStep();
     }
+    
 
     public void LateStep() {
         if (CurrentState == null) return;

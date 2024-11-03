@@ -2,7 +2,11 @@ using UnityEngine;
 
 public abstract class PlayerState : MonoBehaviour {
     protected PlayerStateMachine stateMachine;
-    public void SetStateMachine(PlayerStateMachine stateMachine) => this.stateMachine = stateMachine;
+    protected PlayerConfiguration configuration;
+    public void Configure(PlayerStateMachine stateMachine, PlayerConfiguration configuration) { 
+        this.stateMachine = stateMachine;
+        this.configuration = configuration;
+    }
     public abstract void StateInputs();
     public abstract void StateEnter();
     public abstract void StateStep();

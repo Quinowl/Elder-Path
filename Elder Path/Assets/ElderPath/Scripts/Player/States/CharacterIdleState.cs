@@ -9,6 +9,7 @@ public class CharacterIdleState : PlayerState {
     }
 
     public override void StateInputs() {
+        if (EPInputManager.Instance.MoveInput != 0) stateMachine.ChangeState(typeof(CharacterMovementState));
     }
 
     public override void StateLateStep() {

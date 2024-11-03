@@ -7,8 +7,14 @@ public class EPInputManager : MonoBehaviour {
     [SerializeField] private PlayerInput playerInput;
 
     private InputAction movementInputAction;
+    private InputAction jumpInputAction;
+    private InputAction attackInputAction;
+    private InputAction dashInputAction;
 
     public float MoveInput { get; private set; }
+    public bool JumpInput { get; private set; }
+    public bool AttackInput { get; private set; }
+    public bool DashInput { get; private set; }
     public bool IsGamepad { get; private set; }
 
     public static EPInputManager Instance {get; private set;}
@@ -44,10 +50,16 @@ public class EPInputManager : MonoBehaviour {
     }
 
     private void InitializeInputActions() {
-        // movementInputAction = playerInput.actions[Constants.PLAYER_MOVE_ACTION];
+        movementInputAction = playerInput.actions[Constants.PLAYER_MOVE_ACTION];
+        jumpInputAction = playerInput.actions[Constants.PLAYER_JUMP_ACTION];
+        attackInputAction = playerInput.actions[Constants.PLAYER_ATTACK_ACTION];
+        dashInputAction = playerInput.actions[Constants.PLAYER_DASH_ACTION];
     }
 
     private void ReadInputs() {
-        // MoveInput = movementInputAction.ReadValue<float>();
+        MoveInput = movementInputAction.ReadValue<float>();
+        JumpInput = jumpInputAction.WasPressedThisFrame();
+        AttackInput = attackInputAction.WasPressedThisFrame();
+        DashInput = dashInputAction.WasPressedThisFrame();
     }
 }
