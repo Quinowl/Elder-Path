@@ -13,6 +13,7 @@ public class CharacterIdleState : PlayerState {
 
     public override void StateInputs() {
         if (EPInputManager.Instance.MoveInput != 0) stateMachine.SetState(typeof(CharacterMovementState));
+        if (EPInputManager.Instance.JumpInput && stateMachine.PlayerController.IsGrounded) stateMachine.SetState(typeof(CharacterJumpState));
     }
 
     public override void StateLateStep() {

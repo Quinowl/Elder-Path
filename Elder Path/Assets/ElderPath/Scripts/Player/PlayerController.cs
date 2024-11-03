@@ -35,14 +35,14 @@ public class PlayerController : MonoBehaviour {
         if (IsGrounded) {
             if (Rigidbody2D.linearVelocityY < 0f) Rigidbody2D.linearVelocityY = 0f;
         }
-        else Rigidbody2D.linearVelocityY -= 1.25f * Time.deltaTime;
+        else Rigidbody2D.linearVelocityY += configuration.GravityForce * Time.deltaTime;
     }
 
     private void UpdateAnimator() {
         Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, Mathf.Clamp01(Mathf.Abs(Rigidbody2D.linearVelocityX)));
     }
 
-    private void CheckFlip(){
+    private void CheckFlip() {
         if (Rigidbody2D.linearVelocityX == 0) return;
         Vector3 scale = transform.localScale;
         scale.x = Rigidbody2D.linearVelocityX > 0 ? 1 : -1;            

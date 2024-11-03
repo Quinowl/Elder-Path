@@ -15,3 +15,5 @@ MonoBehaviour:
   <MaxSpeed>k__BackingField: 1
   <AccelerationRate>k__BackingField: 2
   <DeccelerationRate>k__BackingField: 5
+  <JumpHeight>k__BackingField: 0.4
+  <JumpTimeToApex>k__BackingField: 0.3
