@@ -19,7 +19,7 @@ public class PlayerStateMachine : MonoBehaviour {
             return;
         }
         foreach (PlayerState state in states) state.Configure(this, playerConfiguration);
-        ChangeState(states[0].GetType());
+        SetState(states[0].GetType());
     }
 
     public void Step() {
@@ -39,7 +39,7 @@ public class PlayerStateMachine : MonoBehaviour {
         CurrentState.StateLateStep();
     }
 
-    public void ChangeState(Type nextStateType) {
+    public void SetState(Type nextStateType) {
         PlayerState nextState = GetStateByType(nextStateType);
         if (nextState == null || nextState == CurrentState) return;
         CurrentState?.StateExit();
