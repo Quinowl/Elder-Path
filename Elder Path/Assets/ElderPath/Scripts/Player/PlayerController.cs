@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour {
     [field : SerializeField] public Animator Animator { get; private set; }
     [Header("Gameplay")]
     [SerializeField] private AreaChecker groundCheck;
+    [SerializeField] private AreaChecker ceilCheck;
     public bool IsGrounded => groundCheck.IsOverlapping();
+    public bool IsCeiled => ceilCheck.IsOverlapping();
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
@@ -18,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Update() {
 
-        Debug.Log(IsGrounded);
+        Debug.Log(IsCeiled);
 
         stateMachine.Step();
         CheckFlip();
