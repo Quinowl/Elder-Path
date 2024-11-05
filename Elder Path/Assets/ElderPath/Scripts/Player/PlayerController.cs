@@ -17,10 +17,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
+
+        Debug.Log(IsGrounded);
+
         stateMachine.Step();
         CheckFlip();
         ApplyGravity();
-        UpdateAnimator();
     }
 
     private void FixedUpdate() {
@@ -36,10 +38,6 @@ public class PlayerController : MonoBehaviour {
             if (Rigidbody2D.linearVelocityY < 0f) Rigidbody2D.linearVelocityY = 0f;
         }
         else Rigidbody2D.linearVelocityY += configuration.GravityForce * Time.deltaTime;
-    }
-
-    private void UpdateAnimator() {
-        Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, Mathf.Clamp01(Mathf.Abs(Rigidbody2D.linearVelocityX)));
     }
 
     private void CheckFlip() {

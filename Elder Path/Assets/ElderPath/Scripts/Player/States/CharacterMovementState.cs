@@ -4,6 +4,7 @@ public class CharacterMovementState : PlayerState {
     private float currentSpeed;
     public override void StateEnter() {
         currentSpeed = 0f;
+        stateMachine.PlayerController.Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, 1f);
     }
 
     public override void StateExit() {

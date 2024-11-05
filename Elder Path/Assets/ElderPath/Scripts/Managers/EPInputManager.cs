@@ -13,6 +13,7 @@ public class EPInputManager : MonoBehaviour {
 
     public float MoveInput { get; private set; }
     public bool JumpInput { get; private set; }
+    public bool JumpInputReleased { get; private set; }
     public bool AttackInput { get; private set; }
     public bool DashInput { get; private set; }
     public bool IsGamepad { get; private set; }
@@ -59,6 +60,7 @@ public class EPInputManager : MonoBehaviour {
     private void ReadInputs() {
         MoveInput = movementInputAction.ReadValue<float>();
         JumpInput = jumpInputAction.WasPressedThisFrame();
+        JumpInputReleased = jumpInputAction.WasReleasedThisFrame();
         AttackInput = attackInputAction.WasPressedThisFrame();
         DashInput = dashInputAction.WasPressedThisFrame();
     }
