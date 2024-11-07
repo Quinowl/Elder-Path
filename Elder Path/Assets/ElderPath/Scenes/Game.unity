@@ -6206,7 +6206,7 @@ MonoBehaviour:
   drawGizmo: 1
   gizmoColor: {r: 0, g: 0.93155813, b: 1, a: 1}
   checkRadius: 0.24
-  checkSize: {x: 0.035, y: 0.015, z: 0}
+  checkSize: {x: 0.075, y: 0.015, z: 0}
   collisionLayer:
     serializedVersion: 2
     m_Bits: 64

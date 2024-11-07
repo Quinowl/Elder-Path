@@ -6,6 +6,7 @@ public class PlayerStateMachine : MonoBehaviour {
     [SerializeField] private PlayerState[] states;
     private PlayerConfiguration playerConfiguration;
     public PlayerState CurrentState { get; private set; }
+    public PlayerState LastState { get; private set; }
     public PlayerController PlayerController { get; private set; }
 
     public void ConfigureStateMachine(PlayerConfiguration configuration, PlayerController controller) { 
@@ -43,6 +44,7 @@ public class PlayerStateMachine : MonoBehaviour {
         PlayerState nextState = GetStateByType(nextStateType);
         if (nextState == null || nextState == CurrentState) return;
         CurrentState?.StateExit();
+        if (CurrentState) LastState = CurrentState;
         CurrentState = nextState;
         CurrentState.StateEnter();
     }
