@@ -10,12 +10,18 @@ public class PlayerController : MonoBehaviour {
     [Header("Gameplay")]
     [SerializeField] private AreaChecker groundCheck;
     [SerializeField] private AreaChecker ceilCheck;
+    [SerializeField] private AreaChecker frontalCheck;
     public bool IsGrounded => groundCheck.IsOverlapping();
     public bool IsCeiled => ceilCheck.IsOverlapping();
+    public bool IsFrontBlocked => frontalCheck.IsOverlapping();
+    public bool CanMove { get; private set; }
+
+    public void SetCanMove (bool canMove) => CanMove = canMove;
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
+        SetCanMove(true);
     }
 
     private void Update() {
@@ -23,6 +29,7 @@ public class PlayerController : MonoBehaviour {
         Debug.Log(IsCeiled);
 
         stateMachine.Step();
+        CheckCanMove();
         CheckFlip();
         ApplyGravity();
     }
@@ -48,4 +55,6 @@ public class PlayerController : MonoBehaviour {
         scale.x = Rigidbody2D.linearVelocityX > 0 ? 1 : -1;            
         transform.localScale = scale;
     }
+
+    private void CheckCanMove() => SetCanMove(!IsFrontBlocked);
 }
