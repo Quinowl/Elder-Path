@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private PlayerConfiguration configuration;
     [field : SerializeField] public Rigidbody2D Rigidbody2D { get; private set; }
     [field : SerializeField] public Animator Animator { get; private set; }
+    [field: SerializeField] public Transform AttackPoint { get; private set; }
     [Header("Gameplay")]
     [SerializeField] private AreaChecker groundCheck;
     [SerializeField] private AreaChecker ceilCheck;

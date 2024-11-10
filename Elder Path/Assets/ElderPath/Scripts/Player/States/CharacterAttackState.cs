@@ -1,8 +1,10 @@
 using UnityEngine;
 
 public class CharacterAttackState : PlayerState {
+
     public override void StateEnter() {
         Debug.Log("Estamos en el estado de ataque");
+        // stateMachine.PlayerController.Animator.SetTrigger();
     }
 
     public override void StateExit() {
@@ -18,5 +20,10 @@ public class CharacterAttackState : PlayerState {
     }
 
     public override void StateStep() {
-    } 
+    }
+
+    private bool HasHit() {
+        
+        return false;
+    }
 }
