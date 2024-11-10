@@ -106,10 +106,10 @@ TextureImporter:
       name: sword_effect_strip_4(new)_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 14
-        height: 11
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,10 +128,10 @@ TextureImporter:
       name: sword_effect_strip_4(new)_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 2
-        width: 35
-        height: 9
+        x: 16
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,11 +146,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sword_effect_strip_4(new)_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d290f348cc3f742ba877773452fa33
+      internalID: 649486198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sword_effect_strip_4(new)_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da8c690fda1884e47a3e604b1f6d5368
+      internalID: 1370675942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 10f4b6e9feac5c948851a3deb2cf45bc
     internalID: 0
     vertices: []
     indices: 
@@ -162,6 +206,8 @@ TextureImporter:
     nameFileIdTable:
       sword_effect_strip_4(new)_0: -1900035956748308934
       sword_effect_strip_4(new)_1: -2674865830326373707
+      sword_effect_strip_4(new)_2: 649486198
+      sword_effect_strip_4(new)_3: 1370675942
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
