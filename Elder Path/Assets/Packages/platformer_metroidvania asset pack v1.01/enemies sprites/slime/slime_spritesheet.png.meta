@@ -112,7 +112,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -759,7 +759,33 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slime_spritesheet_0: -3972691880002762918
+      slime_spritesheet_1: 185273964626852292
+      slime_spritesheet_10: -88975248114899469
+      slime_spritesheet_11: 6594812665686601892
+      slime_spritesheet_12: 2482175033045573690
+      slime_spritesheet_13: 8362078115520233020
+      slime_spritesheet_14: 3882258480079301089
+      slime_spritesheet_15: 8070294389882960005
+      slime_spritesheet_16: -2068211280229322706
+      slime_spritesheet_17: 8334024866636099368
+      slime_spritesheet_18: 6461772780688292466
+      slime_spritesheet_19: -5435708396011010926
+      slime_spritesheet_2: -2494720475795009309
+      slime_spritesheet_20: -4638871924367489754
+      slime_spritesheet_21: -8767064303162457365
+      slime_spritesheet_22: -1803195728042607551
+      slime_spritesheet_23: -8277382326411502443
+      slime_spritesheet_24: 4250956038776025391
+      slime_spritesheet_25: 7692384602979903838
+      slime_spritesheet_3: 4004852365708811859
+      slime_spritesheet_4: -2540513707462572328
+      slime_spritesheet_5: -4274099877474758581
+      slime_spritesheet_6: 1910898978208789147
+      slime_spritesheet_7: 4143079626918877683
+      slime_spritesheet_8: -4113847630476860729
+      slime_spritesheet_9: 30343468084892780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

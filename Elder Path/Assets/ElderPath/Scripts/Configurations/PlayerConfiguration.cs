@@ -11,6 +11,7 @@ public class PlayerConfiguration : ScriptableObject {
     [field: HideInInspector] public float GravityForce { get; private set; }
     [field: HideInInspector] public float JumpForce { get; private set; }
     [field: SerializeField] public float AttackRange { get; private set; }
+    [field: SerializeField] public float AttackDamage { get; private set; }
 
     private void OnValidate() {
         GravityForce = -(2 * JumpHeight) / Mathf.Pow(JumpDuration, 2);

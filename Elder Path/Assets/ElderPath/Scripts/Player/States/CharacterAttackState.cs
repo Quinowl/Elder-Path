@@ -1,9 +1,13 @@
+using System.Linq;
 using UnityEngine;
 
 public class CharacterAttackState : PlayerState {
 
+    private EnemyDamageable[] hits;
+
     public override void StateEnter() {
-        Debug.Log("Estamos en el estado de ataque");
+        stateMachine.PlayerController.Rigidbody2D.linearVelocityX = 0f;
+        if(HasHit()) ApplyDamageToHitTargets();
         // stateMachine.PlayerController.Animator.SetTrigger();
     }
 
@@ -23,7 +27,16 @@ public class CharacterAttackState : PlayerState {
     }
 
     private bool HasHit() {
-        
-        return false;
+        hits = Physics2D.OverlapCircleAll(stateMachine.PlayerController.AttackPoint.position, configuration.AttackRange)
+            .Select(collider => collider.GetComponent<EnemyDamageable>())
+            .Where(enemy => enemy != null)
+            .ToArray();
+        return hits.Length > 0;
+    }
+
+    private void ApplyDamageToHitTargets() {
+        foreach (var hit in hits) {
+            hit.TakeDamage(configuration.AttackDamage);
+        }
     }
 }

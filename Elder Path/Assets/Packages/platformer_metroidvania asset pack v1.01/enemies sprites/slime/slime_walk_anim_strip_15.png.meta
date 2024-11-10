@@ -79,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -148,7 +148,7 @@ TextureImporter:
         x: 0
         y: 0
         width: 16
-        height: 13
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,7 +170,7 @@ TextureImporter:
         x: 16
         y: 0
         width: 16
-        height: 13
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,7 +192,7 @@ TextureImporter:
         x: 32
         y: 0
         width: 16
-        height: 11
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -211,10 +211,10 @@ TextureImporter:
       name: slime_walk_anim_strip_15_3
       rect:
         serializedVersion: 2
-        x: 47
+        x: 48
         y: 0
-        width: 18
-        height: 10
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: slime_walk_anim_strip_15_4
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 0
-        width: 14
-        height: 14
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +255,10 @@ TextureImporter:
       name: slime_walk_anim_strip_15_5
       rect:
         serializedVersion: 2
-        x: 81
+        x: 80
         y: 0
-        width: 14
-        height: 15
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,9 +278,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 3
-        width: 15
-        height: 14
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -300,9 +300,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 112
-        y: 5
-        width: 15
-        height: 15
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -322,9 +322,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 5
-        width: 15
-        height: 16
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,9 +344,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 144
-        y: 2
-        width: 15
-        height: 17
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,9 +366,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 1
-        width: 15
-        height: 16
+        y: 0
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,8 +389,8 @@ TextureImporter:
         serializedVersion: 2
         x: 176
         y: 0
-        width: 15
-        height: 15
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,7 +412,7 @@ TextureImporter:
         x: 192
         y: 0
         width: 16
-        height: 12
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,10 +431,10 @@ TextureImporter:
       name: slime_walk_anim_strip_15_13
       rect:
         serializedVersion: 2
-        x: 207
+        x: 208
         y: 0
-        width: 18
-        height: 10
+        width: 16
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,7 +456,7 @@ TextureImporter:
         x: 224
         y: 0
         width: 16
-        height: 11
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,7 +475,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: faba962520d954a4fb75c1a7184fdb84
     internalID: 0
     vertices: []
     indices: 
@@ -484,7 +484,22 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      slime_walk_anim_strip_15_0: -2325216643911212202
+      slime_walk_anim_strip_15_1: 789489969757258557
+      slime_walk_anim_strip_15_10: -7607273933111477781
+      slime_walk_anim_strip_15_11: 5060140053435829621
+      slime_walk_anim_strip_15_12: 8866576736846584026
+      slime_walk_anim_strip_15_13: 3761636257525902792
+      slime_walk_anim_strip_15_14: 1908998100897791413
+      slime_walk_anim_strip_15_2: -4497068974636521811
+      slime_walk_anim_strip_15_3: -5875821445719288973
+      slime_walk_anim_strip_15_4: 4852437831693834423
+      slime_walk_anim_strip_15_5: 6164234618649752919
+      slime_walk_anim_strip_15_6: -8638225023099586266
+      slime_walk_anim_strip_15_7: -4487001021355472299
+      slime_walk_anim_strip_15_8: -8285757388227157481
+      slime_walk_anim_strip_15_9: 8811490195307566953
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
