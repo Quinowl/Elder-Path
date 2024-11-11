@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86342241}
   m_Layer: 0
-  m_Name: GroundCheck (1)
+  m_Name: Point 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2265,6 +2265,37 @@ Transform:
   - {fileID: 353292405}
   m_Father: {fileID: 519420032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &400899056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400899057}
+  m_Layer: 0
+  m_Name: Point 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400899057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400899056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2047051751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &428938979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2743,6 +2774,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931db13981274ef428859c54651398f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &603462793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603462794}
+  m_Layer: 0
+  m_Name: Point 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &603462794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603462793}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.04, y: 0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2047051751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,7 +2899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673994386}
   m_Layer: 0
-  m_Name: GroundCheck (2)
+  m_Name: Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3119,6 +3181,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &885319861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 885319862}
+  m_Layer: 0
+  m_Name: Point 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &885319862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885319861}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.04, y: 0.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2047051751}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007573545
 GameObject:
   m_ObjectHideFlags: 0
@@ -4544,37 +4637,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3042009014352029592, guid: dc55e02e4ec9da84584e64e12621aa12, type: 3}
   m_PrefabInstance: {fileID: 1194246159}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1235463329
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1235463330}
-  m_Layer: 0
-  m_Name: ShoulderPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1235463330
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1235463329}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1962504714}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1327945876
 GameObject:
   m_ObjectHideFlags: 0
@@ -4585,7 +4647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1327945877}
   m_Layer: 0
-  m_Name: GroundCheck
+  m_Name: Point 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4850,7 +4912,7 @@ Transform:
   m_GameObject: {fileID: 1619965740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.121, y: -0.878, z: 0}
+  m_LocalPosition: {x: 0.121, y: -0.871, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -4876,10 +4938,10 @@ MonoBehaviour:
   stateMachine: {fileID: 1719603214}
   configuration: {fileID: 11400000, guid: 76843677d137ec34eb20a7102a9efbe9, type: 2}
   <Rigidbody2D>k__BackingField: {fileID: 1619965743}
+  <Collider2D>k__BackingField: {fileID: 1619965745}
   <Animator>k__BackingField: {fileID: 1619965744}
   <AttackPoint>k__BackingField: {fileID: 57749714}
   <Collisions>k__BackingField: {fileID: 1619965746}
-  ceilCheck: {fileID: 2047051752}
   frontalCheck: {fileID: 335521525}
 --- !u!50 &1619965743
 Rigidbody2D:
@@ -4964,7 +5026,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.01}
   m_Size: {x: 0.1, y: 0.15}
   m_Direction: 0
 --- !u!114 &1619965746
@@ -4983,10 +5045,15 @@ MonoBehaviour:
   - {fileID: 1327945877}
   - {fileID: 86342241}
   - {fileID: 673994386}
-  groundLayer:
+  ceilCheckPositions:
+  - {fileID: 400899057}
+  - {fileID: 885319862}
+  - {fileID: 603462794}
+  groundAndCeilLayer:
     serializedVersion: 2
     m_Bits: 64
-  <GroundRayLength>k__BackingField: 0.025
+  groundRayLength: 0.03
+  ceilRayLength: 0.02
 --- !u!1 &1710800529
 GameObject:
   m_ObjectHideFlags: 0
@@ -6332,7 +6399,6 @@ Transform:
   - {fileID: 2115379642}
   - {fileID: 2047051751}
   - {fileID: 335521524}
-  - {fileID: 1235463330}
   m_Father: {fileID: 1619965741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1987377161
@@ -7354,7 +7420,7 @@ CompositeCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -7707,7 +7773,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 1
+  m_CompositeOperation: 2
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
@@ -7722,9 +7788,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2047051751}
-  - component: {fileID: 2047051752}
   m_Layer: 0
-  m_Name: CeilCheck
+  m_Name: CeilChecks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7742,29 +7807,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 400899057}
+  - {fileID: 885319862}
+  - {fileID: 603462794}
   m_Father: {fileID: 1962504714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2047051752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047051750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b66f8e96338c054c94e6ebdd9776cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  form: 1
-  drawGizmo: 1
-  gizmoColor: {r: 0, g: 0.93155813, b: 1, a: 1}
-  checkRadius: 0.24
-  checkSize: {x: 0.075, y: 0.015, z: 0}
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1001 &2055258383
 PrefabInstance:
   m_ObjectHideFlags: 0

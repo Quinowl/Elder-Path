@@ -12,7 +12,7 @@ public class CharacterMovementState : PlayerState {
 
     public override void StateInputs() {
         if (EPInputManager.Instance.MoveInput == 0) stateMachine.SetState(typeof(CharacterIdleState));
-        if (EPInputManager.Instance.JumpInput && stateMachine.PlayerController.IsGrounded) stateMachine.SetState(typeof(CharacterJumpState));
+        if (EPInputManager.Instance.JumpInput && stateMachine.PlayerController.IsGrounded && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpState));
         if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
         // if (EPInputManager.Instance.DashInput) stateMachine.SetState(typeof(CharacterDashState));            
     }
