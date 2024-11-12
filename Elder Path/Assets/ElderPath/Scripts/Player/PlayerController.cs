@@ -5,9 +5,9 @@ public class PlayerController : MonoBehaviour {
     [Header("References")]
     [SerializeField] private PlayerStateMachine stateMachine;
     [SerializeField] private PlayerConfiguration configuration;
-    [field : SerializeField] public Rigidbody2D Rigidbody2D { get; private set; }
+    [field: SerializeField] public Rigidbody2D Rigidbody2D { get; private set; }
     [field: SerializeField] public Collider2D Collider2D { get; private set; }
-    [field : SerializeField] public Animator Animator { get; private set; }
+    [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Transform AttackPoint { get; private set; }
     [field: SerializeField] public CharacterCollisions Collisions { get; private set; }
 
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool groundedLastFrame;
 
-    public void SetCanMove (bool canMove) => CanMove = canMove;
+    public void SetCanMove(bool canMove) => CanMove = canMove;
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void Update() {
-
-        if (Collisions.GroundHit) Debug.Log(Collisions.GroundHit.distance);
-
         stateMachine.Step();
         CheckFlip();
         ApplyGravity();
@@ -42,17 +39,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void LateUpdate() {
-        stateMachine.LateStep();    
+        stateMachine.LateStep();
     }
 
     private void ApplyGravity() {
 
         if (!IsGrounded) {
             Rigidbody2D.linearVelocityY += configuration.GravityForce * Time.deltaTime;
-            if (Rigidbody2D.linearVelocityY < configuration.MaxFalligSpeed) Rigidbody2D.linearVelocityY = configuration.MaxFalligSpeed; 
-        } else if (Rigidbody2D.linearVelocityY < 0 && !groundedLastFrame) {
+            if (Rigidbody2D.linearVelocityY < configuration.MaxFalligSpeed) Rigidbody2D.linearVelocityY = configuration.MaxFalligSpeed;
+        }
+        else if (Rigidbody2D.linearVelocityY < 0 && !groundedLastFrame) {
             Rigidbody2D.linearVelocityY = 0f;
-            if (Collisions.GroundHit.distance > 0.025f) Rigidbody2D.position -= Vector2.up * 0.005f;                
+            if (Collisions.GroundHit.distance > 0.025f) Rigidbody2D.position -= Vector2.up * 0.005f;
             if (Collisions.GroundHit.distance < 0.02f) Rigidbody2D.position += Vector2.up * (0.02f - Collisions.GroundHit.distance);
         }
         groundedLastFrame = IsGrounded;
@@ -61,7 +59,7 @@ public class PlayerController : MonoBehaviour {
     private void CheckFlip() {
         if (Rigidbody2D.linearVelocityX == 0) return;
         Vector3 scale = transform.localScale;
-        scale.x = Rigidbody2D.linearVelocityX > 0 ? 1 : -1;            
+        scale.x = Rigidbody2D.linearVelocityX > 0 ? 1 : -1;
         transform.localScale = scale;
     }
 

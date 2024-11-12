@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class CharacterTransitionToJumpState : PlayerState {
+public class CharacterJumpTransition : PlayerState {
     public override void StateEnter() {
         Debug.Log("Transicionamos a jump");
+        // stateMachine.PlayerController.Animator.SetTrigger();
     }
 
     public override void StateExit() {
@@ -18,5 +19,5 @@ public class CharacterTransitionToJumpState : PlayerState {
     }
 
     public override void StateStep() {
-    }     
+    }
 }
