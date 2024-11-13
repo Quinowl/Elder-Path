@@ -3,8 +3,6 @@ using UnityEngine;
 public class CharacterJumpState : PlayerState {
 
     private float groundCheckDelay;
-    //TODO: I dont like a LayerMask here, fix this
-    [SerializeField] private LayerMask groundLayer;
 
     public override void StateEnter() {
         groundCheckDelay = configuration.GroundCheckDelayAfterJump;
