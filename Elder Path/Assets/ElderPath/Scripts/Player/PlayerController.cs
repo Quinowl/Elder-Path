@@ -36,6 +36,14 @@ public class PlayerController : MonoBehaviour {
         stateMachine.LateStep();
     }
 
+    public void TryMove(float motion) {
+        if (IsFrontBlocked) {
+            Rigidbody2D.linearVelocityX = 0f;
+            return;
+        }
+        Rigidbody2D.linearVelocityX = motion;
+    }
+
     private void ApplyGravity() {
 
         if (!IsGrounded) {

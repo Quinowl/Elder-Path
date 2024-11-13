@@ -14,10 +14,10 @@ public class CharacterMovementState : PlayerState {
 
     public override void StateInputs() {
         if (EPInputManager.Instance.MoveInput == 0) stateMachine.SetState(typeof(CharacterIdleState));
-        if (!stateMachine.PlayerController.IsGrounded && stateMachine.PlayerController.Rigidbody2D.linearVelocityY <= -0.02f) stateMachine.SetState(typeof(CharacterFallingState));
+        if (!stateMachine.PlayerController.IsGrounded && stateMachine.PlayerController.Rigidbody2D.linearVelocityY <= -0.0002f) stateMachine.SetState(typeof(CharacterFallingState));
         if (EPInputManager.Instance.JumpInputPressed && stateMachine.PlayerController.IsGrounded && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpTransition));
         if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
-        // if (EPInputManager.Instance.DashInput) stateMachine.SetState(typeof(CharacterDashState));            
+        // if (EPInputManager.Instance.DashInput) stateMachine.SetState(typeof(CharacterDashState)); 
     }
 
     public override void StateLateStep() {
@@ -28,8 +28,12 @@ public class CharacterMovementState : PlayerState {
         // If direction is changed, conserve current speed,
         if (IsDirectionChanged(targetSpeed)) currentSpeed = targetSpeed;
         // else it will accelerate to target speed.
-        else currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, configuration.AccelerationRate * Time.fixedDeltaTime);
-        stateMachine.PlayerController.Rigidbody2D.linearVelocityX = currentSpeed;
+        else {
+            if (!stateMachine.PlayerController.IsFrontBlocked) currentSpeed = Mathf.MoveTowards(currentSpeed, targetSpeed, configuration.AccelerationRate * Time.fixedDeltaTime);
+            else currentSpeed = 0f;
+        }
+        stateMachine.PlayerController.TryMove(currentSpeed);
+        // stateMachine.PlayerController.Rigidbody2D.linearVelocityX = currentSpeed;
     }
 
     public override void StateStep() {

@@ -14,7 +14,7 @@ public static class Constants {
     public const string PLAYER_ANIMATOR_ATTACK_TRIGGER = "attack";
     public const string PLAYER_ANIMATOR_IS_GROUNDED = "isGrounded";
     // ===== PLAYER CONSTANTS FIELDS =====
-    public const float PLAYER_JUMP_TRANSITIO_FRAMES_DURATION = 0.3f;
+    public const float PLAYER_JUMP_TRANSITIO_FRAMES_DURATION = 0.15f;
     // ===== GENERAL ANIMATORS =====
     public const string COIN_ANIMATION_PICK_UP = "pickUp";
 }

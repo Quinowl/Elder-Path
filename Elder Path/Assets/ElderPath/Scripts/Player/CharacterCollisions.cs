@@ -22,25 +22,20 @@ public class CharacterCollisions : MonoBehaviour {
     private RaycastHit2D groundHit;
 
     private void OnDrawGizmos() {
-
-        Gizmos.color = Color.red;
-        foreach (Transform point in groundCheckPositions) {
-            Gizmos.DrawRay(point.position, Vector2.down * groundRayLength);
-        }
-
-        Gizmos.color = Color.blue;
-        foreach (Transform point in ceilCheckPositions) {
-            Gizmos.DrawRay(point.position, Vector2.up * ceilRayLength);
-        }
-
-        Gizmos.color = Color.cyan;
-        foreach (Transform point in frontCheckPositions) {
-            Gizmos.DrawRay(point.position, (transform.localScale.x == 1 ? Vector2.right : Vector2.left) * frontRayLength);
-        }
+        DrawGizmo(Color.red, groundCheckPositions, Vector2.down, groundRayLength);
+        DrawGizmo(Color.blue, ceilCheckPositions, Vector2.up, ceilRayLength);
+        DrawGizmo(Color.cyan, frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength);
     }
 
     private void Update() {
         PerformCollisionChecks();
+    }
+
+    private void DrawGizmo(Color gizmoColor, Transform[] points, Vector2 direction, float length) {
+        Gizmos.color = gizmoColor;
+        foreach (Transform point in points) {
+            Gizmos.DrawRay(point.position, direction * length);
+        }
     }
 
     private void PerformCollisionChecks() {
