@@ -1,9 +1,12 @@
 using UnityEngine;
 
 public class CharacterJumpTransition : PlayerState {
+
+    private float counter;
+
     public override void StateEnter() {
-        Debug.Log("Transicionamos a jump");
-        // stateMachine.PlayerController.Animator.SetTrigger();
+        stateMachine.PlayerController.Animator.SetTrigger(Constants.PLAYER_ANIMATOR_JUMP_TRIGGER);
+        counter = 0.03f;
     }
 
     public override void StateExit() {
@@ -19,5 +22,9 @@ public class CharacterJumpTransition : PlayerState {
     }
 
     public override void StateStep() {
+        counter -= Time.deltaTime;
+        if (counter <= 0f) {
+            stateMachine.SetState(EPInputManager.Instance.JumpInputHeld && !stateMachine.PlayerController.IsCeiled ? typeof(CharacterJumpState) : typeof(CharacterIdleState));
+        }
     }
 }

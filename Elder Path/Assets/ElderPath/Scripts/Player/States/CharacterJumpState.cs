@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class CharacterJumpState : PlayerState {
-    
+
     private float groundCheckDelay;
     //TODO: I dont like a LayerMask here, fix this
     [SerializeField] private LayerMask groundLayer;
@@ -30,11 +30,11 @@ public class CharacterJumpState : PlayerState {
     }
 
     public override void StateStep() {
-        if (stateMachine.PlayerController.IsCeiled) stateMachine.PlayerController.Rigidbody2D.linearVelocityY = -0.25f * configuration.JumpForce;             
+        if (stateMachine.PlayerController.IsCeiled) stateMachine.PlayerController.Rigidbody2D.linearVelocityY = -0.25f * configuration.JumpForce;
         groundCheckDelay -= Time.deltaTime;
         if (groundCheckDelay > 0f) return;
         if (!stateMachine.PlayerController.IsGrounded) return;
         if (stateMachine.PlayerController.Rigidbody2D.linearVelocity != Vector2.zero) stateMachine.SetState(typeof(CharacterMovementState));
         else stateMachine.SetState(typeof(CharacterIdleState));
-    }  
+    }
 }

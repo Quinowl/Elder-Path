@@ -12,6 +12,7 @@ public static class Constants {
     public const string PLAYER_ANIMATOR_Y_SPEED = "speed-y";
     public const string PLAYER_ANIMATOR_JUMP_TRIGGER = "jump";
     public const string PLAYER_ANIMATOR_ATTACK_TRIGGER = "attack";
+    public const string PLAYER_ANIMATOR_IS_GROUNDED = "isGrounded";
     // ===== GENERAL ANIMATORS =====
     public const string COIN_ANIMATION_PICK_UP = "pickUp";
 }

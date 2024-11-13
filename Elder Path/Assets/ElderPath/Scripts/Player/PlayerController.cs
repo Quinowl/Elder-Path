@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour {
             if (Collisions.GroundHit.distance < 0.02f) Rigidbody2D.position += Vector2.up * (0.02f - Collisions.GroundHit.distance);
         }
         groundedLastFrame = IsGrounded;
+        Animator.SetBool(Constants.PLAYER_ANIMATOR_IS_GROUNDED, IsGrounded);
+        Animator.SetFloat(Constants.PLAYER_ANIMATOR_Y_SPEED, Rigidbody2D.linearVelocityY);
     }
 
     private void CheckFlip() {

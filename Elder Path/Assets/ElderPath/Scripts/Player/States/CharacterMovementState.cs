@@ -15,7 +15,7 @@ public class CharacterMovementState : PlayerState {
     public override void StateInputs() {
         if (EPInputManager.Instance.MoveInput == 0) stateMachine.SetState(typeof(CharacterIdleState));
         if (!stateMachine.PlayerController.IsGrounded && stateMachine.PlayerController.Rigidbody2D.linearVelocityY <= -0.02f) stateMachine.SetState(typeof(CharacterFallingState));
-        if (EPInputManager.Instance.JumpInput && stateMachine.PlayerController.IsGrounded && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpTransition));
+        if (EPInputManager.Instance.JumpInputPressed && stateMachine.PlayerController.IsGrounded && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpTransition));
         if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
         // if (EPInputManager.Instance.DashInput) stateMachine.SetState(typeof(CharacterDashState));            
     }
