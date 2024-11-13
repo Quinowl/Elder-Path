@@ -6,7 +6,7 @@ public class CharacterJumpTransition : PlayerState {
 
     public override void StateEnter() {
         stateMachine.PlayerController.Animator.SetTrigger(Constants.PLAYER_ANIMATOR_JUMP_TRIGGER);
-        counter = 0.03f;
+        counter = Constants.PLAYER_JUMP_TRANSITIO_FRAMES_DURATION;
     }
 
     public override void StateExit() {

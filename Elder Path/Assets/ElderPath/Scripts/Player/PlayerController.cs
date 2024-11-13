@@ -11,21 +11,15 @@ public class PlayerController : MonoBehaviour {
     [field: SerializeField] public Transform AttackPoint { get; private set; }
     [field: SerializeField] public CharacterCollisions Collisions { get; private set; }
 
-    [Header("Gameplay")]
-    [SerializeField] private AreaChecker frontalCheck;
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
-    public bool IsFrontBlocked => frontalCheck.IsOverlapping();
-    public bool CanMove { get; private set; }
+    public bool IsFrontBlocked => Collisions.HasSomethingInFront;
 
     private bool groundedLastFrame;
-
-    public void SetCanMove(bool canMove) => CanMove = canMove;
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
-        SetCanMove(true);
     }
 
     private void Update() {
@@ -50,6 +44,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (Rigidbody2D.linearVelocityY < 0 && !groundedLastFrame) {
             Rigidbody2D.linearVelocityY = 0f;
+            //TODO: Fix these magic numbers
             if (Collisions.GroundHit.distance > 0.025f) Rigidbody2D.position -= Vector2.up * 0.005f;
             if (Collisions.GroundHit.distance < 0.02f) Rigidbody2D.position += Vector2.up * (0.02f - Collisions.GroundHit.distance);
         }
@@ -64,6 +59,4 @@ public class PlayerController : MonoBehaviour {
         scale.x = Rigidbody2D.linearVelocityX > 0 ? 1 : -1;
         transform.localScale = scale;
     }
-
-    private void CheckCanMove() => SetCanMove(!IsFrontBlocked);
 }

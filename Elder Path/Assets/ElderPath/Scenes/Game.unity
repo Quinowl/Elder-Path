@@ -150,6 +150,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1619965741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &73508122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73508123}
+  m_Layer: 0
+  m_Name: Point 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73508123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73508122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06, y: -0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 335521524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &86342240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,9 +1963,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 335521524}
-  - component: {fileID: 335521525}
   m_Layer: 0
-  m_Name: FrontCheck
+  m_Name: FrontChecks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1949,32 +1979,15 @@ Transform:
   m_GameObject: {fileID: 335521523}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.060000002, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1167765478}
+  - {fileID: 380302066}
+  - {fileID: 73508123}
   m_Father: {fileID: 1962504714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &335521525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 335521523}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b66f8e96338c054c94e6ebdd9776cb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  form: 1
-  drawGizmo: 1
-  gizmoColor: {r: 1, g: 0, b: 0.5828066, a: 1}
-  checkRadius: 0.24
-  checkSize: {x: 0.005, y: 0.05, z: 0}
-  collisionLayer:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!1 &353292404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2231,6 +2244,37 @@ MonoBehaviour:
   rend: {fileID: 378570386}
   cam: {fileID: 519420031}
   target: {fileID: 1619965741}
+--- !u!1 &380302065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 380302066}
+  m_Layer: 0
+  m_Name: Point 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &380302066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380302065}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06, y: 0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 335521524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &399775547
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,6 +4619,37 @@ Transform:
   - {fileID: 1110560915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1167765477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167765478}
+  m_Layer: 0
+  m_Name: Point 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1167765478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167765477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 335521524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1194246159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4942,7 +5017,6 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 1619965744}
   <AttackPoint>k__BackingField: {fileID: 57749714}
   <Collisions>k__BackingField: {fileID: 1619965746}
-  frontalCheck: {fileID: 335521525}
 --- !u!50 &1619965743
 Rigidbody2D:
   serializedVersion: 5
@@ -5049,11 +5123,19 @@ MonoBehaviour:
   - {fileID: 400899057}
   - {fileID: 885319862}
   - {fileID: 603462794}
+  frontCheckPositions:
+  - {fileID: 1167765478}
+  - {fileID: 380302066}
+  - {fileID: 73508123}
   groundAndCeilLayer:
     serializedVersion: 2
     m_Bits: 64
   groundRayLength: 0.03
   ceilRayLength: 0.02
+  frontObstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  frontRayLength: 0.05
 --- !u!1 &1710800529
 GameObject:
   m_ObjectHideFlags: 0
@@ -6161,7 +6243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1831487857
 Transform:
   m_ObjectHideFlags: 0
@@ -6364,9 +6446,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc5663be82c95a4cb5ec4aca5859297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &1962504713
 GameObject:
   m_ObjectHideFlags: 0

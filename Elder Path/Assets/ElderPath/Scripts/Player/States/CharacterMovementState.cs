@@ -24,7 +24,6 @@ public class CharacterMovementState : PlayerState {
     }
 
     public override void StatePhysicsStep() {
-        if (!stateMachine.PlayerController.CanMove) return;
         float targetSpeed = EPInputManager.Instance.MoveInput * configuration.MaxSpeed;
         // If direction is changed, conserve current speed,
         if (IsDirectionChanged(targetSpeed)) currentSpeed = targetSpeed;
