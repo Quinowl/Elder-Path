@@ -9,7 +9,7 @@ public class PlayerStateMachine : MonoBehaviour {
     public PlayerState LastState { get; private set; }
     public PlayerController PlayerController { get; private set; }
 
-    public void ConfigureStateMachine(PlayerConfiguration configuration, PlayerController controller) { 
+    public void ConfigureStateMachine(PlayerConfiguration configuration, PlayerController controller) {
         playerConfiguration = configuration;
         PlayerController = controller;
     }
@@ -33,7 +33,7 @@ public class PlayerStateMachine : MonoBehaviour {
         if (CurrentState == null) return;
         CurrentState.StatePhysicsStep();
     }
-    
+
 
     public void LateStep() {
         if (CurrentState == null) return;
@@ -49,7 +49,7 @@ public class PlayerStateMachine : MonoBehaviour {
         CurrentState.StateEnter();
     }
 
-    private PlayerState GetStateByType(Type stateType){
+    private PlayerState GetStateByType(Type stateType) {
         for (int i = 0; i < states.Length; i++) {
             if (states[i].GetType() == stateType) return states[i];
         }

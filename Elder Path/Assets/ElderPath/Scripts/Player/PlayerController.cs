@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour {
     public bool IsCeiled => Collisions.IsCeiled;
     public bool IsFrontBlocked => Collisions.HasSomethingInFront;
 
+    public bool CanJumpCoyote => coyoteTimeCounter < configuration.CoyoteTime;
+
     private bool groundedLastFrame;
+    private float coyoteTimeCounter;
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
@@ -26,6 +29,7 @@ public class PlayerController : MonoBehaviour {
         stateMachine.Step();
         CheckFlip();
         ApplyGravity();
+        CheckCoyoteTime();
     }
 
     private void FixedUpdate() {
@@ -45,7 +49,6 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void ApplyGravity() {
-
         if (!IsGrounded) {
             Rigidbody2D.linearVelocityY += configuration.GravityForce * Time.deltaTime;
             if (Rigidbody2D.linearVelocityY < configuration.MaxFalligSpeed) Rigidbody2D.linearVelocityY = configuration.MaxFalligSpeed;
@@ -62,9 +65,18 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void CheckFlip() {
-        if (Rigidbody2D.linearVelocityX == 0) return;
+        if (EPInputManager.Instance.MoveInput == 0) return;
         Vector3 scale = transform.localScale;
-        scale.x = Rigidbody2D.linearVelocityX > 0 ? 1 : -1;
+        scale.x = EPInputManager.Instance.MoveInput > 0 ? 1 : -1;
         transform.localScale = scale;
+    }
+
+    private void CheckCoyoteTime() {
+        if (!IsGrounded) {
+            coyoteTimeCounter += Time.deltaTime;
+        }
+        else {
+            coyoteTimeCounter = 0f;
+        }
     }
 }

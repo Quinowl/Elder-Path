@@ -8,8 +8,9 @@ public class CharacterCollisions : MonoBehaviour {
     [SerializeField] private Transform[] frontCheckPositions;
 
     [Header("Configuration")]
-    [SerializeField] private LayerMask groundAndCeilLayer;
+    [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundRayLength;
+    [SerializeField] private LayerMask ceilLayer;
     [SerializeField] private float ceilRayLength;
     [SerializeField] private LayerMask frontObstaclesLayer;
     [SerializeField] private float frontRayLength;
@@ -39,8 +40,8 @@ public class CharacterCollisions : MonoBehaviour {
     }
 
     private void PerformCollisionChecks() {
-        IsGrounded = CheckForCollisions(groundCheckPositions, Vector2.down, groundRayLength, groundAndCeilLayer, out groundHit);
-        IsCeiled = CheckForCollisions(ceilCheckPositions, Vector2.up, ceilRayLength, groundAndCeilLayer, out _);
+        IsGrounded = CheckForCollisions(groundCheckPositions, Vector2.down, groundRayLength, groundLayer, out groundHit);
+        IsCeiled = CheckForCollisions(ceilCheckPositions, Vector2.up, ceilRayLength, ceilLayer, out _);
         HasSomethingInFront = CheckForCollisions(frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength, frontObstaclesLayer, out _);
     }
 

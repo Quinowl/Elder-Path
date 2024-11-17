@@ -16,7 +16,8 @@ public class CharacterMovementState : PlayerState {
         if (EPInputManager.Instance.MoveInput == 0) stateMachine.SetState(typeof(CharacterIdleState));
         if (!stateMachine.PlayerController.IsGrounded && stateMachine.PlayerController.Rigidbody2D.linearVelocityY <= -0.0002f) stateMachine.SetState(typeof(CharacterFallingState));
         if (EPInputManager.Instance.JumpInputPressed && stateMachine.PlayerController.IsGrounded && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpTransition));
-        if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
+        if (EPInputManager.Instance.JumpInputPressed && stateMachine.PlayerController.CanJumpCoyote && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpTransition));
+        // if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
         // if (EPInputManager.Instance.DashInput) stateMachine.SetState(typeof(CharacterDashState)); 
     }
 
@@ -33,7 +34,6 @@ public class CharacterMovementState : PlayerState {
             else currentSpeed = 0f;
         }
         stateMachine.PlayerController.TryMove(currentSpeed);
-        // stateMachine.PlayerController.Rigidbody2D.linearVelocityX = currentSpeed;
     }
 
     public override void StateStep() {

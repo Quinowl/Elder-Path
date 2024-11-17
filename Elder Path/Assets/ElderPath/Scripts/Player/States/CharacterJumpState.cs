@@ -5,8 +5,8 @@ public class CharacterJumpState : PlayerState {
     private float groundCheckDelay;
 
     public override void StateEnter() {
-        groundCheckDelay = configuration.GroundCheckDelayAfterJump;
-        stateMachine.PlayerController.Rigidbody2D.linearVelocityX = EPInputManager.Instance.MoveInput * configuration.MaxSpeed;
+        groundCheckDelay = Constants.PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP;
+        stateMachine.PlayerController.TryMove(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
         stateMachine.PlayerController.Rigidbody2D.linearVelocityY = configuration.JumpForce;
     }
 
@@ -24,7 +24,7 @@ public class CharacterJumpState : PlayerState {
     }
 
     public override void StatePhysicsStep() {
-        stateMachine.PlayerController.Rigidbody2D.linearVelocityX = EPInputManager.Instance.MoveInput * configuration.MaxSpeed;
+        stateMachine.PlayerController.TryMove(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
     }
 
     public override void StateStep() {

@@ -17,7 +17,7 @@ MonoBehaviour:
   <DeccelerationRate>k__BackingField: 5
   <JumpHeight>k__BackingField: 0.5
   <JumpDuration>k__BackingField: 0.5
-  <GroundCheckDelayAfterJump>k__BackingField: 0.1
   <MaxFalligSpeed>k__BackingField: -1.5
+  <CoyoteTime>k__BackingField: 0.2
   <AttackRange>k__BackingField: 0
   <AttackDamage>k__BackingField: 0

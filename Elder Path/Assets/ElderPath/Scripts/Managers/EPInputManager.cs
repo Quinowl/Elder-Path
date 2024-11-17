@@ -1,4 +1,3 @@
-using UnityEditor.MPE;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -26,10 +25,7 @@ public class EPInputManager : MonoBehaviour {
     }
 
     private void Awake() {
-        if (!Instance) {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        if (!Instance) Instance = this;
         else Destroy(gameObject);
         if (!playerInput) GetComponent<PlayerInput>();
         InitializeInputActions();
