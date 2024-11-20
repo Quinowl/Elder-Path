@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CharacterIdleState : PlayerState {
     private float currentSpeed;
+
     public override void StateEnter() {
         currentSpeed = stateMachine.PlayerController.Rigidbody2D.linearVelocityX;
         stateMachine.PlayerController.Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, 0f);

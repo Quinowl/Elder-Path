@@ -7,6 +7,7 @@ public static class Constants {
     public const string PLAYER_JUMP_ACTION = "Jump";
     public const string PLAYER_DASH_ACTION = "Dash";
     public const string PLAYER_ATTACK_ACTION = "Attack";
+    public const string PLAYER_RESET_ACTION = "Reset";
     // ===== PLAYER ANIMATOR =====
     public const string PLAYER_ANIMATOR_X_SPEED = "speed-x";
     public const string PLAYER_ANIMATOR_Y_SPEED = "speed-y";
@@ -14,8 +15,8 @@ public static class Constants {
     public const string PLAYER_ANIMATOR_ATTACK_TRIGGER = "attack";
     public const string PLAYER_ANIMATOR_IS_GROUNDED = "isGrounded";
     // ===== PLAYER CONSTANTS FIELDS =====
-    public const float PLAYER_JUMP_TRANSITIO_FRAMES_DURATION = 0.01f;
-    public const float PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP = 0.1f;
+    public const float PLAYER_JUMP_TRANSITION_FRAMES_DURATION = 0.01f;
+    public const float PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP = 0.25f;
     // ===== GENERAL ANIMATORS =====
     public const string COIN_ANIMATION_PICK_UP = "pickUp";
 }

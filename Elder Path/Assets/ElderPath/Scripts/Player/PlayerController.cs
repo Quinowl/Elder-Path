@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
     public bool IsCeiled => Collisions.IsCeiled;
     public bool IsFrontBlocked => Collisions.HasSomethingInFront;
 
-    public bool CanJumpCoyote => coyoteTimeCounter < configuration.CoyoteTime;
+    public bool CanJumpCoyote => !IsGrounded && coyoteTimeCounter < configuration.CoyoteTime;
 
     private bool groundedLastFrame;
     private float coyoteTimeCounter;
@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
+        configuration.CalculateValues();
     }
 
     private void Update() {
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour {
         CheckFlip();
         ApplyGravity();
         CheckCoyoteTime();
+        // TODO: TEST - REMOVE THIS
+        // ######
+        if (EPInputManager.Instance.ResetInput) UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        // ######
     }
 
     private void FixedUpdate() {
@@ -72,11 +77,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void CheckCoyoteTime() {
+        if (!IsGrounded && groundedLastFrame) coyoteTimeCounter = 0f;
         if (!IsGrounded) {
             coyoteTimeCounter += Time.deltaTime;
+            if (coyoteTimeCounter > configuration.CoyoteTime) coyoteTimeCounter = configuration.CoyoteTime;
         }
-        else {
-            coyoteTimeCounter = 0f;
-        }
+        else coyoteTimeCounter = 0f;
+        groundedLastFrame = IsGrounded;
     }
 }

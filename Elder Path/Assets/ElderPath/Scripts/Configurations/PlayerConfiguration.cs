@@ -15,6 +15,10 @@ public class PlayerConfiguration : ScriptableObject {
     [field: SerializeField] public float AttackDamage { get; private set; }
 
     private void OnValidate() {
+        CalculateValues();
+    }
+
+    public void CalculateValues() {
         GravityForce = -(2 * JumpHeight) / Mathf.Pow(JumpDuration, 2);
         JumpForce = Mathf.Sqrt(2 * Mathf.Abs(GravityForce) * JumpHeight);
     }

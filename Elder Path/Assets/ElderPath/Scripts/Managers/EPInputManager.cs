@@ -9,6 +9,7 @@ public class EPInputManager : MonoBehaviour {
     private InputAction jumpInputAction;
     private InputAction attackInputAction;
     private InputAction dashInputAction;
+    private InputAction resetInputAction;
 
     public float MoveInput { get; private set; }
     public bool JumpInputPressed { get; private set; }
@@ -16,6 +17,7 @@ public class EPInputManager : MonoBehaviour {
     public bool JumpInputReleased { get; private set; }
     public bool AttackInput { get; private set; }
     public bool DashInput { get; private set; }
+    public bool ResetInput { get; private set; }
     public bool IsGamepad { get; private set; }
 
     public static EPInputManager Instance { get; private set; }
@@ -52,6 +54,7 @@ public class EPInputManager : MonoBehaviour {
         jumpInputAction = playerInput.actions[Constants.PLAYER_JUMP_ACTION];
         attackInputAction = playerInput.actions[Constants.PLAYER_ATTACK_ACTION];
         dashInputAction = playerInput.actions[Constants.PLAYER_DASH_ACTION];
+        resetInputAction = playerInput.actions[Constants.PLAYER_RESET_ACTION];
     }
 
     private void ReadInputs() {
@@ -61,5 +64,6 @@ public class EPInputManager : MonoBehaviour {
         JumpInputReleased = jumpInputAction.WasReleasedThisFrame();
         AttackInput = attackInputAction.WasPressedThisFrame();
         DashInput = dashInputAction.WasPressedThisFrame();
+        ResetInput = resetInputAction.WasPressedThisFrame();
     }
 }
