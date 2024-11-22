@@ -109,7 +109,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: speed-y
-    m_EventTreshold: 0
+    m_EventTreshold: 0.0001
   - m_ConditionMode: 2
     m_ConditionEvent: isGrounded
     m_EventTreshold: 0
