@@ -11,6 +11,7 @@ public class PlayerConfiguration : ScriptableObject {
     [field: HideInInspector] public float GravityForce { get; private set; }
     [field: HideInInspector] public float JumpForce { get; private set; }
     [field: SerializeField] public float CoyoteTime { get; private set; }
+    [field: SerializeField] public float DashForce { get; private set; }
     [field: SerializeField] public float AttackRange { get; private set; }
     [field: SerializeField] public float AttackDamage { get; private set; }
 

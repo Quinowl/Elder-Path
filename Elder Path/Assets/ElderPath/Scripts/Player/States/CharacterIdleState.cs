@@ -20,10 +20,10 @@ public class CharacterIdleState : PlayerState {
     }
 
     public override void StatePhysicsStep() {
-        currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, configuration.DeccelerationRate * Time.fixedDeltaTime);
-        stateMachine.PlayerController.Rigidbody2D.linearVelocityX = currentSpeed;
     }
 
     public override void StateStep() {
+        currentSpeed = Mathf.MoveTowards(currentSpeed, 0f, configuration.DeccelerationRate * Time.deltaTime);
+        stateMachine.PlayerController.Rigidbody2D.linearVelocityX = currentSpeed;
     }
 }

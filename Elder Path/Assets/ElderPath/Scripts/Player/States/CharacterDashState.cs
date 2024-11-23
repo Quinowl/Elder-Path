@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class CharacterDashState : PlayerState {
     public override void StateEnter() {
+        //TODO: Impulso en el eje X
+        stateMachine.PlayerController.TryMoveX(configuration.DashForce);
     }
 
     public override void StateExit() {

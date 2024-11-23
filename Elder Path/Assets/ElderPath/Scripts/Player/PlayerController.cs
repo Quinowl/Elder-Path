@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour {
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
     public bool IsFrontBlocked => Collisions.HasSomethingInFront;
-
     public bool CanJumpCoyote => !IsGrounded && coyoteTimeCounter < configuration.CoyoteTime;
 
     private bool groundedLastFrame;
@@ -45,7 +44,7 @@ public class PlayerController : MonoBehaviour {
         stateMachine.LateStep();
     }
 
-    public void TryMove(float motion) {
+    public void TryMoveX(float motion) {
         if (IsFrontBlocked) {
             Rigidbody2D.linearVelocityX = 0f;
             return;
