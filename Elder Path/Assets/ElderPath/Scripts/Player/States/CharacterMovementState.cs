@@ -6,7 +6,7 @@ public class CharacterMovementState : PlayerState {
     private float TargetSpeed => EPInputManager.Instance.MoveInput * configuration.MaxSpeed;
 
     public override void StateEnter() {
-        currentSpeed = (stateMachine.LastState is CharacterJumpState) ? stateMachine.PlayerController.Rigidbody2D.linearVelocityX : 0f;
+        currentSpeed = (stateMachine.LastState is CharacterJumpState || stateMachine.LastState is CharacterDashState) ? stateMachine.PlayerController.Rigidbody2D.linearVelocityX : 0f;
         stateMachine.PlayerController.Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, 1f);
     }
 

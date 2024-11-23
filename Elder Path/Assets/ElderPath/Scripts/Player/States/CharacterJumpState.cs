@@ -18,6 +18,7 @@ public class CharacterJumpState : PlayerState {
         if (EPInputManager.Instance.JumpInputReleased && stateMachine.PlayerController.Rigidbody2D.linearVelocityY > 0f) {
             stateMachine.PlayerController.Rigidbody2D.linearVelocityY *= 0.5f;
         }
+        if (EPInputManager.Instance.DashInput) stateMachine.SetState(typeof(CharacterDashState));
     }
 
     public override void StateLateStep() {

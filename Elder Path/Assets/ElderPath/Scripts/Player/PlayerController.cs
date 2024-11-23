@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Transform AttackPoint { get; private set; }
     [field: SerializeField] public CharacterCollisions Collisions { get; private set; }
+    [field: SerializeField] public TrailRenderer TrailRenderer { get; private set; }
 
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
         configuration.CalculateValues();
+        TrailRenderer.enabled = false;
     }
 
     private void Update() {

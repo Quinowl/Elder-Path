@@ -19,6 +19,7 @@ MonoBehaviour:
   <JumpDuration>k__BackingField: 0.5
   <MaxFalligSpeed>k__BackingField: -1.5
   <CoyoteTime>k__BackingField: 0.1
-  <DashForce>k__BackingField: 1.5
+  <DashForce>k__BackingField: 4
+  <DashTime>k__BackingField: 0.15
   <AttackRange>k__BackingField: 0
   <AttackDamage>k__BackingField: 0
