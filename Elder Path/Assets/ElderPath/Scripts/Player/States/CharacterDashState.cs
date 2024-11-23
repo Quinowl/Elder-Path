@@ -29,8 +29,4 @@ public class CharacterDashState : PlayerState {
     public override void StateStep() {
         if (Time.time > startTime + configuration.DashTime) stateMachine.SetState(typeof(CharacterMovementState));
     }
-
-    private void SpawnDashTrail() {
-
-    }
 }
