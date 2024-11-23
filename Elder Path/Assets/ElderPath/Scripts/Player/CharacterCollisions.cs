@@ -13,11 +13,13 @@ public class CharacterCollisions : MonoBehaviour {
     [SerializeField] private LayerMask ceilLayer;
     [SerializeField] private float ceilRayLength;
     [SerializeField] private LayerMask frontObstaclesLayer;
+    [SerializeField] private LayerMask frontPusheableLayer;
     [SerializeField] private float frontRayLength;
 
     public bool IsGrounded { get; private set; }
     public bool IsCeiled { get; private set; }
-    public bool HasSomethingInFront { get; private set; }
+    public bool HasSomethingInFrontNotPusheable { get; private set; }
+    public bool HasSomethingInFrontPusheable { get; private set; }
     public RaycastHit2D GroundHit => groundHit;
 
     private RaycastHit2D groundHit;
@@ -42,7 +44,8 @@ public class CharacterCollisions : MonoBehaviour {
     private void PerformCollisionChecks() {
         IsGrounded = CheckForCollisions(groundCheckPositions, Vector2.down, groundRayLength, groundLayer, out groundHit);
         IsCeiled = CheckForCollisions(ceilCheckPositions, Vector2.up, ceilRayLength, ceilLayer, out _);
-        HasSomethingInFront = CheckForCollisions(frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength, frontObstaclesLayer, out _);
+        HasSomethingInFrontNotPusheable = CheckForCollisions(frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength, frontObstaclesLayer, out _);
+        HasSomethingInFrontPusheable = CheckForCollisions(frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength, frontPusheableLayer, out _);
     }
 
     private bool CheckForCollisions(Transform[] points, Vector2 direction, float rayLength, LayerMask layer, out RaycastHit2D hit) {

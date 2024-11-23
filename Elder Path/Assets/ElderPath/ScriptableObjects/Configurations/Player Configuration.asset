@@ -15,6 +15,7 @@ MonoBehaviour:
   <MaxSpeed>k__BackingField: 1
   <AccelerationRate>k__BackingField: 2
   <DeccelerationRate>k__BackingField: 5
+  <PushingSpeed>k__BackingField: 0.3
   <JumpHeight>k__BackingField: 0.5
   <JumpDuration>k__BackingField: 0.5
   <MaxFalligSpeed>k__BackingField: -1.5

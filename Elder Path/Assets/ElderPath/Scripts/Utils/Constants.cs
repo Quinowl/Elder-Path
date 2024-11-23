@@ -14,6 +14,7 @@ public static class Constants {
     public const string PLAYER_ANIMATOR_JUMP_TRIGGER = "jump";
     public const string PLAYER_ANIMATOR_ATTACK_TRIGGER = "attack";
     public const string PLAYER_ANIMATOR_IS_GROUNDED = "isGrounded";
+    public const string PLAYER_ANIMATOR_IS_PUSHING = "isPushing";
     // ===== PLAYER CONSTANTS FIELDS =====
     public const float PLAYER_JUMP_TRANSITION_FRAMES_DURATION = 0.01f;
     public const float PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP = 0.25f;

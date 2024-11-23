@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour {
 
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
-    public bool IsFrontBlocked => Collisions.HasSomethingInFront;
+    public bool IsFrontBlocked => Collisions.HasSomethingInFrontNotPusheable;
+    public bool CanPushSomething => Collisions.HasSomethingInFrontPusheable;
     public bool CanJumpCoyote => !IsGrounded && coyoteTimeCounter < configuration.CoyoteTime;
 
     private bool groundedLastFrame;
@@ -94,9 +95,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void CheckCanDash() {
-        if (IsGrounded) {
-            if (dashTimeCounter > 0f) dashTimeCounter -= Time.deltaTime;
-            if (dashTimeCounter <= 0f) SetCanDash(true);
-        }
+        if (dashTimeCounter > 0f) dashTimeCounter -= Time.deltaTime;
+        if (IsGrounded && dashTimeCounter <= 0f) SetCanDash(true);
     }
 }

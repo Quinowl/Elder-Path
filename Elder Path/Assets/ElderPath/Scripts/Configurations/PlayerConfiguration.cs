@@ -5,6 +5,7 @@ public class PlayerConfiguration : ScriptableObject {
     [field: SerializeField] public float MaxSpeed { get; private set; }
     [field: SerializeField] public float AccelerationRate { get; private set; }
     [field: SerializeField] public float DeccelerationRate { get; private set; }
+    [field: SerializeField] public float PushingSpeed { get; private set; }
     [field: SerializeField] public float JumpHeight { get; private set; }
     [field: SerializeField] public float JumpDuration { get; private set; }
     [field: SerializeField] public float MaxFalligSpeed { get; private set; }
