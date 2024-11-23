@@ -22,7 +22,7 @@ public class CharacterMovementState : PlayerState {
             stateMachine.SetState(typeof(CharacterJumpTransition));
         }
         // if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
-        if (EPInputManager.Instance.DashInput) stateMachine.SetState(typeof(CharacterDashState));
+        if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
     }
 
     public override void StateLateStep() {

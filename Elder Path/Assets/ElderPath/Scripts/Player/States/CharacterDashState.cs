@@ -9,6 +9,7 @@ public class CharacterDashState : PlayerState {
         stateMachine.PlayerController.TrailRenderer.enabled = true;
         stateMachine.PlayerController.Rigidbody2D.linearVelocityY *= 0.3f;
         stateMachine.PlayerController.TryMoveX(configuration.DashForce * stateMachine.PlayerController.transform.localScale.x);
+        stateMachine.PlayerController.SetCanDash(false);
     }
 
     public override void StateExit() {

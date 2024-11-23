@@ -11,6 +11,11 @@ public class PlayerController : MonoBehaviour {
     [field: SerializeField] public Transform AttackPoint { get; private set; }
     [field: SerializeField] public CharacterCollisions Collisions { get; private set; }
     [field: SerializeField] public TrailRenderer TrailRenderer { get; private set; }
+    public bool CanDash { get; private set; }
+    public void SetCanDash(bool can) {
+        if (!can) dashTimeCounter = configuration.DashCooldown;
+        CanDash = can;
+    }
 
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
@@ -19,6 +24,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool groundedLastFrame;
     private float coyoteTimeCounter;
+    private float dashTimeCounter;
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
@@ -32,6 +38,7 @@ public class PlayerController : MonoBehaviour {
         CheckFlip();
         ApplyGravity();
         CheckCoyoteTime();
+        CheckCanDash();
         // TODO: TEST - REMOVE THIS
         // ######
         if (EPInputManager.Instance.ResetInput) UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
@@ -84,6 +91,12 @@ public class PlayerController : MonoBehaviour {
             if (coyoteTimeCounter > configuration.CoyoteTime) coyoteTimeCounter = configuration.CoyoteTime;
         }
         else coyoteTimeCounter = 0f;
-        groundedLastFrame = IsGrounded;
+    }
+
+    private void CheckCanDash() {
+        if (IsGrounded) {
+            if (dashTimeCounter > 0f) dashTimeCounter -= Time.deltaTime;
+            if (dashTimeCounter <= 0f) SetCanDash(true);
+        }
     }
 }

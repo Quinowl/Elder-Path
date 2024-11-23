@@ -21,5 +21,6 @@ MonoBehaviour:
   <CoyoteTime>k__BackingField: 0.1
   <DashForce>k__BackingField: 4
   <DashTime>k__BackingField: 0.15
+  <DashCooldown>k__BackingField: 0.1
   <AttackRange>k__BackingField: 0
   <AttackDamage>k__BackingField: 0
