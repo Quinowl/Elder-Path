@@ -7,7 +7,8 @@ public class CharacterMovementState : PlayerState {
 
     public override void StateEnter() {
         currentSpeed = (stateMachine.LastState is CharacterJumpState || stateMachine.LastState is CharacterDashState) ? stateMachine.PlayerController.Rigidbody2D.linearVelocityX : 0f;
-        stateMachine.PlayerController.Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, 1f);
+        // stateMachine.PlayerController.Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, 1f);
+        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_RUN_ANIM);
     }
 
     public override void StateExit() {
@@ -18,8 +19,9 @@ public class CharacterMovementState : PlayerState {
         if (EPInputManager.Instance.JumpInputPressed
             && (stateMachine.PlayerController.IsGrounded || stateMachine.PlayerController.CanJumpCoyote)
             && !stateMachine.PlayerController.IsCeiled) {
-            stateMachine.SetState(typeof(CharacterJumpTransition));
+            stateMachine.SetState(typeof(CharacterJumpState));
         }
+        if (stateMachine.PlayerController.Rigidbody2D.linearVelocityY < 0f) stateMachine.SetState(typeof(CharacterFallingState));
         // if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
         if (stateMachine.PlayerController.CanPushSomething && EPInputManager.Instance.MoveInput != 0) stateMachine.SetState(typeof(CharacterPushingState));

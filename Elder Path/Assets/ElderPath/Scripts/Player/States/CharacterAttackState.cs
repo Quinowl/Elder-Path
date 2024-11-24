@@ -3,11 +3,19 @@ using UnityEngine;
 
 public class CharacterAttackState : PlayerState {
 
+    [SerializeField] private bool drawGizmo = true;
+
     private EnemyDamageable[] hits;
+
+    private void OnDrawGizmos() {
+        if (!drawGizmo) return;
+        if (stateMachine == null || configuration == null) return;
+        Gizmos.DrawWireSphere(stateMachine.PlayerController.AttackPoint.position, configuration.AttackRange);
+    }
 
     public override void StateEnter() {
         stateMachine.PlayerController.Rigidbody2D.linearVelocityX = 0f;
-        if(HasHit()) ApplyDamageToHitTargets();
+        if (HasHit()) ApplyDamageToHitTargets();
         // stateMachine.PlayerController.Animator.SetTrigger();
     }
 

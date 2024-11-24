@@ -26,12 +26,14 @@ public class PlayerController : MonoBehaviour {
     private bool groundedLastFrame;
     private float coyoteTimeCounter;
     private float dashTimeCounter;
+    private string currentAnimation;
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
         configuration.CalculateValues();
         TrailRenderer.enabled = false;
+        ChangeAnimation(Constants.PLAYER_IDLE_ANIM);
     }
 
     private void Update() {
@@ -74,8 +76,8 @@ public class PlayerController : MonoBehaviour {
             if (Collisions.GroundHit.distance < 0.02f) Rigidbody2D.position += Vector2.up * (0.02f - Collisions.GroundHit.distance);
         }
         groundedLastFrame = IsGrounded;
-        Animator.SetBool(Constants.PLAYER_ANIMATOR_IS_GROUNDED, IsGrounded);
-        Animator.SetFloat(Constants.PLAYER_ANIMATOR_Y_SPEED, Rigidbody2D.linearVelocityY);
+        // Animator.SetBool(Constants.PLAYER_ANIMATOR_IS_GROUNDED, IsGrounded);
+        // Animator.SetFloat(Constants.PLAYER_ANIMATOR_Y_SPEED, Rigidbody2D.linearVelocityY);
     }
 
     private void CheckFlip() {
@@ -97,5 +99,11 @@ public class PlayerController : MonoBehaviour {
     private void CheckCanDash() {
         if (dashTimeCounter > 0f) dashTimeCounter -= Time.deltaTime;
         if (IsGrounded && dashTimeCounter <= 0f) SetCanDash(true);
+    }
+
+    public void ChangeAnimation(string nextState) {
+        if (currentAnimation == nextState) return;
+        Animator.Play(nextState);
+        currentAnimation = nextState;
     }
 }

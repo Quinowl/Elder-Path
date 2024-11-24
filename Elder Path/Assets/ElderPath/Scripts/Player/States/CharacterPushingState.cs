@@ -1,13 +1,12 @@
 using UnityEngine;
 
 public class CharacterPushingState : PlayerState {
+
     public override void StateEnter() {
-        stateMachine.PlayerController.Animator.SetBool(Constants.PLAYER_ANIMATOR_IS_PUSHING, true);
+        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_PUSH_ANIM);
     }
 
     public override void StateExit() {
-        stateMachine.PlayerController.Animator.SetBool(Constants.PLAYER_ANIMATOR_IS_PUSHING, false);
-        stateMachine.PlayerController.Animator.SetTrigger("stopPush");
     }
 
     public override void StateInputs() {
@@ -26,7 +25,7 @@ public class CharacterPushingState : PlayerState {
         if (EPInputManager.Instance.JumpInputPressed
             && stateMachine.PlayerController.IsGrounded
             && !stateMachine.PlayerController.IsCeiled) {
-            stateMachine.SetState(typeof(CharacterJumpTransition));
+            stateMachine.SetState(typeof(CharacterJumpState));
         }
     }
 }

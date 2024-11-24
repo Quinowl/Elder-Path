@@ -15,9 +15,20 @@ public static class Constants {
     public const string PLAYER_ANIMATOR_ATTACK_TRIGGER = "attack";
     public const string PLAYER_ANIMATOR_IS_GROUNDED = "isGrounded";
     public const string PLAYER_ANIMATOR_IS_PUSHING = "isPushing";
+    // ===== PLAYER ANIMATIONS =====
+    public const string PLAYER_IDLE_ANIM = "player-idle";
+    public const string PLAYER_RUN_ANIM = "player-run";
+    public const string PLAYER_PUSH_ANIM = "player-push";
+    public const string PLAYER_ATTACK_ANIM = "player-attack";
+    public const string PLAYER_HIT_ANIM = "player-hit";
+    public const string PLAYER_JUMP_ANIM = "player-jump-up";
+    public const string PLAYER_FALLING_ANIM = "player-jump-down";
+    public const string PLAYER_LAND_ANIM = "player-jump-grounded";
     // ===== PLAYER CONSTANTS FIELDS =====
-    public const float PLAYER_JUMP_TRANSITION_FRAMES_DURATION = 0.01f;
     public const float PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP = 0.25f;
+    // ===== WALL ANIMATIONS =====
+    public const string WALL_ANIMATION_CLOSED = "wall-closed";
+    public const string WALL_ANIMATION_OPENING = "wall-opening";
     // ===== GENERAL ANIMATORS =====
     public const string COIN_ANIMATION_PICK_UP = "pickUp";
 }
