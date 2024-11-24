@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     [field: SerializeField] public Transform AttackPoint { get; private set; }
     [field: SerializeField] public CharacterCollisions Collisions { get; private set; }
     [field: SerializeField] public TrailRenderer TrailRenderer { get; private set; }
+    [field: SerializeField] public ParticleSystem MovementParticles { get; private set; }
     public bool CanDash { get; private set; }
     public void SetCanDash(bool can) {
         if (!can) dashTimeCounter = configuration.DashCooldown;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour {
         configuration.CalculateValues();
         TrailRenderer.enabled = false;
         ChangeAnimation(Constants.PLAYER_IDLE_ANIM);
+        MovementParticles.Stop();
     }
 
     private void Update() {
@@ -79,8 +81,6 @@ public class PlayerController : MonoBehaviour {
             if (Collisions.GroundHit.distance < 0.02f) Rigidbody2D.position += Vector2.up * (0.02f - Collisions.GroundHit.distance);
         }
         groundedLastFrame = IsGrounded;
-        // Animator.SetBool(Constants.PLAYER_ANIMATOR_IS_GROUNDED, IsGrounded);
-        // Animator.SetFloat(Constants.PLAYER_ANIMATOR_Y_SPEED, Rigidbody2D.linearVelocityY);
     }
 
     private void CheckFlip() {
