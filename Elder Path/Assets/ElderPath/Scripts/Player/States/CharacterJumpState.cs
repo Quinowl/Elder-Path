@@ -6,8 +6,8 @@ public class CharacterJumpState : PlayerState {
 
     public override void StateEnter() {
         groundCheckDelay = Constants.PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP;
-        stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
         stateMachine.PlayerController.Rigidbody2D.linearVelocityY = configuration.JumpForce;
+        stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
         stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_JUMP_ANIM);
     }
 
@@ -16,6 +16,7 @@ public class CharacterJumpState : PlayerState {
 
     public override void StateInputs() {
         // Regulable jump
+        if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
         if (EPInputManager.Instance.JumpInputReleased && stateMachine.PlayerController.Rigidbody2D.linearVelocityY > 0f) stateMachine.PlayerController.Rigidbody2D.linearVelocityY *= 0.5f;
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
     }

@@ -6,6 +6,7 @@ public class CharacterAttackState : PlayerState {
     [SerializeField] private bool drawGizmo = true;
 
     private EnemyDamageable[] hits;
+    private float startTime;
 
     private void OnDrawGizmos() {
         if (!drawGizmo) return;
@@ -14,12 +15,16 @@ public class CharacterAttackState : PlayerState {
     }
 
     public override void StateEnter() {
+        stateMachine.PlayerController.SetIsAttacking(true);
         stateMachine.PlayerController.Rigidbody2D.linearVelocityX = 0f;
         if (HasHit()) ApplyDamageToHitTargets();
-        // stateMachine.PlayerController.Animator.SetTrigger();
+        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_ATTACK_ANIM);
+        stateMachine.PlayerController.Rigidbody2D.linearVelocity = Vector2.zero;
+        startTime = Time.time;
     }
 
     public override void StateExit() {
+        stateMachine.PlayerController.SetIsAttacking(false);
     }
 
     public override void StateInputs() {
@@ -32,6 +37,9 @@ public class CharacterAttackState : PlayerState {
     }
 
     public override void StateStep() {
+        if (Time.time > startTime + configuration.AttackTime) {
+            stateMachine.SetState(stateMachine.PlayerController.Rigidbody2D.linearVelocityX == 0f ? typeof(CharacterIdleState) : typeof(CharacterMovementState));
+        }
     }
 
     private bool HasHit() {

@@ -10,6 +10,7 @@ public class CharacterFallingState : PlayerState {
     }
 
     public override void StateInputs() {
+        if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
     }
 
@@ -21,6 +22,6 @@ public class CharacterFallingState : PlayerState {
 
     public override void StateStep() {
         stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
-        if (stateMachine.PlayerController.IsGrounded) stateMachine.SetState(stateMachine.PlayerController.Rigidbody2D.linearVelocityX > 0f ? typeof(CharacterMovementState) : typeof(CharacterIdleState));
+        if (stateMachine.PlayerController.IsGrounded) stateMachine.SetState(stateMachine.PlayerController.Rigidbody2D.linearVelocityX == 0f ? typeof(CharacterIdleState) : typeof(CharacterMovementState));
     }
 }

@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour {
         if (!can) dashTimeCounter = configuration.DashCooldown;
         CanDash = can;
     }
-
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
     public bool IsFrontBlocked => Collisions.HasSomethingInFrontNotPusheable;
@@ -27,6 +26,10 @@ public class PlayerController : MonoBehaviour {
     private float coyoteTimeCounter;
     private float dashTimeCounter;
     private string currentAnimation;
+    private bool isAttacking;
+    public void SetIsAttacking(bool isAttacking) => this.isAttacking = isAttacking;
+    private bool isDashing;
+    public void SetIsDashing(bool isDashing) => this.isDashing = isDashing;
 
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
@@ -81,7 +84,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void CheckFlip() {
-        if (EPInputManager.Instance.MoveInput == 0) return;
+        if (EPInputManager.Instance.MoveInput == 0 || isAttacking || isDashing) return;
         Vector3 scale = transform.localScale;
         scale.x = EPInputManager.Instance.MoveInput > 0 ? 1 : -1;
         transform.localScale = scale;

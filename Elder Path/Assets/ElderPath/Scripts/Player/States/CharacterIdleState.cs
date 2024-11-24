@@ -5,7 +5,6 @@ public class CharacterIdleState : PlayerState {
 
     public override void StateEnter() {
         currentSpeed = stateMachine.PlayerController.Rigidbody2D.linearVelocityX;
-        // stateMachine.PlayerController.Animator.SetFloat(Constants.PLAYER_ANIMATOR_X_SPEED, 0f);
         stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_IDLE_ANIM);
     }
 
@@ -16,12 +15,14 @@ public class CharacterIdleState : PlayerState {
         if (EPInputManager.Instance.MoveInput != 0) stateMachine.SetState(typeof(CharacterMovementState));
         if (EPInputManager.Instance.JumpInputPressed && stateMachine.PlayerController.IsGrounded && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpState));
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
+        if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
     }
 
     public override void StateLateStep() {
     }
 
     public override void StatePhysicsStep() {
+        if (stateMachine.PlayerController.Rigidbody2D.linearVelocityY < 0f) stateMachine.SetState(typeof(CharacterFallingState));
     }
 
     public override void StateStep() {

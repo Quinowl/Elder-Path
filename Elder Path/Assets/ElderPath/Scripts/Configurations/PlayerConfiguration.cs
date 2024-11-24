@@ -17,6 +17,7 @@ public class PlayerConfiguration : ScriptableObject {
     [field: SerializeField] public float DashCooldown { get; private set; }
     [field: SerializeField] public float AttackRange { get; private set; }
     [field: SerializeField] public float AttackDamage { get; private set; }
+    [field: SerializeField] public float AttackTime { get; private set; }
 
     private void OnValidate() {
         CalculateValues();
