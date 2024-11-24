@@ -16,10 +16,9 @@ public class CharacterAttackState : PlayerState {
 
     public override void StateEnter() {
         stateMachine.PlayerController.SetIsAttacking(true);
-        stateMachine.PlayerController.Rigidbody2D.linearVelocityX = 0f;
         if (HasHit()) ApplyDamageToHitTargets();
         stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_ATTACK_ANIM);
-        stateMachine.PlayerController.Rigidbody2D.linearVelocity = Vector2.zero;
+        if (stateMachine.PlayerController.Rigidbody2D.linearVelocityY > 0f) stateMachine.PlayerController.Rigidbody2D.linearVelocityY *= 0.5f;
         startTime = Time.time;
     }
 
