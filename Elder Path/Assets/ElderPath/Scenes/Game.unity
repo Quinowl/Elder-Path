@@ -5820,7 +5820,7 @@ MonoBehaviour:
   frontPusheableLayer:
     serializedVersion: 2
     m_Bits: 512
-  frontRayLength: 0.04
+  frontRayLength: 0.02
 --- !u!96 &1619965747
 TrailRenderer:
   serializedVersion: 3
@@ -7265,7 +7265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1902341960
 Transform:
   m_ObjectHideFlags: 0
@@ -8649,21 +8649,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1393930390768065954, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7091994463499905387, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
       propertyPath: m_Name
       value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: 8409636921661928866, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.336
+      value: 0.452
       objectReference: {fileID: 0}
     - target: {fileID: 8409636921661928866, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.404
+      value: 0.526
       objectReference: {fileID: 0}
     - target: {fileID: 8409636921661928866, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
       propertyPath: m_LocalPosition.z
