@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour {
 
+    [SerializeField] private Animator animator;
+
     public Action OnChangeState;
     public bool IsActive { get; private set; }
     private readonly List<string> validTags = new List<string> { "Player", "Rock" };
@@ -24,9 +26,10 @@ public class PressurePlate : MonoBehaviour {
     }
 
     private void UpdateState() {
-        bool newState = validObjectsOnPlate.Count > 0;
-        if (newState != IsActive) {
-            IsActive = newState;
+        bool isPressed = validObjectsOnPlate.Count > 0;
+        if (isPressed != IsActive) {
+            IsActive = isPressed;
+            animator.Play(isPressed ? "pressure-plate-pressed" : "pressure-plate-idle");
             OnChangeState?.Invoke();
         }
     }

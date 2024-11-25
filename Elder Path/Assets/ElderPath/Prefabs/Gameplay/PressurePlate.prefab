@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1585229899
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4076107285379419603, guid: 34e8f7357e1b7d649bebf7282f0a2871, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 927314916853947957}
   - component: {fileID: 7179133425575885642}
   - component: {fileID: 2725859083097960797}
+  - component: {fileID: 2496964555876983773}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -165,6 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fb0ca49c74b8748bafb7e4c55b51fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2496964555876983773}
 --- !u!61 &2725859083097960797
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -211,3 +213,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.12, y: 0.04}
   m_EdgeRadius: 0
+--- !u!95 &2496964555876983773
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651584388628645363}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1f8958ab5fc709428f550b7cb4b1258, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
