@@ -70,6 +70,10 @@ public class PlayerController : MonoBehaviour {
     }
 
     private void ApplyGravity() {
+        if (isDashing) {
+            Rigidbody2D.linearVelocityY = 0f;
+            return;
+        }
         if (!IsGrounded) {
             Rigidbody2D.linearVelocityY += configuration.GravityForce * Time.deltaTime;
             if (Rigidbody2D.linearVelocityY < configuration.MaxFalligSpeed) Rigidbody2D.linearVelocityY = configuration.MaxFalligSpeed;
