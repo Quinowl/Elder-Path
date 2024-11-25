@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Player Configuration
   m_EditorClassIdentifier: 
   <MaxSpeed>k__BackingField: 1
+  <MinSpeedOnDirectionChange>k__BackingField: 0.1
   <AccelerationRate>k__BackingField: 2
   <DeccelerationRate>k__BackingField: 5
   <PushingSpeed>k__BackingField: 0.3

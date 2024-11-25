@@ -37,7 +37,7 @@ public class CharacterMovementState : PlayerState {
     public override void StateStep() {
         // If direction is changed, conserve current speed,
         if (IsDirectionChanged(TargetSpeed)) {
-            currentSpeed = TargetSpeed;
+            currentSpeed = Mathf.Sign(TargetSpeed) * Mathf.Max(Mathf.Abs(currentSpeed), configuration.MinSpeedOnDirectionChange);
         }
         // else it will accelerate to target speed.
         else {
