@@ -10,7 +10,7 @@ public class CharacterFallingState : PlayerState {
     }
 
     public override void StateInputs() {
-        if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
+        if (EPInputManager.Instance.AttackInput && stateMachine.PlayerController.CanAttack) stateMachine.SetState(typeof(CharacterAttackState));
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
     }
 

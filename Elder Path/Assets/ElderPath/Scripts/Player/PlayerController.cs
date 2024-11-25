@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour {
         if (!can) dashTimeCounter = configuration.DashCooldown;
         CanDash = can;
     }
+    public bool CanAttack { get; private set; }
+    public void SetCanAttack(bool can) {
+        if (!can) attackTimeCounter = configuration.AttackCooldown + configuration.AttackTime;
+        CanAttack = can;
+    }
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
     public bool IsFrontBlocked => Collisions.HasSomethingInFrontNotPusheable;
@@ -26,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     private bool groundedLastFrame;
     private float coyoteTimeCounter;
     private float dashTimeCounter;
+    private float attackTimeCounter;
     private string currentAnimation;
     private bool isAttacking;
     public void SetIsAttacking(bool isAttacking) => this.isAttacking = isAttacking;
@@ -47,6 +53,7 @@ public class PlayerController : MonoBehaviour {
         ApplyGravity();
         CheckCoyoteTime();
         CheckCanDash();
+        CheckCanAttack();
         // TODO: TEST - REMOVE THIS
         // ######
         if (EPInputManager.Instance.ResetInput) UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
@@ -106,6 +113,11 @@ public class PlayerController : MonoBehaviour {
     private void CheckCanDash() {
         if (dashTimeCounter > 0f) dashTimeCounter -= Time.deltaTime;
         if (IsGrounded && dashTimeCounter <= 0f) SetCanDash(true);
+    }
+
+    private void CheckCanAttack() {
+        if (attackTimeCounter > 0f) attackTimeCounter -= Time.deltaTime;
+        if (attackTimeCounter <= 0f) SetCanAttack(true);
     }
 
     public void ChangeAnimation(string nextState) {

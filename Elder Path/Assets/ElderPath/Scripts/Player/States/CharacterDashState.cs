@@ -21,7 +21,7 @@ public class CharacterDashState : PlayerState {
     }
 
     public override void StateInputs() {
-        if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
+        if (EPInputManager.Instance.AttackInput && stateMachine.PlayerController.CanAttack) stateMachine.SetState(typeof(CharacterAttackState));
     }
 
     public override void StateLateStep() {

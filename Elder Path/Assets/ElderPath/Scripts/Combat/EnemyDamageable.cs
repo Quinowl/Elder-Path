@@ -20,6 +20,8 @@ public class EnemyDamageable : Damageable {
     public override void TakeDamage(float damage) {
         if (canReceiveKnockback) ApplyKnockback();
         if (colorFlashCoroutine != null) StopCoroutine(colorFlashCoroutine);
+        propertyBlock.SetColor("_Color", flashColor);
+        sprite.SetPropertyBlock(propertyBlock);
         colorFlashCoroutine = StartCoroutine(HitAnimationCoroutine());
         base.TakeDamage(damage);
         // TODO: If I finally decide to put a life bar on the enemies, it should be updated here.
@@ -31,14 +33,15 @@ public class EnemyDamageable : Damageable {
 
     private IEnumerator HitAnimationCoroutine() {
         float elapsedTime = 0f;
+        Color startColor = propertyBlock.GetColor("_Color");
         while (elapsedTime < flashTime) {
-            elapsedTime += Time.deltaTime;
-            float currentFlashAmount = Mathf.Lerp(1f, 0f, elapsedTime / flashTime);
-            propertyBlock.SetColor("_Color", flashColor * currentFlashAmount);
+            Color currentColor = Color.Lerp(startColor, Color.white, elapsedTime / flashTime);
+            propertyBlock.SetColor("_Color", currentColor);
             sprite.SetPropertyBlock(propertyBlock);
-            yield return null;
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
         }
         propertyBlock.SetColor("_Color", Color.white);
-        sprite.SetPropertyBlock(propertyBlock);        
+        sprite.SetPropertyBlock(propertyBlock);
     }
 }

@@ -16,7 +16,7 @@ public class CharacterJumpState : PlayerState {
 
     public override void StateInputs() {
         // Regulable jump
-        if (EPInputManager.Instance.AttackInput) stateMachine.SetState(typeof(CharacterAttackState));
+        if (EPInputManager.Instance.AttackInput && stateMachine.PlayerController.CanAttack) stateMachine.SetState(typeof(CharacterAttackState));
         if (EPInputManager.Instance.JumpInputReleased && stateMachine.PlayerController.Rigidbody2D.linearVelocityY > 0f) stateMachine.PlayerController.Rigidbody2D.linearVelocityY *= 0.5f;
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
     }
