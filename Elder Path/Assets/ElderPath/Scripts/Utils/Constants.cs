@@ -8,13 +8,6 @@ public static class Constants {
     public const string PLAYER_DASH_ACTION = "Dash";
     public const string PLAYER_ATTACK_ACTION = "Attack";
     public const string PLAYER_RESET_ACTION = "Reset";
-    // ===== PLAYER ANIMATOR =====
-    public const string PLAYER_ANIMATOR_X_SPEED = "speed-x";
-    public const string PLAYER_ANIMATOR_Y_SPEED = "speed-y";
-    public const string PLAYER_ANIMATOR_JUMP_TRIGGER = "jump";
-    public const string PLAYER_ANIMATOR_ATTACK_TRIGGER = "attack";
-    public const string PLAYER_ANIMATOR_IS_GROUNDED = "isGrounded";
-    public const string PLAYER_ANIMATOR_IS_PUSHING = "isPushing";
     // ===== PLAYER ANIMATIONS =====
     public const string PLAYER_IDLE_ANIM = "player-idle";
     public const string PLAYER_RUN_ANIM = "player-run";
@@ -29,6 +22,9 @@ public static class Constants {
     // ===== WALL ANIMATIONS =====
     public const string WALL_ANIMATION_CLOSED = "wall-closed";
     public const string WALL_ANIMATION_OPENING = "wall-opening";
+    // ===== PRESSURE PLATE ANIMATIONS =====
+    public const string PRESSURE_PLATE_IDLE = "pressure-plate-idle";
+    public const string PRESSURE_PLATE_PRESSED = "pressure-plate-pressed";
     // ===== GENERAL ANIMATORS =====
     public const string COIN_ANIMATION_PICK_UP = "pickUp";
 }
