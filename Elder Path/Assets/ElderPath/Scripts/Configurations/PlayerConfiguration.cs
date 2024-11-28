@@ -24,6 +24,8 @@ public class PlayerConfiguration : ScriptableObject {
     [field: SerializeField, BoxGroup("Attack")] public float AttackDamage { get; private set; }
     [field: SerializeField, BoxGroup("Attack")] public float AttackTime { get; private set; }
     [field: SerializeField, BoxGroup("Attack")] public float AttackCooldown { get; private set; }
+    [field: SerializeField, BoxGroup("Attack")] public CharacterHitEffect HitEffectPrefab { get; private set; }
+    [field: SerializeField, BoxGroup("Attack")] public int HitEffectPoolInitialSize { get; private set; }
 
     private void OnValidate() {
         CalculateValues();

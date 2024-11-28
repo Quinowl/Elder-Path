@@ -106,10 +106,10 @@ TextureImporter:
       name: hit_sparkle_anim_strip_4_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 11
-        height: 11
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,9 +128,9 @@ TextureImporter:
       name: hit_sparkle_anim_strip_4_1
       rect:
         serializedVersion: 2
-        x: 8
+        x: 16
         y: 0
-        width: 56
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -146,11 +146,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: hit_sparkle_anim_strip_4_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb1541af0ec6ca44b07e8649783daef
+      internalID: 1060725572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_sparkle_anim_strip_4_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b41c779bc003e741bbb4dd5f4876e56
+      internalID: 906954371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3619c77d3e0e5ec4ea7157ec3ddcf40f
     internalID: 0
     vertices: []
     indices: 
@@ -162,6 +206,8 @@ TextureImporter:
     nameFileIdTable:
       hit_sparkle_anim_strip_4_0: 5702766072548976018
       hit_sparkle_anim_strip_4_1: -3712070095467908123
+      hit_sparkle_anim_strip_4_2: 1060725572
+      hit_sparkle_anim_strip_4_3: 906954371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

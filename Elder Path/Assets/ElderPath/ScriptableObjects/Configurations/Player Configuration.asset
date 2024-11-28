@@ -31,3 +31,5 @@ MonoBehaviour:
   <AttackDamage>k__BackingField: 0
   <AttackTime>k__BackingField: 0.1
   <AttackCooldown>k__BackingField: 0.15
+  <HitEffectPrefab>k__BackingField: {fileID: 4605280176230363358, guid: b3384875879b20c4e821119e37723ace, type: 3}
+  <HitEffectPoolInitialSize>k__BackingField: 10

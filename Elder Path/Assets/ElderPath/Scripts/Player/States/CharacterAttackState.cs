@@ -4,7 +4,6 @@ using UnityEngine;
 public class CharacterAttackState : PlayerState {
 
     [SerializeField] private bool drawGizmo = true;
-
     private EnemyDamageable[] hits;
     private float startTime;
 
@@ -53,6 +52,9 @@ public class CharacterAttackState : PlayerState {
 
     private void ApplyDamageToHitTargets() {
         foreach (var hit in hits) {
+            CharacterHitEffect hitEffect = stateMachine.PlayerController.HitEffectPool.Get();
+            hitEffect.Initialize(stateMachine.PlayerController);
+            hitEffect.transform.position = hit.transform.position;
             hit.TakeDamage(configuration.AttackDamage);
         }
     }
