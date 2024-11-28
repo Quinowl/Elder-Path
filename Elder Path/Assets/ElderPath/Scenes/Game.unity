@@ -10457,7 +10457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawGizmo: 0
-  hitEffect: {fileID: 4605280176230363358, guid: b3384875879b20c4e821119e37723ace, type: 3}
 --- !u!1 &1619965740
 GameObject:
   m_ObjectHideFlags: 0
