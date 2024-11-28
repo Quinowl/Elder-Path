@@ -24,6 +24,9 @@ MonoBehaviour:
   <DashForce>k__BackingField: 4
   <DashTime>k__BackingField: 0.15
   <DashCooldown>k__BackingField: 0.1
+  <TrailPrefab>k__BackingField: {fileID: 4239311426642321630, guid: a8955e84ba3c3d44fb3c2082517becfb, type: 3}
+  <TrailPoolInitialSize>k__BackingField: 10
+  <TrailSpawnDistance>k__BackingField: 0.075
   <AttackRange>k__BackingField: 0.08
   <AttackDamage>k__BackingField: 0
   <AttackTime>k__BackingField: 0.1

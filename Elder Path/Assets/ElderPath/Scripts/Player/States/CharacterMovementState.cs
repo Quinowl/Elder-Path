@@ -24,7 +24,7 @@ public class CharacterMovementState : PlayerState {
         }
         if (stateMachine.PlayerController.Rigidbody2D.linearVelocityY < 0f) stateMachine.SetState(typeof(CharacterFallingState));
         if (EPInputManager.Instance.AttackInput && stateMachine.PlayerController.CanAttack) stateMachine.SetState(typeof(CharacterAttackState));
-        if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash) stateMachine.SetState(typeof(CharacterDashState));
+        if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash && !stateMachine.PlayerController.IsFrontBlocked) stateMachine.SetState(typeof(CharacterDashState));
         if (stateMachine.PlayerController.CanPushSomething && EPInputManager.Instance.MoveInput != 0) stateMachine.SetState(typeof(CharacterPushingState));
     }
 

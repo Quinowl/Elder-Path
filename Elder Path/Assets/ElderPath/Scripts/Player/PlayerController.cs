@@ -10,8 +10,9 @@ public class PlayerController : MonoBehaviour {
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Transform AttackPoint { get; private set; }
     [field: SerializeField] public CharacterCollisions Collisions { get; private set; }
-    [field: SerializeField] public TrailRenderer TrailRenderer { get; private set; }
     [field: SerializeField] public ParticleSystem MovementParticles { get; private set; }
+    [field: SerializeField] public SpriteRenderer SpriteRenderer { get; private set; }
+    [field: SerializeField] public Transform TrailPoolParent { get; private set; }
     public bool CanDash { get; private set; }
     public void SetCanDash(bool can) {
         if (!can) dashTimeCounter = configuration.DashCooldown;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour {
         if (!can) attackTimeCounter = configuration.AttackCooldown + configuration.AttackTime;
         CanAttack = can;
     }
+    public ObjectPool<PlayerTrail> TrailPool { get; private set; }
+
     public bool IsGrounded => Collisions.IsGrounded;
     public bool IsCeiled => Collisions.IsCeiled;
     public bool IsFrontBlocked => Collisions.HasSomethingInFrontNotPusheable;
@@ -42,9 +45,9 @@ public class PlayerController : MonoBehaviour {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
         configuration.CalculateValues();
-        TrailRenderer.enabled = false;
         ChangeAnimation(Constants.PLAYER_IDLE_ANIM);
         MovementParticles.Stop();
+        TrailPool = new ObjectPool<PlayerTrail>(configuration.TrailPrefab, configuration.TrailPoolInitialSize, TrailPoolParent);
     }
 
     private void Update() {

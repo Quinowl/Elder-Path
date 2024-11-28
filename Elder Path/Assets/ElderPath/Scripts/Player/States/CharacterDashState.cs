@@ -1,23 +1,26 @@
+using System.Collections;
 using UnityEngine;
 
 public class CharacterDashState : PlayerState {
 
     private float startTime;
+    private Vector3 lastTrailPosition;
+    private Coroutine trailGenerationCoroutine;
 
     public override void StateEnter() {
         stateMachine.PlayerController.SetCanDash(false);
         startTime = Time.time;
-        stateMachine.PlayerController.TrailRenderer.enabled = true;
         stateMachine.PlayerController.Rigidbody2D.linearVelocityY *= 0.3f;
         stateMachine.PlayerController.TryMoveX(configuration.DashForce * stateMachine.PlayerController.transform.localScale.x);
         stateMachine.PlayerController.SetIsDashing(true);
+        trailGenerationCoroutine = StartCoroutine(StartTrailGeneration());
     }
 
     public override void StateExit() {
         //TODO: Change these magic numbers
         stateMachine.PlayerController.Rigidbody2D.linearVelocityX *= 0.25f;
-        stateMachine.PlayerController.TrailRenderer.enabled = false;
         stateMachine.PlayerController.SetIsDashing(false);
+        StopCoroutine(trailGenerationCoroutine);
     }
 
     public override void StateInputs() {
@@ -32,5 +35,21 @@ public class CharacterDashState : PlayerState {
 
     public override void StateStep() {
         if (Time.time > startTime + configuration.DashTime) stateMachine.SetState(typeof(CharacterMovementState));
+    }
+
+    private IEnumerator StartTrailGeneration() {
+        lastTrailPosition = stateMachine.PlayerController.transform.position;
+        while (true) {
+            if (Vector3.Distance(stateMachine.PlayerController.transform.position, lastTrailPosition) >= configuration.TrailSpawnDistance) {
+                SpawnTrail();
+                lastTrailPosition = stateMachine.PlayerController.transform.position;
+            }
+            yield return null;
+        }
+    }
+
+    private void SpawnTrail() {
+        PlayerTrail trail = stateMachine.PlayerController.TrailPool.Get();
+        trail.Initialize(stateMachine.PlayerController);
     }
 }
