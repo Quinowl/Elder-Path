@@ -6,6 +6,7 @@ public class LoadingScreen : MonoBehaviour {
     [SerializeField] private Animator imageAnimator;
 
     public void StartLoading() {
+        gameObject.SetActive(true);
         loadingTextAnimator.StartSequence();
         imageAnimator.Play("loading-screen-running");
     }
@@ -13,5 +14,6 @@ public class LoadingScreen : MonoBehaviour {
     public void StopLoading() {
         loadingTextAnimator.StopSequence();
         imageAnimator.Play("loading-screen-wait");
+        gameObject.SetActive(false);
     }
 }
