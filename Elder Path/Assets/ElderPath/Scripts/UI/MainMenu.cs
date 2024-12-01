@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private Button startGameButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button exitButton;
+    [SerializeField] private Button closeSettingsButton;
 
     [Header("General UI")]
     [SerializeField] private CanvasGroup mainMenuCanvas;
@@ -25,6 +26,7 @@ public class MainMenu : MonoBehaviour {
         startGameButton.onClick.AddListener(OnStartButtonPressed);
         settingsButton.onClick.AddListener(OnSettingsButtonPressed);
         exitButton.onClick.AddListener(OnExitButtonPressed);
+        closeSettingsButton.onClick.AddListener(OnCloseSettingsButton);
     }
 
     private void OnStartButtonPressed() {
@@ -34,6 +36,11 @@ public class MainMenu : MonoBehaviour {
     private void OnSettingsButtonPressed() {
         mainMenuCanvas.Toggle(false);
         settingsCanvas.Toggle(true);
+    }
+
+    private void OnCloseSettingsButton() {
+        mainMenuCanvas.Toggle(true);
+        settingsCanvas.Toggle(false);
     }
 
     private void OnExitButtonPressed() {
