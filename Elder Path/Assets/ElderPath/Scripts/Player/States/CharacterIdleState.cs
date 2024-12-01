@@ -22,7 +22,6 @@ public class CharacterIdleState : PlayerState {
     }
 
     public override void StatePhysicsStep() {
-        if (stateMachine.PlayerController.Rigidbody2D.linearVelocityY < 0f) stateMachine.SetState(typeof(CharacterFallingState));
     }
 
     public override void StateStep() {

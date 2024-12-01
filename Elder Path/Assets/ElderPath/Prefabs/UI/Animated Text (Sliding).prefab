@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 4334948537289874401}
   - component: {fileID: 2110332905859931793}
   m_Layer: 5
-  m_Name: Animated Text
+  m_Name: Animated Text (Sliding)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

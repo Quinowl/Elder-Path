@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3125091399229550483}
-  activeTime: 0.75
+  activeTime: 0.2
   initialAlpha: 0.8
   alphaDecayRate: 0.95
 --- !u!212 &3125091399229550483
