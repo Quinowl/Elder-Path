@@ -27,4 +27,6 @@ public static class Constants {
     public const string PRESSURE_PLATE_PRESSED = "pressure-plate-pressed";
     // ===== GENERAL ANIMATORS =====
     public const string COIN_ANIMATION_PICK_UP = "pickUp";
+    // ===== TAGS =====
+    public const string TAG_PLAYER = "Player";
 }
