@@ -1,18 +1,11 @@
 using UnityEngine;
 
-public class EPSoundManager : MonoBehaviour {
+public class SoundsPlayer : MonoBehaviour {
 
     [SerializeField] private AudioPlayer audioPlayerPrefab;
     [SerializeField] private int initialPoolSize;
 
     public ObjectPool<AudioPlayer> AudioPlayerPool { get; private set; }
-
-    public static EPSoundManager Instance { get; private set; }
-
-    private void Awake() {
-        if (!Instance) Instance = this;
-        else Destroy(gameObject);
-    }
 
     private void Start() {
         AudioPlayerPool = new ObjectPool<AudioPlayer>(audioPlayerPrefab, initialPoolSize, transform);

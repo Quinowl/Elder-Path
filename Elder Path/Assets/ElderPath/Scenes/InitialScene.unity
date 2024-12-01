@@ -3008,6 +3008,52 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2110332905859931793, guid: 289634f26a18d8c45bbecd78c992d1d7, type: 3}
   m_PrefabInstance: {fileID: 1478639387}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1547040482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547040484}
+  - component: {fileID: 1547040483}
+  m_Layer: 0
+  m_Name: SoundPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1547040483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547040482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec85f38ed727b2a48abae880ed124edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioPlayerPrefab: {fileID: 2646635240282371039, guid: c916ac9de6c85a54892893c22efd018e, type: 3}
+  initialPoolSize: 10
+--- !u!4 &1547040484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547040482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1549573477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4379,6 +4425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 2136996418}
   sceneLoader: {fileID: 2071726687}
+  soundsPlayer: {fileID: 1547040483}
 --- !u!1 &2128018788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4787,9 +4834,10 @@ RectTransform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 36204412}
   - {fileID: 2089626126}
+  - {fileID: 36204412}
   - {fileID: 2143327118}
   - {fileID: 1922291779}
   - {fileID: 2136996417}
   - {fileID: 2071726686}
+  - {fileID: 1547040484}
