@@ -12,8 +12,7 @@ public class SplashCanvas : MonoBehaviour {
 
     private void GoToMainMenu() {
         hasStarted = true;
-        //TODO: Add loading screen, etc
         SceneManager.LoadScene(Constants.SCENE_MAIN_MENU);
-        ServiceLocator.Instance.GetService<LoadingScreen>().StartLoading();
+        ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.SCENE_MAIN_MENU, 1f);
     }
 }

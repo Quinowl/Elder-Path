@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     private void OnStartButtonPressed() {
-
+        ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.SCENE_GAME, 1.5f);
     }
 
     private void OnSettingsButtonPressed() {
