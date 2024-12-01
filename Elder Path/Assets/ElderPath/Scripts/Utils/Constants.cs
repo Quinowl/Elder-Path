@@ -29,4 +29,7 @@ public static class Constants {
     public const string COIN_ANIMATION_PICK_UP = "pickUp";
     // ===== TAGS =====
     public const string TAG_PLAYER = "Player";
+    // ===== SCENES =====
+    public const string SCENE_MAIN_MENU = "MainMenu";
+    public const string SCENE_GAME = "Game";
 }
