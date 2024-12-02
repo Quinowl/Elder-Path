@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +20,8 @@ public class EPInputManager : MonoBehaviour {
     public bool ResetInput { get; private set; }
     public bool IsGamepad { get; private set; }
 
+    private bool isInputEnabled = true;
+
     public static EPInputManager Instance { get; private set; }
 
     private void OnEnable() {
@@ -35,12 +36,14 @@ public class EPInputManager : MonoBehaviour {
     }
 
     private void Update() {
-        ReadInputs();
+        if (isInputEnabled) ReadInputs();
     }
 
     private void OnDisable() {
         InputSystem.onActionChange -= ChangeInputAction;
     }
+
+    public void EnableInput(bool enable) => isInputEnabled = enable;
 
     private void ChangeInputAction(object obj, InputActionChange change) {
         if (change == InputActionChange.ActionPerformed) {
@@ -51,6 +54,7 @@ public class EPInputManager : MonoBehaviour {
     }
 
     private void InitializeInputActions() {
+        isInputEnabled = true;
         movementInputAction = playerInput.actions[Constants.PLAYER_MOVE_ACTION];
         jumpInputAction = playerInput.actions[Constants.PLAYER_JUMP_ACTION];
         attackInputAction = playerInput.actions[Constants.PLAYER_ATTACK_ACTION];

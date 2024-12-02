@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour {
 
     public void Initialize(LoadingScreen loadingScreen) => this.loadingScreen = loadingScreen;
 
-    public void LoadScene(string sceneName, float duration) {
+    public void LoadScene(string sceneName, float duration = 1f) {
         if (loadingScreen == null) {
             Debug.LogWarning("No LoadingScreen registered in SceneLoader.");
             return;
