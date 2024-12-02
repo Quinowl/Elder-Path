@@ -60,10 +60,6 @@ public class PlayerController : MonoBehaviour {
         CheckCoyoteTime();
         CheckCanDash();
         CheckCanAttack();
-        // TODO: TEST - REMOVE THIS
-        // ######
-        if (EPInputManager.Instance.ResetInput) UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-        // ######
     }
 
     private void FixedUpdate() {

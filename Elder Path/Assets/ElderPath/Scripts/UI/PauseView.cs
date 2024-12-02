@@ -6,6 +6,7 @@ public class PauseView : MonoBehaviour {
     [SerializeField] private CanvasGroup canvasGroup;
 
     [SerializeField] private Button resumeButton;
+    [SerializeField] private Button restartButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button menuButton;
 
@@ -19,10 +20,12 @@ public class PauseView : MonoBehaviour {
 
     private void InitializeButtons() {
         resumeButton.onClick.RemoveAllListeners();
+        restartButton.onClick.RemoveAllListeners();
         settingsButton.onClick.RemoveAllListeners();
         menuButton.onClick.RemoveAllListeners();
 
         resumeButton.onClick.AddListener(OnResumeButton);
+        restartButton.onClick.AddListener(OnRestartButton);
         settingsButton.onClick.AddListener(OnSettingsButton);
         menuButton.onClick.AddListener(OnMenuButton);
     }
@@ -32,6 +35,8 @@ public class PauseView : MonoBehaviour {
     public void Hide() => canvasGroup.Toggle(false);
 
     private void OnResumeButton() => gameMenuMediator.OnResumeButtonPressed();
+
+    private void OnRestartButton() => gameMenuMediator.OnRestartButtonPressed();
 
     private void OnSettingsButton() => gameMenuMediator.OnSettingsButtonPressed();
 
