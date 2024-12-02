@@ -2934,9 +2934,12 @@ MonoBehaviour:
   speedFactor: 0.01
   followX: 1
   followY: 0
+  autoScroll: 0
   rend: {fileID: 353292407}
   cam: {fileID: 519420031}
   target: {fileID: 1619965741}
+  autoScrollSpeedX: 0.05
+  autoScrollSpeedY: 0
 --- !u!1 &378570383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3062,9 +3065,12 @@ MonoBehaviour:
   speedFactor: 0.02
   followX: 1
   followY: 0
+  autoScroll: 0
   rend: {fileID: 378570386}
   cam: {fileID: 519420031}
   target: {fileID: 1619965741}
+  autoScrollSpeedX: 0.05
+  autoScrollSpeedY: 0
 --- !u!1 &380302065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3394,9 +3400,12 @@ MonoBehaviour:
   speedFactor: 0.03
   followX: 1
   followY: 0
+  autoScroll: 0
   rend: {fileID: 462949749}
   cam: {fileID: 519420031}
   target: {fileID: 1619965741}
+  autoScrollSpeedX: 0.05
+  autoScrollSpeedY: 0
 --- !u!1001 &499731171
 PrefabInstance:
   m_ObjectHideFlags: 0

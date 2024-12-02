@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using UnityEngine;
 
 public class ParallaxLayer : MonoBehaviour {
+
     [SerializeField, Range(0f, 0.5f)] private float speedFactor = 0.06f;
     [SerializeField] private bool followX = true;
     [SerializeField] private bool followY;
@@ -35,9 +36,10 @@ public class ParallaxLayer : MonoBehaviour {
 
     private void InitializeScales() {
         if (target) targetOldPosition = target.position;
-        Vector2 backgroundHalfSize = new Vector2(cam.orthographicSize * Screen.width / Screen.height, cam.orthographicSize);
-        transform.localScale = new Vector3(backgroundHalfSize.x * 2, backgroundHalfSize.y * 2, transform.localScale.z);
-        rend.material.SetTextureScale(Constants.MATERIAL_PROPERTY_MAIN_TEXTURE, backgroundHalfSize);
+        Vector2 textureSize = rend.bounds.size;
+        float worldScreenHeight = cam.orthographicSize * 2;
+        float worldScreenWidth = worldScreenHeight * Screen.width / Screen.height;
+        transform.localScale = new Vector3(worldScreenWidth / textureSize.x, worldScreenHeight / textureSize.y, transform.localScale.z);
     }
 
     private void MoveLayer() {
