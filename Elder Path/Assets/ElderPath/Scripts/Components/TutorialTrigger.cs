@@ -18,12 +18,14 @@ public class TutorialTrigger : ReactiveUI {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag(Constants.TAG_PLAYER)) prompt.Toggle(true);
+        if (other.CompareTag(Constants.TAG_PLAYER)) SetPromptVisibility(true);
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag(Constants.TAG_PLAYER)) prompt.Toggle(false);
+        if (other.CompareTag(Constants.TAG_PLAYER)) SetPromptVisibility(false);
     }
+
+    private void SetPromptVisibility(bool isVisible) => prompt.Toggle(isVisible);
 
     protected override void OnInputDeviceChange() => promptImage.sprite = EPInputManager.Instance.IsGamepad ? gamepadSprite : keyboardSprite;
 }
