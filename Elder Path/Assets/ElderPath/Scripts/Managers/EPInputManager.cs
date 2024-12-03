@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,8 +22,11 @@ public class EPInputManager : MonoBehaviour {
     public bool IsGamepad { get; private set; }
 
     private bool isInputEnabled = true;
+    private string lastDevideUsed;
 
     public static EPInputManager Instance { get; private set; }
+
+    public Action OnInputDeviceChanged;
 
     private void OnEnable() {
         InputSystem.onActionChange += ChangeInputAction;
@@ -43,13 +47,16 @@ public class EPInputManager : MonoBehaviour {
         InputSystem.onActionChange -= ChangeInputAction;
     }
 
-    public void EnableInput(bool enable) => isInputEnabled = enable;
+    public void SetEnableInput(bool enable) => isInputEnabled = enable;
 
     private void ChangeInputAction(object obj, InputActionChange change) {
         if (change == InputActionChange.ActionPerformed) {
             InputAction receivedInputAction = (InputAction)obj;
-            InputDevice lastDevice = receivedInputAction.activeControl.device;
-            IsGamepad = !(lastDevice.name.Equals("Keyboard") || lastDevice.name.Equals("Mouse"));
+            InputDevice currentDevice = receivedInputAction.activeControl.device;
+            if (lastDevideUsed == currentDevice.name) return;
+            lastDevideUsed = currentDevice.name;
+            IsGamepad = !(currentDevice.name.Equals("Keyboard") || currentDevice.name.Equals("Mouse"));
+            OnInputDeviceChanged?.Invoke();
         }
     }
 

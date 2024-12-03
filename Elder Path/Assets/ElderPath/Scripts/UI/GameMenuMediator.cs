@@ -45,7 +45,7 @@ public class GameMenuMediator : MonoBehaviour {
     private void TogglePause() {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : 1f;
-        EPInputManager.Instance.EnableInput(!isPaused);
+        EPInputManager.Instance.SetEnableInput(!isPaused);
         if (isPaused) pauseView.Show();
         else pauseView.Hide();
     }

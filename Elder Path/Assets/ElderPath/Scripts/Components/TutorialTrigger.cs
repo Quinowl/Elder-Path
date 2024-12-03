@@ -1,12 +1,29 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TutorialTrigger : MonoBehaviour {
+public class TutorialTrigger : ReactiveUI {
 
-    [SerializeField] private GameObject bubble;
+    [SerializeField] private CanvasGroup prompt;
+    [SerializeField] private Image promptImage;
+    [SerializeField] private Sprite keyboardSprite;
+    [SerializeField] private Sprite gamepadSprite;
+
+    private void Awake() {
+        if (!keyboardSprite || !gamepadSprite) Debug.LogWarning("Sprites to change are not configurated.");
+    }
+
+    protected override void Start() {
+        base.Start();
+        prompt.Toggle(false);
+    }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag(Constants.TAG_PLAYER)) {
-
-        }
+        if (other.CompareTag(Constants.TAG_PLAYER)) prompt.Toggle(true);
     }
+
+    private void OnTriggerExit2D(Collider2D other) {
+        if (other.CompareTag(Constants.TAG_PLAYER)) prompt.Toggle(false);
+    }
+
+    protected override void OnInputDeviceChange() => promptImage.sprite = EPInputManager.Instance.IsGamepad ? gamepadSprite : keyboardSprite;
 }
