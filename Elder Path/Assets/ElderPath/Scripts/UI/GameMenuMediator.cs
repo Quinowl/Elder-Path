@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class GameMenuMediator : MonoBehaviour {
 
+    [SerializeField] private EventSystem eventSystem;
     [SerializeField] private PauseView pauseView;
 
     private bool isPaused;
@@ -37,6 +39,8 @@ public class GameMenuMediator : MonoBehaviour {
         TogglePause();
         ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.SCENE_MAIN_MENU);
     }
+
+    public void OnUpdateSelectedObjectInEventSystem(GameObject obj) => eventSystem.SetSelectedGameObject(obj);
 
     private void TogglePause() {
         isPaused = !isPaused;

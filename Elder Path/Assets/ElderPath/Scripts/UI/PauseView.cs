@@ -30,7 +30,10 @@ public class PauseView : MonoBehaviour {
         menuButton.onClick.AddListener(OnMenuButton);
     }
 
-    public void Show() => canvasGroup.Toggle(true);
+    public void Show() {
+        canvasGroup.Toggle(true);
+        gameMenuMediator.OnUpdateSelectedObjectInEventSystem(resumeButton.gameObject);
+    }
 
     public void Hide() => canvasGroup.Toggle(false);
 
