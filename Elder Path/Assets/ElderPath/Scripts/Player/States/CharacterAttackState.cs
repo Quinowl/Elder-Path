@@ -38,7 +38,7 @@ public class CharacterAttackState : PlayerState {
 
     public override void StateStep() {
         if (Time.time > startTime + configuration.AttackTime) {
-            stateMachine.SetState(stateMachine.PlayerController.Rigidbody2D.linearVelocityX == 0f ? typeof(CharacterIdleState) : typeof(CharacterMovementState));
+            stateMachine.SetState((stateMachine.PlayerController.Rigidbody2D.linearVelocityX == 0f && stateMachine.PlayerController.IsGrounded) ? typeof(CharacterIdleState) : typeof(CharacterMovementState));
         }
     }
 

@@ -16,7 +16,7 @@ public class CharacterMovementState : PlayerState {
     }
 
     public override void StateInputs() {
-        if (EPInputManager.Instance.MoveInput == 0) stateMachine.SetState(typeof(CharacterIdleState));
+        if (EPInputManager.Instance.MoveInput == 0 && stateMachine.PlayerController.IsGrounded) stateMachine.SetState(typeof(CharacterIdleState));
         if (EPInputManager.Instance.JumpInputPressed
             && (stateMachine.PlayerController.IsGrounded || stateMachine.PlayerController.CanJumpCoyote)
             && !stateMachine.PlayerController.IsCeiled) {
