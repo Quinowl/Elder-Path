@@ -3665,9 +3665,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e057354fadb4c32418610596e8535f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalTrigger: {fileID: 2232486821929602752}
   <LevelIndex>k__BackingField: 1
   <InitialPlayerPosition>k__BackingField: {fileID: 9032353156864196873}
-  <FinalTrigger>k__BackingField: {fileID: 2232486821929602752}
 --- !u!1 &4116022942503734033
 GameObject:
   m_ObjectHideFlags: 0
