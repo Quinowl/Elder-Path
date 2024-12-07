@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Threading;
 using UnityEngine;
 
 public class EPLevelManager : MonoBehaviour {
@@ -33,6 +32,7 @@ public class EPLevelManager : MonoBehaviour {
         currentLevel = Instantiate(configuration.Levels[levelIndex], levelParent);
         float elapsedTime = Time.time - startTime;
         if (elapsedTime < configuration.TransitionDuration) yield return new WaitForSeconds(configuration.TransitionDuration - elapsedTime);
+        currentLevel.InitializeLevel();
         ServiceLocator.Instance.GetService<LoadingScreen>().StopLoading();
     }
 

@@ -16,6 +16,7 @@ public class CharacterIdleState : PlayerState {
         if (EPInputManager.Instance.JumpInputPressed && stateMachine.PlayerController.IsGrounded && !stateMachine.PlayerController.IsCeiled) stateMachine.SetState(typeof(CharacterJumpState));
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash && !stateMachine.PlayerController.IsFrontBlocked) stateMachine.SetState(typeof(CharacterDashState));
         if (EPInputManager.Instance.AttackInput && stateMachine.PlayerController.CanAttack) stateMachine.SetState(typeof(CharacterAttackState));
+        if (!stateMachine.PlayerController.IsGrounded && stateMachine.PlayerController.Rigidbody2D.linearVelocityY < 0f) stateMachine.SetState(typeof(CharacterFallingState));
     }
 
     public override void StateLateStep() {

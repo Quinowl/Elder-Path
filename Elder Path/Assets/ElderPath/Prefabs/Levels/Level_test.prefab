@@ -2759,7 +2759,7 @@ Transform:
   m_Children:
   - {fileID: 8877028223545585331}
   - {fileID: 7300343446669855283}
-  - {fileID: 5534508090710703156}
+  - {fileID: 6330470872143300887}
   m_Father: {fileID: 7917415949007812306}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2801182235763874263
@@ -5420,16 +5420,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -7, y: 3, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -4, y: 3, z: 0}
     second:
       serializedVersion: 2
@@ -5494,15 +5484,19 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 20
     m_Data: {fileID: 11400000, guid: 0e1c4b2c5a2939f429a71e3eeaf25457, type: 2}
-  - m_RefCount: 25
+  - m_RefCount: 24
     m_Data: {fileID: 11400000, guid: 5807806279960fc4ab7eaacf3ff9ce91, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 20
     m_Data: {fileID: -2112476280, guid: 5daebea4693775240b3139664cb32229, type: 3}
-  - m_RefCount: 25
+  - m_RefCount: 24
     m_Data: {fileID: -846071130, guid: 5daebea4693775240b3139664cb32229, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 45
+  - m_RefCount: 44
     m_Data:
       e00: 1
       e01: 0
@@ -5521,7 +5515,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 45
+  - m_RefCount: 44
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -5631,7 +5625,7 @@ TilemapCollider2D:
     m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_CompositeOperation: 2
+  m_CompositeOperation: 1
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
@@ -5705,18 +5699,14 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 2033936494461042344}
     m_ColliderPaths:
-    - - X: -9600000
-        Y: 6400000
-      - X: -8000000
-        Y: 6400000
-      - X: -8000000
+    - - X: -8000000
         Y: 7999999
       - X: -11200000
         Y: 7999999
       - X: -11200000
-        Y: 4800000
-      - X: -9600000
-        Y: 4800000
+        Y: 6400000
+      - X: -8000000
+        Y: 6400000
     - - X: -4800000
         Y: 7999999
       - X: -7999999
@@ -5848,9 +5838,7 @@ CompositeCollider2D:
       - {x: -0.48000002, y: 0.64002943}
       - {x: -0.4800293, y: 0.7999999}
       - {x: -1.12, y: 0.7999706}
-      - {x: -1.1199707, y: 0.48000002}
-      - {x: -0.96000004, y: 0.4800293}
-      - {x: -0.9599706, y: 0.64}
+      - {x: -1.1199707, y: 0.64}
       - {x: -0.64, y: 0.6399706}
       - {x: -0.6399707, y: 0.48000002}
       - {x: -0.4799999, y: 0.4799706}
@@ -6384,7 +6372,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3042009014352029592, guid: dc55e02e4ec9da84584e64e12621aa12, type: 3}
   m_PrefabInstance: {fileID: 2072183526734978635}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &4070002751482694038
+--- !u!1001 &2553349186596912309
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -6402,7 +6390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8409636921661928866, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.401
+      value: 0.719
       objectReference: {fileID: 0}
     - target: {fileID: 8409636921661928866, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6441,10 +6429,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
---- !u!4 &5534508090710703156 stripped
+--- !u!4 &6330470872143300887 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8409636921661928866, guid: 3b967ffbbbe16f441a4a7a6b048a1de7, type: 3}
-  m_PrefabInstance: {fileID: 4070002751482694038}
+  m_PrefabInstance: {fileID: 2553349186596912309}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5569681377325816147
 PrefabInstance:

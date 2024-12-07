@@ -1,3 +1,4 @@
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -43,6 +44,10 @@ public class PlayerController : MonoBehaviour {
     private bool isDashing;
     public void SetIsDashing(bool isDashing) => this.isDashing = isDashing;
 
+    private void OnEnable() {
+        Level.OnLevelLoaded += InitializePlayer;
+    }
+
     private void Start() {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
@@ -68,6 +73,16 @@ public class PlayerController : MonoBehaviour {
 
     private void LateUpdate() {
         stateMachine.LateStep();
+    }
+
+    private void OnDisable() {
+        Level.OnLevelLoaded -= InitializePlayer;
+    }
+
+    private void InitializePlayer(Vector3 initialPosition) {
+        transform.position = initialPosition;
+        Rigidbody2D.linearVelocity = Vector2.zero;
+        stateMachine.SetState(typeof(CharacterIdleState));
     }
 
     public void TryMoveX(float motion) {
