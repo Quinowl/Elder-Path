@@ -31,10 +31,8 @@ public class GameMenuMediator : MonoBehaviour {
     }
 
     public void OnRestartButtonPressed() {
-        //TODO: Resume and reload the scene with the level, now it can be like this because we only have a single level.
         TogglePause();
         ServiceLocator.Instance.GetService<EPLevelManager>().RestartLevel();
-        // ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.SCENE_GAME);
     }
 
     public void OnBackToMenuButtonPressed() {
