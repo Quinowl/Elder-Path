@@ -79,8 +79,8 @@ public class PlayerController : MonoBehaviour {
         Level.OnLevelLoaded -= InitializePlayer;
     }
 
-    private void InitializePlayer(Vector3 initialPosition) {
-        transform.position = initialPosition;
+    private void InitializePlayer(Level currentLevel) {
+        transform.position = currentLevel.InitialPlayerPosition.position;
         Rigidbody2D.linearVelocity = Vector2.zero;
         stateMachine.SetState(typeof(CharacterIdleState));
     }
