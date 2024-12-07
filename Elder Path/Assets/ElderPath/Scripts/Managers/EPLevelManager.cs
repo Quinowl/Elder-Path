@@ -19,12 +19,18 @@ public class EPLevelManager : MonoBehaviour {
         int nextLevelIndex = currentLevel ? currentLevel.LevelIndex + 1 : 0;
         if (nextLevelIndex < 0 || nextLevelIndex >= configuration.Levels.Length) {
             if (nextLevelIndex < 0) Debug.LogError("Invalid level index");
-            else Debug.Log("Fin del juego");
+            else ServiceLocator.Instance.GetService<EPGameManager>().EndGame();
             return;
         }
         ServiceLocator.Instance.GetService<LoadingScreen>().StartLoading();
         if (loadLevelCoroutine != null) StopCoroutine(loadLevelCoroutine);
         loadLevelCoroutine = StartCoroutine(StartLoadLevel(nextLevelIndex));
+    }
+
+    public void RestartLevel() {
+        ServiceLocator.Instance.GetService<LoadingScreen>().StartLoading();
+        if (loadLevelCoroutine != null) StopCoroutine(loadLevelCoroutine);
+        loadLevelCoroutine = StartCoroutine(StartLoadLevel(currentLevel.LevelIndex));
     }
 
     private IEnumerator StartLoadLevel(int levelIndex) {

@@ -6,13 +6,14 @@ public class GameMenuMediator : MonoBehaviour {
 
     [SerializeField] private EventSystem eventSystem;
     [SerializeField] private PauseView pauseView;
+    [SerializeField] private EndGameView endGameView;
 
     private bool isPaused;
 
     private void Awake() {
-
         isPaused = false;
         pauseView.Configure(this);
+        endGameView.Configure(this);
     }
 
     private void Start() {
@@ -32,7 +33,8 @@ public class GameMenuMediator : MonoBehaviour {
     public void OnRestartButtonPressed() {
         //TODO: Resume and reload the scene with the level, now it can be like this because we only have a single level.
         TogglePause();
-        ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.SCENE_GAME);
+        ServiceLocator.Instance.GetService<EPLevelManager>().RestartLevel();
+        // ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.SCENE_GAME);
     }
 
     public void OnBackToMenuButtonPressed() {
@@ -52,5 +54,6 @@ public class GameMenuMediator : MonoBehaviour {
 
     private void HideAllMenus() {
         pauseView.Hide();
+        endGameView.Hide();
     }
 }
