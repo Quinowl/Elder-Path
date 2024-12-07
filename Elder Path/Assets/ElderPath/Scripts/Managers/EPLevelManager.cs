@@ -11,6 +11,7 @@ public class EPLevelManager : MonoBehaviour {
 
     private void Start() {
         if (!levelParent) levelParent = transform;
+        LoadNextLevel();
     }
 
     [ContextMenu("Siguiente nivel")]

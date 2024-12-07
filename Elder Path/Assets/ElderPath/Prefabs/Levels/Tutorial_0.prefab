@@ -3575,6 +3575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <LevelIndex>k__BackingField: 0
   <InitialPlayerPosition>k__BackingField: {fileID: 3937783835317394570}
+  <FinalTrigger>k__BackingField: {fileID: 2232486821929602752}
 --- !u!1 &4116022942503734033
 GameObject:
   m_ObjectHideFlags: 0
@@ -5213,6 +5214,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 292386383d23ff34ca1ce2e7cebacd9d, type: 3}
+--- !u!114 &2232486821929602752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5246467388008471297, guid: 292386383d23ff34ca1ce2e7cebacd9d, type: 3}
+  m_PrefabInstance: {fileID: 6211678457415357889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4c0a928a2be5ab47ab759efd82172fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4080513754955111470 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7968192658369776111, guid: 292386383d23ff34ca1ce2e7cebacd9d, type: 3}

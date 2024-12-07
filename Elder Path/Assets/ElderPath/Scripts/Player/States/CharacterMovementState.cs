@@ -37,6 +37,7 @@ public class CharacterMovementState : PlayerState {
     public override void StateStep() {
         // If direction is changed, conserve current speed,
         if (IsDirectionChanged(TargetSpeed)) {
+            //TODO: Fix this, it is not working all the time
             currentSpeed = Mathf.Sign(TargetSpeed) * Mathf.Max(Mathf.Abs(currentSpeed), configuration.MinSpeedOnDirectionChange);
         }
         // else it will accelerate to target speed.
@@ -47,6 +48,5 @@ public class CharacterMovementState : PlayerState {
         stateMachine.PlayerController.TryMoveX(currentSpeed);
     }
 
-    // The value 0.1f is a magic number that marks a small sensitivity threshold.
     private bool IsDirectionChanged(float targetSpeed) => Mathf.Sign(currentSpeed) != Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > Mathf.Epsilon;
 }
