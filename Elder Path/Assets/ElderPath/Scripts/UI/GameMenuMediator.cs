@@ -44,7 +44,7 @@ public class GameMenuMediator : MonoBehaviour {
     }
 
     public void OnBackToMenuButtonPressed() {
-        TogglePause();
+        if (isPaused) TogglePause();
         ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.SCENE_MAIN_MENU);
     }
 
