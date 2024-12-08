@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class EPGameManager : MonoBehaviour {
 
+    public static Action OnEndGame;
+
     public void EndGame() {
-        Debug.Log("Fin del juego");
+        OnEndGame?.Invoke();
     }
 }

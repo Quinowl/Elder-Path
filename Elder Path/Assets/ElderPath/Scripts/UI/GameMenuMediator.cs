@@ -10,6 +10,10 @@ public class GameMenuMediator : MonoBehaviour {
 
     private bool isPaused;
 
+    private void OnEnable() {
+        EPGameManager.OnEndGame += OnEndGame;
+    }
+
     private void Awake() {
         isPaused = false;
         pauseView.Configure(this);
@@ -18,6 +22,10 @@ public class GameMenuMediator : MonoBehaviour {
 
     private void Start() {
         HideAllMenus();
+    }
+
+    private void OnDisable() {
+        EPGameManager.OnEndGame -= OnEndGame;
     }
 
     public void OnPauseInput(InputAction.CallbackContext context) {
@@ -53,5 +61,9 @@ public class GameMenuMediator : MonoBehaviour {
     private void HideAllMenus() {
         pauseView.Hide();
         endGameView.Hide();
+    }
+
+    private void OnEndGame() {
+        endGameView.Show();
     }
 }
