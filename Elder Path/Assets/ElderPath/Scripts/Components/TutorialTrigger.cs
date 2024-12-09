@@ -14,6 +14,7 @@ public class TutorialTrigger : ReactiveUI {
 
     protected override void Start() {
         base.Start();
+        promptImage.sprite = EPInputManager.Instance.IsGamepad ? gamepadSprite : keyboardSprite;
         prompt.Toggle(false);
     }
 
