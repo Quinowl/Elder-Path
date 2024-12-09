@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4c0a928a2be5ab47ab759efd82172fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider2d: {fileID: 9078659394746917982}
 --- !u!61 &9078659394746917982
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53,7 +54,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3517669657712195340}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

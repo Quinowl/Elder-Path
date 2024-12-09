@@ -5196,10 +5196,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FinalDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 3517669657712195340, guid: 292386383d23ff34ca1ce2e7cebacd9d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7968192658369776111, guid: 292386383d23ff34ca1ce2e7cebacd9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.435
