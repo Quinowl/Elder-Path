@@ -40,7 +40,7 @@ public class GameMenuMediator : MonoBehaviour {
 
     public void OnRestartButtonPressed() {
         TogglePause();
-        ServiceLocator.Instance.GetService<EPLevelManager>().RestartLevel();
+        ServiceLocator.Instance.GetService<EPLevelManager>().RestartLevelWithLoadingScreen();
     }
 
     public void OnBackToMenuButtonPressed() {

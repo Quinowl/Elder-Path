@@ -27,10 +27,17 @@ public class EPLevelManager : MonoBehaviour {
         loadLevelCoroutine = StartCoroutine(StartLoadLevel(nextLevelIndex));
     }
 
-    public void RestartLevel() {
+    public void RestartLevelWithLoadingScreen() {
         ServiceLocator.Instance.GetService<LoadingScreen>().StartLoading();
         if (loadLevelCoroutine != null) StopCoroutine(loadLevelCoroutine);
         loadLevelCoroutine = StartCoroutine(StartLoadLevel(currentLevel.LevelIndex));
+    }
+
+    public void RestartLevelWithoutLoadingScreen() {
+        int levelIndex = currentLevel.LevelIndex;
+        UnloadCurrentLevel();
+        currentLevel = Instantiate(configuration.Levels[levelIndex], levelParent);
+        currentLevel.InitializeLevel();
     }
 
     private IEnumerator StartLoadLevel(int levelIndex) {
