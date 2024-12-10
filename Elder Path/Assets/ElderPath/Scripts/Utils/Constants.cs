@@ -1,13 +1,7 @@
-public static class Constants {
+public static partial class Constants {
 
     // ===== MATERIAL PROPERTIES =====
     public const string MATERIAL_PROPERTY_MAIN_TEXTURE = "_MainTex";
-    // ===== INPUTS =====
-    public const string PLAYER_MOVE_ACTION = "Movement";
-    public const string PLAYER_JUMP_ACTION = "Jump";
-    public const string PLAYER_DASH_ACTION = "Dash";
-    public const string PLAYER_ATTACK_ACTION = "Attack";
-    public const string PLAYER_RESET_ACTION = "Reset";
     // ===== PLAYER ANIMATIONS =====
     public const string PLAYER_IDLE_ANIM = "player-idle";
     public const string PLAYER_RUN_ANIM = "player-run";

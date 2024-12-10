@@ -62,11 +62,11 @@ public class EPInputManager : MonoBehaviour {
 
     private void InitializeInputActions() {
         isInputEnabled = true;
-        movementInputAction = playerInput.actions[Constants.PLAYER_MOVE_ACTION];
-        jumpInputAction = playerInput.actions[Constants.PLAYER_JUMP_ACTION];
-        attackInputAction = playerInput.actions[Constants.PLAYER_ATTACK_ACTION];
-        dashInputAction = playerInput.actions[Constants.PLAYER_DASH_ACTION];
-        resetInputAction = playerInput.actions[Constants.PLAYER_RESET_ACTION];
+        movementInputAction = playerInput.actions[Constants.Inputs.PLAYER_MOVE_ACTION];
+        jumpInputAction = playerInput.actions[Constants.Inputs.PLAYER_JUMP_ACTION];
+        attackInputAction = playerInput.actions[Constants.Inputs.PLAYER_ATTACK_ACTION];
+        dashInputAction = playerInput.actions[Constants.Inputs.PLAYER_DASH_ACTION];
+        resetInputAction = playerInput.actions[Constants.Inputs.PLAYER_RESET_ACTION];
     }
 
     private void ReadInputs() {

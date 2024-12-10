@@ -4,7 +4,7 @@ public class ServiceInitializer : MonoBehaviour {
 
     [SerializeField] private LoadingScreen loadingScreen;
     [SerializeField] private SceneLoader sceneLoader;
-    [SerializeField] private SoundsPlayer soundsPlayer;
+    [SerializeField] private EPSoundsManager soundsPlayer;
 
     private void Start() {
 

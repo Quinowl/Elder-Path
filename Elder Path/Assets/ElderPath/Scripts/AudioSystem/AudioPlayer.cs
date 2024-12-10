@@ -12,12 +12,11 @@ public class AudioPlayer : MonoBehaviour {
     }
 
     private void Update() {
-        if (Time.time > lifeTime) ServiceLocator.Instance.GetService<SoundsPlayer>().AudioPlayerPool.ReturnToPool(this);
+        if (Time.time > lifeTime) ServiceLocator.Instance.GetService<EPSoundsManager>().AudioPlayerPool.ReturnToPool(this);
     }
 
-    public void Initialize(AudioClip audioClip, float volume) {
+    public void PlayClip(AudioClip audioClip) {
         audioSource.clip = audioClip;
-        audioSource.volume = volume;
         audioSource.Play();
         lifeTime = audioSource.clip.length + Time.time;
     }
