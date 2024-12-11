@@ -3,7 +3,7 @@ using UnityEngine;
 public class CharacterFallingState : PlayerState {
 
     public override void StateEnter() {
-        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_FALLING_ANIM);
+        stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.FALLING_ANIM);
     }
 
     public override void StateExit() {

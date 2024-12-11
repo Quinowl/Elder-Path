@@ -7,7 +7,7 @@ public class CharacterMovementState : PlayerState {
 
     public override void StateEnter() {
         currentSpeed = stateMachine.LastState is CharacterIdleState ? 0f : stateMachine.PlayerController.Rigidbody2D.linearVelocityX;
-        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_RUN_ANIM);
+        stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.RUN_ANIM);
         stateMachine.PlayerController.MovementParticles.Play();
     }
 

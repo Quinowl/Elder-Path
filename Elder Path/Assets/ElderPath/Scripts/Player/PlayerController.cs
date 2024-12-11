@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour {
         stateMachine.ConfigureStateMachine(configuration, this);
         stateMachine.Initialize();
         configuration.CalculateValues();
-        ChangeAnimation(Constants.PLAYER_IDLE_ANIM);
+        ChangeAnimation(Constants.PlayerAnimations.IDLE_ANIM);
         MovementParticles.Stop();
         TrailPool = new ObjectPool<PlayerTrail>(configuration.TrailPrefab, configuration.TrailPoolInitialSize, TrailPoolParent);
         HitEffectPool = new ObjectPool<CharacterHitEffect>(configuration.HitEffectPrefab, configuration.HitEffectPoolInitialSize, HitEffectPoolParent);

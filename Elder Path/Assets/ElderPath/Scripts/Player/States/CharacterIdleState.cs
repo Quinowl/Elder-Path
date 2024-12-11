@@ -5,7 +5,7 @@ public class CharacterIdleState : PlayerState {
 
     public override void StateEnter() {
         currentSpeed = stateMachine.PlayerController.Rigidbody2D.linearVelocityX;
-        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_IDLE_ANIM);
+        stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.IDLE_ANIM);
     }
 
     public override void StateExit() {

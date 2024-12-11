@@ -3,7 +3,7 @@ using UnityEngine;
 public class CharacterPushingState : PlayerState {
 
     public override void StateEnter() {
-        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_PUSH_ANIM);
+        stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.PUSH_ANIM);
     }
 
     public override void StateExit() {

@@ -19,11 +19,11 @@ public class TutorialTrigger : ReactiveUI {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.CompareTag(Constants.TAG_PLAYER)) SetPromptVisibility(true);
+        if (other.CompareTag(Constants.Tags.PLAYER)) SetPromptVisibility(true);
     }
 
     private void OnTriggerExit2D(Collider2D other) {
-        if (other.CompareTag(Constants.TAG_PLAYER)) SetPromptVisibility(false);
+        if (other.CompareTag(Constants.Tags.PLAYER)) SetPromptVisibility(false);
     }
 
     private void SetPromptVisibility(bool isVisible) => prompt.Toggle(isVisible);

@@ -8,7 +8,7 @@ public class CharacterJumpState : PlayerState {
         groundCheckDelay = Constants.PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP;
         stateMachine.PlayerController.Rigidbody2D.linearVelocityY = configuration.JumpForce;
         stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
-        stateMachine.PlayerController.ChangeAnimation(Constants.PLAYER_JUMP_ANIM);
+        stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.JUMP_ANIM);
         ServiceLocator.Instance.GetService<EPSoundsManager>().PlaySFX(Constants.SFXIDs.PLAYER_JUMP, stateMachine.PlayerController.transform);
     }
 
