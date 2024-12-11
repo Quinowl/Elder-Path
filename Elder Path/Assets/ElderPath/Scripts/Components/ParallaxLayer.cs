@@ -45,12 +45,12 @@ public class ParallaxLayer : MonoBehaviour {
     private void MoveLayer() {
         Vector2 posVariation = new Vector2(followX ? target.position.x - targetOldPosition.x : 0f, followY ? target.position.y - targetOldPosition.y : 0);
         position.Set(position.x + posVariation.x * speedFactor, position.y + posVariation.y * speedFactor);
-        rend.material.SetTextureOffset(Constants.MATERIAL_PROPERTY_MAIN_TEXTURE, position);
+        rend.material.SetTextureOffset(Constants.MaterialProperties.MAIN_TEXTURE, position);
         targetOldPosition = target.position;
     }
 
     private void AutoScrollLayer() {
         position.Set(position.x + autoScrollSpeedX * speedFactor * Time.deltaTime, position.y + autoScrollSpeedY * speedFactor * Time.deltaTime);
-        rend.material.SetTextureOffset(Constants.MATERIAL_PROPERTY_MAIN_TEXTURE, position);
+        rend.material.SetTextureOffset(Constants.MaterialProperties.MAIN_TEXTURE, position);
     }
 }

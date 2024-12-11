@@ -5,7 +5,7 @@ public class CharacterJumpState : PlayerState {
     private float groundCheckDelay;
 
     public override void StateEnter() {
-        groundCheckDelay = Constants.PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP;
+        groundCheckDelay = Constants.Values.PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP;
         stateMachine.PlayerController.Rigidbody2D.linearVelocityY = configuration.JumpForce;
         stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
         stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.JUMP_ANIM);

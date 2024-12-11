@@ -10,7 +10,8 @@ public class Coin : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.TryGetComponent(out PlayerController player)) {
-            animator.SetTrigger(Constants.COIN_ANIMATION_PICK_UP);
+            //TODO: Add coin to player
+            animator.Play(Constants.MiscAnimations.COIN_PICK_UP);
             Destroy(gameObject, .75f);
         }
     }

@@ -39,7 +39,7 @@ public class PressurePlate : MonoBehaviour {
         bool isPressed = validObjectsOnPlate.Count > 0;
         if (isPressed != IsActive) {
             IsActive = isPressed;
-            animator.Play(isPressed ? Constants.PRESSURE_PLATE_PRESSED : Constants.PRESSURE_PLATE_IDLE);
+            animator.Play(isPressed ? Constants.MiscAnimations.PRESSURE_PLATE_PRESSED : Constants.MiscAnimations.PRESSURE_PLATE_IDLE);
             OnChangeState?.Invoke();
         }
     }

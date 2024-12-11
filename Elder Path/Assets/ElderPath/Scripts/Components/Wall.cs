@@ -39,9 +39,9 @@ public class Wall : MonoBehaviour {
         if (isOpening) animationProgress += Time.deltaTime / animator.GetCurrentAnimatorStateInfo(0).length;
         else animationProgress -= Time.deltaTime / animator.GetCurrentAnimatorStateInfo(0).length;
         animationProgress = Mathf.Clamp01(animationProgress);
-        if (animationProgress <= 0f) animator.Play(Constants.WALL_ANIMATION_CLOSED);
-        else if (animationProgress >= 1f) animator.Play(Constants.WALL_ANIMATION_OPENING);
-        else animator.Play(Constants.WALL_ANIMATION_OPENING, 0, animationProgress);
+        if (animationProgress <= 0f) animator.Play(Constants.MiscAnimations.WALL_CLOSED);
+        else if (animationProgress >= 1f) animator.Play(Constants.MiscAnimations.WALL_OPENING);
+        else animator.Play(Constants.MiscAnimations.WALL_OPENING, 0, animationProgress);
     }
 
     private bool AllPlatesActive() {
