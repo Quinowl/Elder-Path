@@ -25,7 +25,7 @@ public class SceneLoaderEditor : EditorWindow
         scenePaths = scenePaths.Where(x => !x.Contains("Packages/")).ToList();
     }
     // You have to press Control + W (%w)
-    [MenuItem("Tools/Load Scene %w")]
+    [MenuItem("Tools/Load Scene %e")]
     private static void OpenScene()
     {
         if (scenePaths.Count > 0)
