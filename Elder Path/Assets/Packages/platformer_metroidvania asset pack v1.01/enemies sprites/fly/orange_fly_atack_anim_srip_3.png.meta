@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      orange_fly_atack_anim_srip_3_0: -7429580106776882341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

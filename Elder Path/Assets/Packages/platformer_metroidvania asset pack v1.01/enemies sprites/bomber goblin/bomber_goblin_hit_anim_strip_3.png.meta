@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bomber_goblin_hit_anim_strip_3_0: 7314046616172343290
+      bomber_goblin_hit_anim_strip_3_1: 6108168321920253892
+      bomber_goblin_hit_anim_strip_3_2: -5525317870497543570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mushroom_crushed_anim_strip_6_0: -4387502403121105992
+      mushroom_crushed_anim_strip_6_1: 4934098177039159063
+      mushroom_crushed_anim_strip_6_2: -4739746410951811203
+      mushroom_crushed_anim_strip_6_3: -3371635672966405916
+      mushroom_crushed_anim_strip_6_4: 9176025294522152392
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bomber_goblin_attack_anim_strip_6_0: -4529357280582004484
+      bomber_goblin_attack_anim_strip_6_1: -8476611940600134197
+      bomber_goblin_attack_anim_strip_6_2: -5212021237089792338
+      bomber_goblin_attack_anim_strip_6_3: 1879468426901525459
+      bomber_goblin_attack_anim_strip_6_4: -8453559638860079850
+      bomber_goblin_attack_anim_strip_6_5: 5188864175324568156
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

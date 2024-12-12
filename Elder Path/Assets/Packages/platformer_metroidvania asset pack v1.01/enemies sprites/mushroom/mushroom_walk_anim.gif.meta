@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mushroom_walk_anim_0: -8275656265730929413
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

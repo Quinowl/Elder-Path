@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mushroom_death_anim_0: 176273380267241481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

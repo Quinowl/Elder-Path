@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bomber_goblin_idle_anim_strip_4_0: 4062965729305634177
+      bomber_goblin_idle_anim_strip_4_1: 5706325708820212063
+      bomber_goblin_idle_anim_strip_4_2: 5654424801616684977
+      bomber_goblin_idle_anim_strip_4_3: 1412791399166139725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

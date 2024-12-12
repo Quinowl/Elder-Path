@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mushroom_walk_anim_strip_8_0: 6258348882928458165
+      mushroom_walk_anim_strip_8_1: -1700240541789307417
+      mushroom_walk_anim_strip_8_2: 5030395815178594903
+      mushroom_walk_anim_strip_8_3: -7262816221784533022
+      mushroom_walk_anim_strip_8_4: -6502187641634695907
+      mushroom_walk_anim_strip_8_5: 7038071649082671908
+      mushroom_walk_anim_strip_8_6: 3388712834061836074
+      mushroom_walk_anim_strip_8_7: -7251899048989260558
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

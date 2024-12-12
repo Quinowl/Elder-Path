@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm_hit_anim_strip_3_0: -6660691273581345480
+      worm_hit_anim_strip_3_1: 7996805600415874357
+      worm_hit_anim_strip_3_2: 4007792685299390262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      goblin_hit_anim_strip_3_0: 4056893406760036682
+      goblin_hit_anim_strip_3_1: -7325512602589853777
+      goblin_hit_anim_strip_3_2: -2067752605208300786
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

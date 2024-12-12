@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm_walk_anim_strip_6_0: 8879881333668894217
+      worm_walk_anim_strip_6_1: -7862408890117445916
+      worm_walk_anim_strip_6_2: 6591859500488388153
+      worm_walk_anim_strip_6_3: -418413624177838612
+      worm_walk_anim_strip_6_4: 6108990551742686092
+      worm_walk_anim_strip_6_5: -6393876777280993029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      orange_fly_death_anim_strip_5_0: -3513071602134439776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      goblin_attack_anim_strip_4_0: -1419938988753322111
+      goblin_attack_anim_strip_4_1: 4520123806859305378
+      goblin_attack_anim_strip_4_2: -4399571278975291826
+      goblin_attack_anim_strip_4_3: 7794331006894111819
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

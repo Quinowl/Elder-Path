@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      orange_fly_idle_or_flying_anim_0: 2170951647032109756
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

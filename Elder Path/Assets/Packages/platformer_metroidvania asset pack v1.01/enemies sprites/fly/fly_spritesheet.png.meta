@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      fly_spritesheet_0: 529769329009268880
+      fly_spritesheet_1: -3806357164315670787
+      fly_spritesheet_2: -3257582829988704031
+      fly_spritesheet_3: -5705554535393543444
+      fly_spritesheet_4: -3440560552663755849
+      fly_spritesheet_5: -3205496289992356394
+      fly_spritesheet_6: 8045418487629456122
+      fly_spritesheet_7: -181426382007162707
+      fly_spritesheet_8: 6496242114487135951
+      fly_spritesheet_9: 6522968040676314389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blue_fly_attack_anim_0: -8023575117442375006
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

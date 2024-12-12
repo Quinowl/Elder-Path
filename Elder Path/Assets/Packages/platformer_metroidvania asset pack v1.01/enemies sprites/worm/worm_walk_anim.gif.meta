@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm_walk_anim_0: -2233992217814512451
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

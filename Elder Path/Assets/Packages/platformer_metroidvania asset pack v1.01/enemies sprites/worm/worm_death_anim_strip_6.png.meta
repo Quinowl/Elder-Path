@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      worm_death_anim_strip_6_0: -5402840941208647422
+      worm_death_anim_strip_6_1: -4832351847404317560
+      worm_death_anim_strip_6_2: 7806809425713480484
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

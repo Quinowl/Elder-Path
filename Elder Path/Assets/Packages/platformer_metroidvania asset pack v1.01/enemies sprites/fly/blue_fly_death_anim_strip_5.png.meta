@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blue_fly_death_anim_strip_5_0: -6208227418438362267
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bomber_goblin_death_anim_0: -5414569367175760227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

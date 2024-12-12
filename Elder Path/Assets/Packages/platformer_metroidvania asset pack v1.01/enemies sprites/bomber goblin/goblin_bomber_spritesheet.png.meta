@@ -509,7 +509,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      goblin_bomber_spritesheet_0: -1004714272314184045
+      goblin_bomber_spritesheet_1: 135930821889724085
+      goblin_bomber_spritesheet_10: -416598499076860339
+      goblin_bomber_spritesheet_11: 3003323711430665792
+      goblin_bomber_spritesheet_12: 1787761511647101250
+      goblin_bomber_spritesheet_13: 7352118185072024653
+      goblin_bomber_spritesheet_14: -7058166052427634013
+      goblin_bomber_spritesheet_15: -4952055252602381489
+      goblin_bomber_spritesheet_2: -7255839903598806580
+      goblin_bomber_spritesheet_3: 6626949011495538135
+      goblin_bomber_spritesheet_4: 1403050773434697451
+      goblin_bomber_spritesheet_5: -6539656281902760273
+      goblin_bomber_spritesheet_6: 322396176442762964
+      goblin_bomber_spritesheet_7: 71955606101158982
+      goblin_bomber_spritesheet_8: 2086647969920149846
+      goblin_bomber_spritesheet_9: -8947958033164047689
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

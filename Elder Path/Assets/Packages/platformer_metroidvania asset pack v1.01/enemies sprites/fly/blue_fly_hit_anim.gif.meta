@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blue_fly_hit_anim_0: 4295790129605460068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

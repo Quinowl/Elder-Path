@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixel-ui-hub-example_0: 4898253651958793654
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
