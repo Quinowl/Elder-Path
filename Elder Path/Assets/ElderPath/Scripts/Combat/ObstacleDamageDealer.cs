@@ -7,6 +7,7 @@ public class ObstacleDamageDealer : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other) {
         OnCollision?.Invoke();
-        if (other.gameObject.CompareTag(Constants.Tags.PLAYER)) ServiceLocator.Instance.GetService<EPLevelManager>().RestartLevelWithoutLoadingScreen();
+        if (other.gameObject.CompareTag(Constants.Tags.PLAYER))
+            ServiceLocator.Instance.GetService<EPLevelManager>().RestartLevelWithoutLoadingScreen();
     }
 }
