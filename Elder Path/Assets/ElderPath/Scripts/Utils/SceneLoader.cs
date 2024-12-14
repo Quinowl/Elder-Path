@@ -27,6 +27,6 @@ public class SceneLoader : MonoBehaviour {
             Debug.LogError($"Failed to load scene {sceneName}: {e.Message}");
         }
         if (finalTime > Time.time) yield return new WaitForSeconds(finalTime - Time.time);
-        loadingScreen.StopLoading();
+        if (loadingScreen.gameObject.activeSelf) loadingScreen.StopLoading();
     }
 }
