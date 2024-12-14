@@ -105,7 +105,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
+        width: 16
         height: 4
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,11 +121,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: spikes_trap_hit_wall_dust_effect_strip_3_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e4f641df2a644ad811a79e72c64328
+      internalID: -490703308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spikes_trap_hit_wall_dust_effect_strip_3_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dbdcadf0499845348dfeaea725f4d50
+      internalID: 326421896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 68e714f59a469499c9baafc83592c545
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +180,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       spikes_trap_hit_wall_dust_effect_strip_3_0: 3153644365775355632
+      spikes_trap_hit_wall_dust_effect_strip_3_1: -490703308
+      spikes_trap_hit_wall_dust_effect_strip_3_2: 326421896
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

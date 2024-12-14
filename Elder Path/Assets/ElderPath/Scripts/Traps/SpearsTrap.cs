@@ -11,6 +11,7 @@ public class SpearsTrap : MonoBehaviour {
     [SerializeField] private Sprite idleSprite;
     [SerializeField] private Sprite fallingSprite;
     [SerializeField] private Rigidbody2D rigidbody2d;
+    [SerializeField] private Animator collisionAnimator;
 
     private void Awake() {
         if (!idleSprite || !fallingSprite) Debug.LogError("Idle sprite or falling sprite is not configured.");
@@ -21,6 +22,8 @@ public class SpearsTrap : MonoBehaviour {
         rigidbody2d.simulated = false;
         staticHitboxCollider.enabled = false;
         fallingHitboxCollider.enabled = false;
+        collisionAnimator.gameObject.SetActive(false);
+        rigidbody2d.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     private void Start() {
@@ -39,9 +42,13 @@ public class SpearsTrap : MonoBehaviour {
         fallingHitboxCollider.enabled = true;
     }
 
-    private void OnCollision() {
+    private void OnCollision(Vector3 collisionPoint) {
         fallingHitboxCollider.enabled = false;
         staticHitboxCollider.enabled = true;
+        // Try to move to equal Y but center fallingCollider at X
+        collisionAnimator.gameObject.transform.position = collisionPoint;
+        collisionAnimator.gameObject.SetActive(true);
+        collisionAnimator.Play("collision-effect");
         rigidbody2d.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }
