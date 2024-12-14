@@ -14,10 +14,7 @@ public class SpearsTrap : MonoBehaviour {
     [SerializeField] private Animator collisionAnimator;
 
     private void Awake() {
-        if (!idleSprite || !fallingSprite) Debug.LogError("Idle sprite or falling sprite is not configured.");
-        if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        if (!playerDetecter) playerDetecter = GetComponentInChildren<PlayerDetecter>();
-        if (!rigidbody2d) rigidbody2d = GetComponentInChildren<Rigidbody2D>();
+        CheckReferences();
         spriteRenderer.sprite = idleSprite;
         rigidbody2d.simulated = false;
         staticHitboxCollider.enabled = false;
@@ -36,6 +33,13 @@ public class SpearsTrap : MonoBehaviour {
         damageDealer.OnCollision -= OnCollision;
     }
 
+    private void CheckReferences() {
+        if (!idleSprite || !fallingSprite) Debug.LogError("Idle sprite or falling sprite is not configured.");
+        if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (!playerDetecter) playerDetecter = GetComponentInChildren<PlayerDetecter>();
+        if (!rigidbody2d) rigidbody2d = GetComponentInChildren<Rigidbody2D>();
+    }
+
     private void FallSpears() {
         spriteRenderer.sprite = fallingSprite;
         rigidbody2d.simulated = true;
@@ -45,8 +49,8 @@ public class SpearsTrap : MonoBehaviour {
     private void OnCollision(Vector3 collisionPoint) {
         fallingHitboxCollider.enabled = false;
         staticHitboxCollider.enabled = true;
-        // Try to move to equal Y but center fallingCollider at X
-        collisionAnimator.gameObject.transform.position = collisionPoint;
+        Vector2 effectPoint = new Vector2(fallingHitboxCollider.bounds.center.x, collisionPoint.y);
+        collisionAnimator.gameObject.transform.position = effectPoint;
         collisionAnimator.gameObject.SetActive(true);
         collisionAnimator.Play("collision-effect");
         rigidbody2d.constraints = RigidbodyConstraints2D.FreezeAll;
