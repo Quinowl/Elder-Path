@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     private void Start() {
+        ServiceLocator.Instance.GetService<MusicPlayer>().PlayMenuTheme();
         mainMenuCanvas.Toggle(true);
         settingsCanvas.Toggle(false);
     }
