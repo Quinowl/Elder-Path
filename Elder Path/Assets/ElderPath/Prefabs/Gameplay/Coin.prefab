@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2729895292635732090}
+  collider2d: {fileID: 6262329343669318048}
 --- !u!58 &6262329343669318048
 CircleCollider2D:
   m_ObjectHideFlags: 0
