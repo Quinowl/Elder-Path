@@ -14,6 +14,7 @@ public class CharacterDashState : PlayerState {
         stateMachine.PlayerController.TryMoveX(configuration.DashForce * stateMachine.PlayerController.transform.localScale.x);
         stateMachine.PlayerController.SetIsDashing(true);
         trailGenerationCoroutine = StartCoroutine(StartTrailGeneration());
+        ServiceLocator.Instance.GetService<EPSoundsManager>().PlaySFX(Constants.SFXIDs.PLAYER_DASH, stateMachine.PlayerController.transform);
     }
 
     public override void StateExit() {
