@@ -456,6 +456,7 @@ MonoBehaviour:
   settingsButton: {fileID: 827227017}
   exitButton: {fileID: 1814556994}
   closeSettingsButton: {fileID: 7790334328485985028}
+  eventSystem: {fileID: 1855703621}
   mainMenuCanvas: {fileID: 922766597}
   settingsCanvas: {fileID: 7790334328485985027}
   settingMenu: {fileID: 7790334328485985029}

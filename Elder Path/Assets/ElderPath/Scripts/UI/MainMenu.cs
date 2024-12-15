@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private Button closeSettingsButton;
 
     [Header("General UI")]
+    [SerializeField] private EventSystem eventSystem;
     [SerializeField] private CanvasGroup mainMenuCanvas;
     [SerializeField] private CanvasGroup settingsCanvas;
     [SerializeField] private SettingMenu settingMenu;
@@ -23,6 +25,7 @@ public class MainMenu : MonoBehaviour {
         ServiceLocator.Instance.GetService<MusicPlayer>().PlayMenuTheme();
         mainMenuCanvas.Toggle(true);
         settingsCanvas.Toggle(false);
+        eventSystem.SetSelectedGameObject(startGameButton.gameObject);
     }
 
     private void InitializeButtonsBehaviour() {
@@ -40,11 +43,13 @@ public class MainMenu : MonoBehaviour {
     private void OnSettingsButtonPressed() {
         mainMenuCanvas.Toggle(false);
         settingsCanvas.Toggle(true);
+        eventSystem.SetSelectedGameObject(settingMenu.FirstSelectedObject);
     }
 
     private void OnCloseSettingsButton() {
         mainMenuCanvas.Toggle(true);
         settingsCanvas.Toggle(false);
+        eventSystem.SetSelectedGameObject(startGameButton.gameObject);
     }
 
     private void OnExitButtonPressed() {
