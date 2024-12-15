@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     [field: SerializeField] public Transform AttackPoint { get; private set; }
     [field: SerializeField] public CharacterCollisions Collisions { get; private set; }
     [field: SerializeField] public ParticleSystem MovementParticles { get; private set; }
+    [field: SerializeField] public ParticleSystem JumpParticles { get; private set; }
     [field: SerializeField] public SpriteRenderer SpriteRenderer { get; private set; }
     public ObjectPool<PlayerTrail> TrailPool { get; private set; }
     [field: SerializeField] public Transform TrailPoolParent { get; private set; }

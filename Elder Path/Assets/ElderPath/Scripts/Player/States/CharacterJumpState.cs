@@ -10,6 +10,7 @@ public class CharacterJumpState : PlayerState {
         stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
         stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.JUMP_ANIM);
         ServiceLocator.Instance.GetService<EPSoundsManager>().PlaySFX(Constants.SFXIDs.PLAYER_JUMP, stateMachine.PlayerController.transform);
+        stateMachine.PlayerController.JumpParticles.Play();
     }
 
     public override void StateExit() {
