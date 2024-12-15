@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: main-menu
   m_EditorClassIdentifier: 
   <ID>k__BackingField: main-menu
-  <Clips>k__BackingField: []
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: 10be6ed97bd2e48cdbac8c2edd288490, type: 3}

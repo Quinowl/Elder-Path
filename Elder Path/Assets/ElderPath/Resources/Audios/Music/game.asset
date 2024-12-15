@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: game
   m_EditorClassIdentifier: 
   <ID>k__BackingField: game
-  <Clips>k__BackingField: []
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: 0a7b27a627dd240fb8eb11bfe502b3d0, type: 3}

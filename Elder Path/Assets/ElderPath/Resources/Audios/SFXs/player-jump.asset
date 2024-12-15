@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ID>k__BackingField: sfx-player-jump
   <Clips>k__BackingField:
-  - {fileID: 8300000, guid: 5fa2fb77dd132314b90d4cdf549da06a, type: 3}
+  - {fileID: 8300000, guid: 4f85aef43008b483a86aa55edbed07cf, type: 3}

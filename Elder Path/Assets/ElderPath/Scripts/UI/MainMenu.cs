@@ -12,9 +12,11 @@ public class MainMenu : MonoBehaviour {
     [Header("General UI")]
     [SerializeField] private CanvasGroup mainMenuCanvas;
     [SerializeField] private CanvasGroup settingsCanvas;
+    [SerializeField] private SettingMenu settingMenu;
 
     private void Awake() {
         InitializeButtonsBehaviour();
+        settingMenu.InitializeSettings();
     }
 
     private void Start() {
@@ -31,6 +33,7 @@ public class MainMenu : MonoBehaviour {
     }
 
     private void OnStartButtonPressed() {
+        ServiceLocator.Instance.GetService<MusicPlayer>().PlayGameTheme();
         ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.Scenes.GAME, 1.5f);
     }
 
