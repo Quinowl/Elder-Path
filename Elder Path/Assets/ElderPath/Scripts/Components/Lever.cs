@@ -5,8 +5,20 @@ public class Lever : MonoBehaviour, IHittable {
     [SerializeField] private Sprite activatedSprite;
     [SerializeField] private Sprite unactivatedSprite;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private LeverWall[] wallsAssociated;
 
     private bool isActivated;
+
+    private void OnDrawGizmos() {
+        if (wallsAssociated == null || wallsAssociated.Length <= 0) {
+            Debug.LogError("Lever has no walls associated.");
+            return;
+        }
+        Gizmos.color = Color.grey;
+        foreach (var wall in wallsAssociated) {
+            Gizmos.DrawLine(transform.position, wall.transform.position);
+        }
+    }
 
     private void Awake() {
         if (!activatedSprite || !unactivatedSprite) Debug.LogError("Level has not sprites assigned.");
@@ -19,5 +31,6 @@ public class Lever : MonoBehaviour, IHittable {
     public void Hit(HitContext context) {
         isActivated = !isActivated;
         spriteRenderer.sprite = isActivated ? activatedSprite : unactivatedSprite;
+        foreach (var wall in wallsAssociated) wall.ChangeState();
     }
 }
