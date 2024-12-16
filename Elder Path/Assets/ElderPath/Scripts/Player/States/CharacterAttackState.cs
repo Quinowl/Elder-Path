@@ -4,7 +4,7 @@ using UnityEngine;
 public class CharacterAttackState : PlayerState {
 
     [SerializeField] private bool drawGizmo = true;
-    private EnemyDamageable[] hits;
+    private IHittable[] hits;
     private float startTime;
 
     private void OnDrawGizmos() {
@@ -44,8 +44,8 @@ public class CharacterAttackState : PlayerState {
 
     private bool HasHit() {
         hits = Physics2D.OverlapCircleAll(stateMachine.PlayerController.AttackPoint.position, configuration.AttackRange)
-            .Select(collider => collider.GetComponent<EnemyDamageable>())
-            .Where(enemy => enemy != null)
+            .Select(collider => collider.GetComponent<IHittable>())
+            .Where(hit => hit != null)
             .ToArray();
         return hits.Length > 0;
     }
@@ -54,8 +54,9 @@ public class CharacterAttackState : PlayerState {
         foreach (var hit in hits) {
             CharacterHitEffect hitEffect = stateMachine.PlayerController.HitEffectPool.Get();
             hitEffect.Initialize(stateMachine.PlayerController);
-            hitEffect.transform.position = hit.transform.position;
-            hit.TakeDamage(configuration.AttackDamage);
+            hitEffect.transform.position = (hit as MonoBehaviour).transform.position;
+            Vector2 hitDirection = stateMachine.PlayerController.transform.localScale.x >= 1 ? Vector2.right : Vector2.left;
+            hit.Hit(new HitContext(configuration.AttackDamage, hitDirection));
         }
     }
 }

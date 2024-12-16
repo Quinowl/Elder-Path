@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyDamageable : Damageable {
+public class EnemyDamageable : Damageable, IHittable {
 
     [SerializeField] private SpriteRenderer sprite;
 
@@ -44,4 +44,6 @@ public class EnemyDamageable : Damageable {
         propertyBlock.SetColor("_Color", Color.white);
         sprite.SetPropertyBlock(propertyBlock);
     }
+
+    public void Hit(HitContext context) => TakeDamage(context.Damage);
 }
