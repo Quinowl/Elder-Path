@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 1488481635763747574}
   - component: {fileID: 8625259883365645753}
   m_Layer: 6
-  m_Name: LeverWall
+  m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
