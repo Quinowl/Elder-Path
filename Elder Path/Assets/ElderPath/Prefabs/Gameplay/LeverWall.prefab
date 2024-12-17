@@ -228,6 +228,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserRenderer: {fileID: 3840009898660309859}
   laserCollider: {fileID: 1606792534742276498}
+  inactiveAlpha: 0.3
+  isActiveAtStart: 1
 --- !u!61 &8625259883365645753
 BoxCollider2D:
   m_ObjectHideFlags: 0
