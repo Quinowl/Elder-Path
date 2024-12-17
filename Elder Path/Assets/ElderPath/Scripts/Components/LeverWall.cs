@@ -14,7 +14,6 @@ public class LeverWall : MonoBehaviour {
     private void Awake() {
         if (!laserRenderer) Debug.LogError("No laser renderer assigned.");
         if (!laserCollider) Debug.LogError("No laser collider assigned.");
-        SetRendererAlpha(1f);
         isActive = isActiveAtStart;
         laserCollider.enabled = isActive;
         SetRendererAlpha(isActive ? 1f : inactiveAlpha);
