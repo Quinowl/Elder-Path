@@ -12,8 +12,8 @@ public class ParallaxLayer : MonoBehaviour {
     [SerializeField, HideIf(nameof(autoScroll))] private Transform target;
     private Vector2 position = Vector2.zero;
     private Vector2 targetOldPosition;
-    [SerializeField] private float autoScrollSpeedX = 0.05f;
-    [SerializeField] private float autoScrollSpeedY;
+    [SerializeField, ShowIf(nameof(autoScroll))] private float autoScrollSpeedX = 0.05f;
+    [SerializeField, ShowIf(nameof(autoScroll))] private float autoScrollSpeedY;
 
     private void Awake() {
         CheckReferences();

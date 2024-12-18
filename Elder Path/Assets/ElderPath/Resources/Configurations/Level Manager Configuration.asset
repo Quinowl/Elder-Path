@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: Level Manager Configuration
   m_EditorClassIdentifier: 
   <Levels>k__BackingField:
-  - {fileID: 8436110687522884727, guid: 4b69803f4ec493e409db8fc9180d13ef, type: 3}
-  - {fileID: 8436110687522884727, guid: a0d3d0dd01aa2bd4da458843203bcf50, type: 3}
-  - {fileID: 8436110687522884727, guid: 81a5c455d66d74bfaa49c7748ffde1c5, type: 3}
-  - {fileID: 2754014513943894355, guid: 35245fc78b51d4c4a9143d129dfd5884, type: 3}
+  - {fileID: 2754014513943894355, guid: 8deacfb71c5024f68b35928ffe823453, type: 3}
   <TransitionDuration>k__BackingField: 1

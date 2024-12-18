@@ -5,6 +5,7 @@ public class EPLevelManager : MonoBehaviour {
 
     [SerializeField] private LevelManagerConfiguration configuration;
     [SerializeField] private Transform levelParent;
+    [SerializeField] private CameraRig cameraRig;
 
     private Level currentLevel;
     private Coroutine loadLevelCoroutine;
@@ -47,6 +48,7 @@ public class EPLevelManager : MonoBehaviour {
         float elapsedTime = Time.time - startTime;
         if (elapsedTime < configuration.TransitionDuration) yield return new WaitForSeconds(configuration.TransitionDuration - elapsedTime);
         currentLevel.InitializeLevel();
+        cameraRig.Configure(currentLevel.MovableCamera, currentLevel.MinCameraBounds, currentLevel.MaxCameraBounds);
         ServiceLocator.Instance.GetService<LoadingScreen>().StopLoading();
     }
 

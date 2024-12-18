@@ -3574,6 +3574,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalTrigger: {fileID: 2232486821929602752}
   <LevelIndex>k__BackingField: 0
+  <MovableCamera>k__BackingField: 0
+  <CameraBoundaries>k__BackingField: {x: 0, y: 0}
   <InitialPlayerPosition>k__BackingField: {fileID: 5802105798191805074}
 --- !u!1 &4116022942503734033
 GameObject:
