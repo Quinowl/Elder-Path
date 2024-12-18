@@ -2777,7 +2777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6315636730945316801
 Transform:
   m_ObjectHideFlags: 0
@@ -3624,7 +3624,7 @@ GameObject:
   - component: {fileID: 7917415949007812306}
   - component: {fileID: 2754014513943894355}
   m_Layer: 0
-  m_Name: Level_test
+  m_Name: Tutorial_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3681,7 +3681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5810445650559909147
 Transform:
   m_ObjectHideFlags: 0
