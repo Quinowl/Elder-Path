@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -49,6 +50,8 @@ public class GameMenuMediator : MonoBehaviour {
     }
 
     public void OnUpdateSelectedObjectInEventSystem(GameObject obj) => eventSystem.SetSelectedGameObject(obj);
+
+    public void UpdateText(TMP_Text text, string message) => text.text = message;
 
     private void TogglePause() {
         isPaused = !isPaused;
