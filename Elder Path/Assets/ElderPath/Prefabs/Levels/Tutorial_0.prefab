@@ -3575,7 +3575,8 @@ MonoBehaviour:
   finalTrigger: {fileID: 2232486821929602752}
   <LevelIndex>k__BackingField: 0
   <MovableCamera>k__BackingField: 0
-  <CameraBoundaries>k__BackingField: {x: 0, y: 0}
+  <MinCameraBounds>k__BackingField: {x: -1, y: -1}
+  <MaxCameraBounds>k__BackingField: {x: 1, y: 1}
   <InitialPlayerPosition>k__BackingField: {fileID: 5802105798191805074}
 --- !u!1 &4116022942503734033
 GameObject:
@@ -5175,6 +5176,10 @@ PrefabInstance:
     - target: {fileID: 5546624367907089729, guid: dc55e02e4ec9da84584e64e12621aa12, type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546624367907089729, guid: dc55e02e4ec9da84584e64e12621aa12, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

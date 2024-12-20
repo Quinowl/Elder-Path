@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b2831098dafb1c4bb773b3535fc3b12, type: 3}
+  m_Name: player-attack
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: sfx-player-attack
+  <Clips>k__BackingField:
+  - {fileID: 8300000, guid: 7c05acdc0328b4b9eb9d4884f818ef03, type: 3}

@@ -29,6 +29,7 @@ public class Lever : MonoBehaviour, IHittable {
 
     public void Hit(HitContext context) {
         isActivated = !isActivated;
+        ServiceLocator.Instance.GetService<EPSoundsManager>().PlaySFX(Constants.SFXIDs.MISC_LEVER_CHANGE_STATE, transform);
         spriteRenderer.sprite = isActivated ? activatedSprite : unactivatedSprite;
         foreach (var wall in lasersAssociated) wall.ChangeState();
     }
