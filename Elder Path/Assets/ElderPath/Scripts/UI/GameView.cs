@@ -9,8 +9,20 @@ public class GameView : MonoBehaviour {
 
     private GameMenuMediator gameMenuMediator;
 
+    private void OnEnable() {
+        EPGameManager.OnLevelChanged += UpdateLevelText;
+    }
+
+    private void OnDisable() {
+        EPGameManager.OnLevelChanged -= UpdateLevelText;
+    }
+
     public void Configure(GameMenuMediator mediator) => gameMenuMediator = mediator;
 
-    public void UpdateLevelText(int currentLevel, int totalLevels) => gameMenuMediator.UpdateText(levelText, $"{currentLevel} / {totalLevels}");
+    public void Show() => canvasGroup.Toggle(true);
+
+    public void Hide() => canvasGroup.Toggle(false);
+
+    public void UpdateLevelText((int currentLevel, int totalLevels) levelInfo) => gameMenuMediator.UpdateText(levelText, $"{levelInfo.currentLevel} / {levelInfo.totalLevels}");
 
 }

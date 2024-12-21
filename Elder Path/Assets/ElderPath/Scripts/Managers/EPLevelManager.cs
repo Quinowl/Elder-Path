@@ -49,6 +49,7 @@ public class EPLevelManager : MonoBehaviour {
         if (elapsedTime < configuration.TransitionDuration) yield return new WaitForSeconds(configuration.TransitionDuration - elapsedTime);
         currentLevel.InitializeLevel();
         cameraRig.Configure(currentLevel.MovableCamera, currentLevel.MinCameraBounds, currentLevel.MaxCameraBounds);
+        ServiceLocator.Instance.GetService<EPGameManager>().LevelChanged(levelIndex + 1, configuration.Levels.Length);
         ServiceLocator.Instance.GetService<LoadingScreen>().StopLoading();
     }
 
