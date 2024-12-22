@@ -2945,11 +2945,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3e226ec6a56433ca51108eddba3556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!225 &1160315836 stripped
-CanvasGroup:
-  m_CorrespondingSourceObject: {fileID: 4574342949075443439, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
-  m_PrefabInstance: {fileID: 1160315833}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1167765477
 GameObject:
   m_ObjectHideFlags: 0
@@ -9362,7 +9357,6 @@ MonoBehaviour:
   pauseView: {fileID: 133375905}
   endGameView: {fileID: 1229994053}
   gameView: {fileID: 1911314151}
-  settingsCanvas: {fileID: 1160315836}
   settings: {fileID: 1160315835}
 --- !u!1 &1719603212
 GameObject:
