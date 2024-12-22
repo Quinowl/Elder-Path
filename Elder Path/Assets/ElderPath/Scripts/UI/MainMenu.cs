@@ -8,7 +8,6 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private Button startGameButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button exitButton;
-    [SerializeField] private Button closeSettingsButton;
 
     [Header("General UI")]
     [SerializeField] private EventSystem eventSystem;
@@ -32,7 +31,7 @@ public class MainMenu : MonoBehaviour {
         startGameButton.onClick.AddListener(OnStartButtonPressed);
         settingsButton.onClick.AddListener(OnSettingsButtonPressed);
         exitButton.onClick.AddListener(OnExitButtonPressed);
-        closeSettingsButton.onClick.AddListener(OnCloseSettingsButton);
+        settingMenu.SetListenersToCloseButton(OnCloseSettingsButton);
     }
 
     private void OnStartButtonPressed() {

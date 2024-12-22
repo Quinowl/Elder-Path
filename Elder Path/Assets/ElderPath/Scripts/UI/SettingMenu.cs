@@ -3,8 +3,13 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 public class SettingMenu : MonoBehaviour {
+
+    [Header("References")]
+    [SerializeField] private Button closeButton;
+    [SerializeField] private CanvasGroup canvasGroup;
 
     [Header("Audio settings")]
     [SerializeField] private AudioMixer audioMixer;
@@ -23,6 +28,15 @@ public class SettingMenu : MonoBehaviour {
         InitializeAudioSettings();
         InitializeDisplaySettings();
     }
+
+    public void SetListenersToCloseButton(UnityAction listener) {
+        closeButton.onClick.RemoveAllListeners();
+        closeButton.onClick.AddListener(listener);
+    }
+
+    public void Hide() => canvasGroup.Toggle(false);
+
+    public void Show() => canvasGroup.Toggle(true);
 
     private void InitializeAudioSettings() {
         masterSlider.value = PlayerPrefs.GetFloat(Constants.SaveKeys.MASTER_VOLUME, 1f);

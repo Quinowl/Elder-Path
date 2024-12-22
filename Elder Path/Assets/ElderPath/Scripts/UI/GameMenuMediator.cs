@@ -9,6 +9,7 @@ public class GameMenuMediator : MonoBehaviour {
     [SerializeField] private PauseView pauseView;
     [SerializeField] private EndGameView endGameView;
     [SerializeField] private GameView gameView;
+    [SerializeField] private SettingMenu settings;
 
     private bool isPaused;
 
@@ -25,6 +26,7 @@ public class GameMenuMediator : MonoBehaviour {
 
     private void Start() {
         HideAllMenus();
+        settings.SetListenersToCloseButton(OnExitSettingsButton);
         gameView.Show();
     }
 
@@ -39,7 +41,10 @@ public class GameMenuMediator : MonoBehaviour {
     public void OnResumeButtonPressed() => TogglePause();
 
     public void OnSettingsButtonPressed() {
-        //TODO: Ajustar el menú de ajustes
+        settings.Show();
+        settings.InitializeSettings();
+        pauseView.Hide();
+        OnUpdateSelectedObjectInEventSystem(settings.FirstSelectedObject);
     }
 
     public void OnRestartButtonPressed() {
@@ -56,6 +61,11 @@ public class GameMenuMediator : MonoBehaviour {
 
     public void UpdateText(TMP_Text text, string message) => text.text = message;
 
+    private void OnExitSettingsButton() {
+        pauseView.Show();
+        settings.Hide();
+    }
+
     private void TogglePause() {
         isPaused = !isPaused;
         Time.timeScale = isPaused ? 0f : 1f;
@@ -71,6 +81,7 @@ public class GameMenuMediator : MonoBehaviour {
     }
 
     private void HideAllMenus() {
+        settings.Hide();
         pauseView.Hide();
         endGameView.Hide();
         gameView.Hide();

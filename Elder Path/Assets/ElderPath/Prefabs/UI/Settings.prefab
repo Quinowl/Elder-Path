@@ -3571,6 +3571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3e226ec6a56433ca51108eddba3556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  closeButton: {fileID: 2044610261131141116}
+  canvasGroup: {fileID: 4574342949075443439}
   audioMixer: {fileID: 24100000, guid: d0bb6f8652620a649af64e31b8852d43, type: 2}
   masterSlider: {fileID: 4277478247274117683}
   sfxSlider: {fileID: 2344882703668443075}
