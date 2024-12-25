@@ -18,4 +18,5 @@ MonoBehaviour:
   - {fileID: 8436110687522884727, guid: 81a5c455d66d74bfaa49c7748ffde1c5, type: 3}
   - {fileID: 2754014513943894355, guid: 35245fc78b51d4c4a9143d129dfd5884, type: 3}
   - {fileID: 2754014513943894355, guid: 5dc98328f94854b138bceac606321961, type: 3}
+  - {fileID: 2754014513943894355, guid: ce0cc4b099825425a96a4b7a80f81f09, type: 3}
   <TransitionDuration>k__BackingField: 1
