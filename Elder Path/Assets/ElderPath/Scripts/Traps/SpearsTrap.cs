@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class SpearsTrap : MonoBehaviour {
+public class SpearsTrap : MonoBehaviour
+{
 
     [Header("References")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -13,7 +14,8 @@ public class SpearsTrap : MonoBehaviour {
     [SerializeField] private Rigidbody2D rigidbody2d;
     [SerializeField] private Animator collisionAnimator;
 
-    private void Awake() {
+    private void Awake()
+    {
         CheckReferences();
         spriteRenderer.sprite = idleSprite;
         rigidbody2d.simulated = false;
@@ -23,30 +25,35 @@ public class SpearsTrap : MonoBehaviour {
         rigidbody2d.constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
-    private void Start() {
+    private void Start()
+    {
         playerDetecter.OnPlayerDetected += FallSpears;
         damageDealer.OnCollision += OnCollision;
     }
 
-    private void OnDestroy() {
+    private void OnDestroy()
+    {
         playerDetecter.OnPlayerDetected -= FallSpears;
         damageDealer.OnCollision -= OnCollision;
     }
 
-    private void CheckReferences() {
+    private void CheckReferences()
+    {
         if (!idleSprite || !fallingSprite) Debug.LogError("Idle sprite or falling sprite is not configured.");
         if (!spriteRenderer) spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         if (!playerDetecter) playerDetecter = GetComponentInChildren<PlayerDetecter>();
         if (!rigidbody2d) rigidbody2d = GetComponentInChildren<Rigidbody2D>();
     }
 
-    private void FallSpears() {
+    private void FallSpears()
+    {
         spriteRenderer.sprite = fallingSprite;
         rigidbody2d.simulated = true;
         fallingHitboxCollider.enabled = true;
     }
 
-    private void OnCollision(Vector3 collisionPoint) {
+    private void OnCollision(Vector3 collisionPoint)
+    {
         fallingHitboxCollider.enabled = false;
         staticHitboxCollider.enabled = true;
         Vector2 effectPoint = new Vector2(fallingHitboxCollider.bounds.center.x, collisionPoint.y);

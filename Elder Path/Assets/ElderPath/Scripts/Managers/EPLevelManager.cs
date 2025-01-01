@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class EPLevelManager : MonoBehaviour {
+public class EPLevelManager : MonoBehaviour
+{
 
     [SerializeField] private LevelManagerConfiguration configuration;
     [SerializeField] private Transform levelParent;
@@ -10,15 +11,18 @@ public class EPLevelManager : MonoBehaviour {
     private Level currentLevel;
     private Coroutine loadLevelCoroutine;
 
-    private void Start() {
+    private void Start()
+    {
         if (!levelParent) levelParent = transform;
         LoadNextLevel();
     }
 
     [ContextMenu("Siguiente nivel")]
-    public void LoadNextLevel() {
+    public void LoadNextLevel()
+    {
         int nextLevelIndex = currentLevel ? currentLevel.LevelIndex + 1 : 0;
-        if (nextLevelIndex < 0 || nextLevelIndex >= configuration.Levels.Length) {
+        if (nextLevelIndex < 0 || nextLevelIndex >= configuration.Levels.Length)
+        {
             if (nextLevelIndex < 0) Debug.LogError("Invalid level index");
             else ServiceLocator.Instance.GetService<EPGameManager>().EndGame();
             return;
@@ -28,20 +32,23 @@ public class EPLevelManager : MonoBehaviour {
         loadLevelCoroutine = StartCoroutine(StartLoadLevel(nextLevelIndex));
     }
 
-    public void RestartLevelWithLoadingScreen() {
+    public void RestartLevelWithLoadingScreen()
+    {
         ServiceLocator.Instance.GetService<LoadingScreen>().StartLoading();
         if (loadLevelCoroutine != null) StopCoroutine(loadLevelCoroutine);
         loadLevelCoroutine = StartCoroutine(StartLoadLevel(currentLevel.LevelIndex));
     }
 
-    public void RestartLevelWithoutLoadingScreen() {
+    public void RestartLevelWithoutLoadingScreen()
+    {
         int levelIndex = currentLevel.LevelIndex;
         UnloadCurrentLevel();
         currentLevel = Instantiate(configuration.Levels[levelIndex], levelParent);
         currentLevel.InitializeLevel();
     }
 
-    private IEnumerator StartLoadLevel(int levelIndex) {
+    private IEnumerator StartLoadLevel(int levelIndex)
+    {
         float startTime = Time.time;
         UnloadCurrentLevel();
         currentLevel = Instantiate(configuration.Levels[levelIndex], levelParent);
@@ -53,7 +60,8 @@ public class EPLevelManager : MonoBehaviour {
         ServiceLocator.Instance.GetService<LoadingScreen>().StopLoading();
     }
 
-    private void UnloadCurrentLevel() {
+    private void UnloadCurrentLevel()
+    {
         if (currentLevel == null) return;
         Destroy(currentLevel.gameObject);
         currentLevel = null;

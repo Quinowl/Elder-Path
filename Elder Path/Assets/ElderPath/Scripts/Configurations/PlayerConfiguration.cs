@@ -2,7 +2,8 @@ using UnityEngine;
 using NaughtyAttributes;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Configurations/Player")]
-public class PlayerConfiguration : ScriptableObject {
+public class PlayerConfiguration : ScriptableObject
+{
     [field: SerializeField, BoxGroup("Movement")] public float MaxSpeed { get; private set; }
     [field: SerializeField, BoxGroup("Movement")] public float MinSpeedOnDirectionChange { get; private set; }
     [field: SerializeField, BoxGroup("Movement")] public float AccelerationRate { get; private set; }
@@ -27,11 +28,13 @@ public class PlayerConfiguration : ScriptableObject {
     [field: SerializeField, BoxGroup("Attack")] public CharacterHitEffect HitEffectPrefab { get; private set; }
     [field: SerializeField, BoxGroup("Attack")] public int HitEffectPoolInitialSize { get; private set; }
 
-    private void OnValidate() {
+    private void OnValidate()
+    {
         CalculateValues();
     }
 
-    public void CalculateValues() {
+    public void CalculateValues()
+    {
         GravityForce = -(2 * JumpHeight) / Mathf.Pow(JumpDuration, 2);
         JumpForce = Mathf.Sqrt(2 * Mathf.Abs(GravityForce) * JumpHeight);
     }

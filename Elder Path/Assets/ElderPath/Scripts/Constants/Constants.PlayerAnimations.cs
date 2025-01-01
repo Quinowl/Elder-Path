@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public static partial class Constants {
-    public static class PlayerAnimations {
+public static partial class Constants
+{
+    public static class PlayerAnimations
+    {
         public const string IDLE_ANIM = "player-idle";
         public const string RUN_ANIM = "player-run";
         public const string PUSH_ANIM = "player-push";

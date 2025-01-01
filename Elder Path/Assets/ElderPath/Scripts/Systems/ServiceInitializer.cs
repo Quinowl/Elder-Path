@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class ServiceInitializer : MonoBehaviour {
+public class ServiceInitializer : MonoBehaviour
+{
 
     [SerializeField] private LoadingScreen loadingScreen;
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private EPSoundsManager soundsPlayer;
     [SerializeField] private MusicPlayer musicPlayer;
 
-    private void Start() {
+    private void Start()
+    {
 
         DontDestroyOnLoad(loadingScreen);
         DontDestroyOnLoad(sceneLoader);

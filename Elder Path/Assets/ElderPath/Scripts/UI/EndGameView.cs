@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EndGameView : MonoBehaviour {
+public class EndGameView : MonoBehaviour
+{
 
     [SerializeField] private CanvasGroup canvasGroup;
 
@@ -11,18 +12,21 @@ public class EndGameView : MonoBehaviour {
 
     public void Configure(GameMenuMediator mediator) => gameMenuMediator = mediator;
 
-    private void Start() {
+    private void Start()
+    {
         InitializeButtons();
     }
 
-    public void Show() {
+    public void Show()
+    {
         canvasGroup.Toggle(true);
         gameMenuMediator.OnUpdateSelectedObjectInEventSystem(menuButton.gameObject);
     }
 
     public void Hide() => canvasGroup.Toggle(false);
 
-    private void InitializeButtons() {
+    private void InitializeButtons()
+    {
         menuButton.onClick.RemoveAllListeners();
         menuButton.onClick.AddListener(OnMenuButton);
     }

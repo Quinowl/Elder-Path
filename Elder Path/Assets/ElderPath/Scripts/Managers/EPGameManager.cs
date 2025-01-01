@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 
-public class EPGameManager : MonoBehaviour {
+public class EPGameManager : MonoBehaviour
+{
 
     public static Action OnEndGame;
     public static Action<(int, int)> OnLevelChanged;

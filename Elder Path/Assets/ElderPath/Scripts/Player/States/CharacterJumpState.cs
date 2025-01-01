@@ -1,10 +1,12 @@
 using UnityEngine;
 
-public class CharacterJumpState : PlayerState {
+public class CharacterJumpState : PlayerState
+{
 
     private float groundCheckDelay;
 
-    public override void StateEnter() {
+    public override void StateEnter()
+    {
         groundCheckDelay = Constants.Values.PLAYER_GROUND_CHECK_DELAY_AFTER_JUMP;
         stateMachine.PlayerController.Rigidbody2D.linearVelocityY = configuration.JumpForce;
         stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
@@ -13,23 +15,28 @@ public class CharacterJumpState : PlayerState {
         stateMachine.PlayerController.JumpParticles.Play();
     }
 
-    public override void StateExit() {
+    public override void StateExit()
+    {
     }
 
-    public override void StateInputs() {
+    public override void StateInputs()
+    {
         // Regulable jump
         if (EPInputManager.Instance.AttackInput && stateMachine.PlayerController.CanAttack) stateMachine.SetState(typeof(CharacterAttackState));
         if (EPInputManager.Instance.JumpInputReleased && stateMachine.PlayerController.Rigidbody2D.linearVelocityY > 0f) stateMachine.PlayerController.Rigidbody2D.linearVelocityY *= 0.5f;
         if (EPInputManager.Instance.DashInput && stateMachine.PlayerController.CanDash && !stateMachine.PlayerController.IsFrontBlocked) stateMachine.SetState(typeof(CharacterDashState));
     }
 
-    public override void StateLateStep() {
+    public override void StateLateStep()
+    {
     }
 
-    public override void StatePhysicsStep() {
+    public override void StatePhysicsStep()
+    {
     }
 
-    public override void StateStep() {
+    public override void StateStep()
+    {
         if (stateMachine.PlayerController.Rigidbody2D.linearVelocityY < 0f) stateMachine.SetState(typeof(CharacterFallingState));
         stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
         if (stateMachine.PlayerController.IsCeiled) stateMachine.PlayerController.Rigidbody2D.linearVelocityY = -0.25f * configuration.JumpForce;

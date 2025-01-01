@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class EnemyDamageable : Damageable, IHittable {
+public class EnemyDamageable : Damageable, IHittable
+{
 
     [SerializeField] private SpriteRenderer sprite;
 
@@ -12,12 +13,14 @@ public class EnemyDamageable : Damageable, IHittable {
     private MaterialPropertyBlock propertyBlock;
     private Coroutine colorFlashCoroutine;
 
-    private void Awake() {
+    private void Awake()
+    {
         if (!sprite) sprite = GetComponentInChildren<SpriteRenderer>();
         propertyBlock = new();
     }
 
-    public override void TakeDamage(float damage) {
+    public override void TakeDamage(float damage)
+    {
         if (canReceiveKnockback) ApplyKnockback();
         if (colorFlashCoroutine != null) StopCoroutine(colorFlashCoroutine);
         propertyBlock.SetColor("_Color", flashColor);
@@ -27,14 +30,17 @@ public class EnemyDamageable : Damageable, IHittable {
         // TODO: If I finally decide to put a life bar on the enemies, it should be updated here.
     }
 
-    private void ApplyKnockback() {
+    private void ApplyKnockback()
+    {
         //TODO: Knockback
     }
 
-    private IEnumerator HitAnimationCoroutine() {
+    private IEnumerator HitAnimationCoroutine()
+    {
         float elapsedTime = 0f;
         Color startColor = propertyBlock.GetColor("_Color");
-        while (elapsedTime < flashTime) {
+        while (elapsedTime < flashTime)
+        {
             Color currentColor = Color.Lerp(startColor, Color.white, elapsedTime / flashTime);
             propertyBlock.SetColor("_Color", currentColor);
             sprite.SetPropertyBlock(propertyBlock);

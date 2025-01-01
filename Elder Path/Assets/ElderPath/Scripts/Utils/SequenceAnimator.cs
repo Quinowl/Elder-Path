@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-public class SequenceAnimator : MonoBehaviour {
+public class SequenceAnimator : MonoBehaviour
+{
 
     [SerializeField] private Animator[] animators;
     [SerializeField] private float waitBetween = 0.15f;
@@ -9,20 +10,26 @@ public class SequenceAnimator : MonoBehaviour {
 
     private Coroutine sequenceCoroutine;
 
-    public void StartSequence() {
+    public void StartSequence()
+    {
         if (sequenceCoroutine == null) sequenceCoroutine = StartCoroutine(StartAnimation());
     }
 
-    public void StopSequence() {
-        if (sequenceCoroutine != null) {
+    public void StopSequence()
+    {
+        if (sequenceCoroutine != null)
+        {
             StopCoroutine(sequenceCoroutine);
             sequenceCoroutine = null;
         }
     }
 
-    private IEnumerator StartAnimation() {
-        while (true) {
-            foreach (Animator animator in animators) {
+    private IEnumerator StartAnimation()
+    {
+        while (true)
+        {
+            foreach (Animator animator in animators)
+            {
                 animator.Play("loading-screen-animated-text");
                 yield return new WaitForSeconds(waitBetween);
             }

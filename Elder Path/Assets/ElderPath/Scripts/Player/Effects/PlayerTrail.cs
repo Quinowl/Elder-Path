@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Animations;
 
-public class PlayerTrail : MonoBehaviour {
+public class PlayerTrail : MonoBehaviour
+{
 
     [Header("References")]
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -14,7 +15,8 @@ public class PlayerTrail : MonoBehaviour {
     private PlayerController player;
     private MaterialPropertyBlock propertyBlock;
 
-    public void Initialize(PlayerController player) {
+    public void Initialize(PlayerController player)
+    {
         this.player = player;
 
         spriteRenderer.sprite = player.SpriteRenderer.sprite;
@@ -29,12 +31,14 @@ public class PlayerTrail : MonoBehaviour {
         spriteRenderer.SetPropertyBlock(propertyBlock);
     }
 
-    private void Update() {
+    private void Update()
+    {
         UpdateAlpha();
         CheckActiveTime();
     }
 
-    private void UpdateAlpha() {
+    private void UpdateAlpha()
+    {
         float lifePercentage = Mathf.Clamp01((Time.time - timeActivated) / activeTime);
         float currentAlpha = Mathf.Lerp(initialAlpha, 0f, lifePercentage);
         spriteRenderer.GetPropertyBlock(propertyBlock);
@@ -44,7 +48,8 @@ public class PlayerTrail : MonoBehaviour {
         spriteRenderer.SetPropertyBlock(propertyBlock);
     }
 
-    private void CheckActiveTime() {
+    private void CheckActiveTime()
+    {
         if (Time.time >= (timeActivated + activeTime)) player.TrailPool.ReturnToPool(this);
     }
 }

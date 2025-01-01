@@ -2,7 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour
+{
 
     [Header("Buttons")]
     [SerializeField] private Button startGameButton;
@@ -15,43 +16,50 @@ public class MainMenu : MonoBehaviour {
     [SerializeField] private CanvasGroup settingsCanvas;
     [SerializeField] private SettingMenu settingMenu;
 
-    private void Awake() {
+    private void Awake()
+    {
         InitializeButtonsBehaviour();
         settingMenu.InitializeSettings();
     }
 
-    private void Start() {
+    private void Start()
+    {
         ServiceLocator.Instance.GetService<MusicPlayer>().PlayMenuTheme();
         mainMenuCanvas.Toggle(true);
         settingsCanvas.Toggle(false);
         eventSystem.SetSelectedGameObject(startGameButton.gameObject);
     }
 
-    private void InitializeButtonsBehaviour() {
+    private void InitializeButtonsBehaviour()
+    {
         startGameButton.onClick.AddListener(OnStartButtonPressed);
         settingsButton.onClick.AddListener(OnSettingsButtonPressed);
         exitButton.onClick.AddListener(OnExitButtonPressed);
         settingMenu.SetListenersToCloseButton(OnCloseSettingsButton);
     }
 
-    private void OnStartButtonPressed() {
+    private void OnStartButtonPressed()
+    {
         ServiceLocator.Instance.GetService<MusicPlayer>().PlayGameTheme();
         ServiceLocator.Instance.GetService<SceneLoader>().LoadScene(Constants.Scenes.GAME, 1.5f);
     }
 
-    private void OnSettingsButtonPressed() {
+    private void OnSettingsButtonPressed()
+    {
         mainMenuCanvas.Toggle(false);
         settingsCanvas.Toggle(true);
         eventSystem.SetSelectedGameObject(settingMenu.FirstSelectedObject);
     }
 
-    private void OnCloseSettingsButton() {
+    private void OnCloseSettingsButton()
+    {
         mainMenuCanvas.Toggle(true);
         settingsCanvas.Toggle(false);
         eventSystem.SetSelectedGameObject(startGameButton.gameObject);
     }
 
-    private void OnExitButtonPressed() {
+    private void OnExitButtonPressed()
+    {
 #if UNITY_STANDALONE
         Application.Quit();
 #endif

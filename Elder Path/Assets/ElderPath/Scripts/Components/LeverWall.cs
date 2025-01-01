@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class LeverWall : MonoBehaviour {
+public class LeverWall : MonoBehaviour
+{
 
     [Header("References")]
     [SerializeField] private SpriteRenderer laserRenderer;
@@ -11,7 +12,8 @@ public class LeverWall : MonoBehaviour {
 
     private bool isActive;
 
-    private void Awake() {
+    private void Awake()
+    {
         if (!laserRenderer) Debug.LogError("No laser renderer assigned.");
         if (!laserCollider) Debug.LogError("No laser collider assigned.");
         isActive = isActiveAtStart;
@@ -19,13 +21,15 @@ public class LeverWall : MonoBehaviour {
         SetRendererAlpha(isActive ? 1f : inactiveAlpha);
     }
 
-    public void ChangeState() {
+    public void ChangeState()
+    {
         isActive = !isActive;
         laserCollider.enabled = isActive;
         SetRendererAlpha(isActive ? 1f : 0.3f);
     }
 
-    private void SetRendererAlpha(float nextAlpha) {
+    private void SetRendererAlpha(float nextAlpha)
+    {
         Color rendererColor = laserRenderer.color;
         rendererColor.a = nextAlpha;
         laserRenderer.color = rendererColor;

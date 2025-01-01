@@ -1,7 +1,8 @@
 using UnityEngine;
 using TMPro;
 
-public class GameView : MonoBehaviour {
+public class GameView : MonoBehaviour
+{
 
     [SerializeField] private CanvasGroup canvasGroup;
 
@@ -9,11 +10,13 @@ public class GameView : MonoBehaviour {
 
     private GameMenuMediator gameMenuMediator;
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         EPGameManager.OnLevelChanged += UpdateLevelText;
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         EPGameManager.OnLevelChanged -= UpdateLevelText;
     }
 

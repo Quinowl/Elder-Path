@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class CameraRig : MonoBehaviour {
+public class CameraRig : MonoBehaviour
+{
 
     [Header("References")]
     [SerializeField] private Camera mainCamera;
@@ -15,14 +16,16 @@ public class CameraRig : MonoBehaviour {
     private Vector2 minBounds;
     private Vector2 maxBounds;
 
-    private void Awake() {
+    private void Awake()
+    {
         if (!mainCamera) mainCamera = Camera.main;
         if (!target) Debug.LogError("Camera rig has no target associated.");
         halfCameraHeight = mainCamera.orthographicSize;
         halfCameraWidth = halfCameraHeight * Screen.width / Screen.height;
     }
 
-    private void FixedUpdate() {
+    private void FixedUpdate()
+    {
         if (!canMove) return;
         if (!target) return;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, target.position, followSpeed * Time.deltaTime);
@@ -31,7 +34,8 @@ public class CameraRig : MonoBehaviour {
         transform.position = new Vector3(xClamp, yClamp, transform.position.z);
     }
 
-    public void Configure(bool canMove, Vector2 minBounds, Vector2 maxBounds) {
+    public void Configure(bool canMove, Vector2 minBounds, Vector2 maxBounds)
+    {
         this.canMove = canMove;
         this.minBounds = minBounds;
         this.maxBounds = maxBounds;

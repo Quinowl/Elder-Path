@@ -5,7 +5,8 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-public class SettingMenu : MonoBehaviour {
+public class SettingMenu : MonoBehaviour
+{
 
     [Header("References")]
     [SerializeField] private Button closeButton;
@@ -24,12 +25,14 @@ public class SettingMenu : MonoBehaviour {
 
     private Resolution[] availableResolutions;
 
-    public void InitializeSettings() {
+    public void InitializeSettings()
+    {
         InitializeAudioSettings();
         InitializeDisplaySettings();
     }
 
-    public void SetListenersToCloseButton(UnityAction listener) {
+    public void SetListenersToCloseButton(UnityAction listener)
+    {
         closeButton.onClick.RemoveAllListeners();
         closeButton.onClick.AddListener(listener);
     }
@@ -38,7 +41,8 @@ public class SettingMenu : MonoBehaviour {
 
     public void Show() => canvasGroup.Toggle(true);
 
-    private void InitializeAudioSettings() {
+    private void InitializeAudioSettings()
+    {
         masterSlider.value = PlayerPrefs.GetFloat(Constants.SaveKeys.MASTER_VOLUME, 1f);
         sfxSlider.value = PlayerPrefs.GetFloat(Constants.SaveKeys.SFX_VOLUME, 1f);
         musicSlider.value = PlayerPrefs.GetFloat(Constants.SaveKeys.MUSIC_VOLUME, 1f);
@@ -58,8 +62,10 @@ public class SettingMenu : MonoBehaviour {
 
     private void SetMusicVolume(float volume) => SetAudioMixerVolume("musicVolume", volume, Constants.SaveKeys.MUSIC_VOLUME);
 
-    private void SetAudioMixerVolume(string mixerParemeter, float volume, string saveKey) {
-        if (!audioMixer) {
+    private void SetAudioMixerVolume(string mixerParemeter, float volume, string saveKey)
+    {
+        if (!audioMixer)
+        {
             Debug.LogError("Audio Mixer is not assigned.");
             return;
         }
@@ -67,7 +73,8 @@ public class SettingMenu : MonoBehaviour {
         PlayerPrefs.SetFloat(saveKey, volume);
     }
 
-    private void InitializeDisplaySettings() {
+    private void InitializeDisplaySettings()
+    {
         InitializeResolutions();
 
         int savedResolutionIndex = PlayerPrefs.GetInt(Constants.SaveKeys.RESOLUTION, availableResolutions.Length - 1);
@@ -83,19 +90,22 @@ public class SettingMenu : MonoBehaviour {
         resolutionDropdown.onValueChanged.AddListener(ApplyResolution);
     }
 
-    private void InitializeResolutions() {
+    private void InitializeResolutions()
+    {
         availableResolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
 
-        for (int i = 0; i < availableResolutions.Length; i++) {
+        for (int i = 0; i < availableResolutions.Length; i++)
+        {
             string resolutionOption = $"{availableResolutions[i].width} x {availableResolutions[i].height}";
             options.Add(resolutionOption);
 
             if (availableResolutions[i].width == Screen.currentResolution.width &&
-                availableResolutions[i].height == Screen.currentResolution.height) {
+                availableResolutions[i].height == Screen.currentResolution.height)
+            {
                 currentResolutionIndex = i;
             }
         }
@@ -105,14 +115,16 @@ public class SettingMenu : MonoBehaviour {
         resolutionDropdown.RefreshShownValue();
     }
 
-    private void ApplyResolution(int resolutionIndex) {
+    private void ApplyResolution(int resolutionIndex)
+    {
         if (resolutionIndex < 0 || resolutionIndex >= availableResolutions.Length) return;
         Resolution selectedResolution = availableResolutions[resolutionIndex];
         Screen.SetResolution(selectedResolution.width, selectedResolution.height, Screen.fullScreen ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed, selectedResolution.refreshRateRatio);
         PlayerPrefs.SetInt(Constants.SaveKeys.RESOLUTION, resolutionIndex);
     }
 
-    private void SetFullscreen(bool isFullscreen) {
+    private void SetFullscreen(bool isFullscreen)
+    {
         Screen.fullScreen = isFullscreen;
         PlayerPrefs.SetInt(Constants.SaveKeys.FULLSCREEN, isFullscreen ? 1 : 0);
     }

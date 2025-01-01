@@ -2,7 +2,8 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class EPInputManager : MonoBehaviour {
+public class EPInputManager : MonoBehaviour
+{
 
     [SerializeField] private PlayerInput playerInput;
 
@@ -28,29 +29,35 @@ public class EPInputManager : MonoBehaviour {
 
     public Action OnInputDeviceChanged;
 
-    private void OnEnable() {
+    private void OnEnable()
+    {
         InputSystem.onActionChange += ChangeInputAction;
     }
 
-    private void Awake() {
+    private void Awake()
+    {
         if (!Instance) Instance = this;
         else Destroy(gameObject);
         if (!playerInput) GetComponent<PlayerInput>();
         InitializeInputActions();
     }
 
-    private void Update() {
+    private void Update()
+    {
         if (isInputEnabled) ReadInputs();
     }
 
-    private void OnDisable() {
+    private void OnDisable()
+    {
         InputSystem.onActionChange -= ChangeInputAction;
     }
 
     public void SetEnableInput(bool enable) => isInputEnabled = enable;
 
-    private void ChangeInputAction(object obj, InputActionChange change) {
-        if (change == InputActionChange.ActionPerformed) {
+    private void ChangeInputAction(object obj, InputActionChange change)
+    {
+        if (change == InputActionChange.ActionPerformed)
+        {
             InputAction receivedInputAction = (InputAction)obj;
             InputDevice currentDevice = receivedInputAction.activeControl.device;
             if (lastDevideUsed == currentDevice.name) return;
@@ -60,7 +67,8 @@ public class EPInputManager : MonoBehaviour {
         }
     }
 
-    private void InitializeInputActions() {
+    private void InitializeInputActions()
+    {
         isInputEnabled = true;
         movementInputAction = playerInput.actions[Constants.Inputs.PLAYER_MOVE_ACTION];
         jumpInputAction = playerInput.actions[Constants.Inputs.PLAYER_JUMP_ACTION];
@@ -69,7 +77,8 @@ public class EPInputManager : MonoBehaviour {
         resetInputAction = playerInput.actions[Constants.Inputs.PLAYER_RESET_ACTION];
     }
 
-    private void ReadInputs() {
+    private void ReadInputs()
+    {
         MoveInput = movementInputAction.ReadValue<float>();
         JumpInputPressed = jumpInputAction.WasPressedThisFrame();
         JumpInputHeld = jumpInputAction.IsPressed();

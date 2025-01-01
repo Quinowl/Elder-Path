@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public static partial class Constants {
-    public static class MiscAnimations {
+public static partial class Constants
+{
+    public static class MiscAnimations
+    {
         // ===== WALL ANIMATIONS =====
         public const string WALL_CLOSED = "wall-closed";
         public const string WALL_OPENING = "wall-opening";

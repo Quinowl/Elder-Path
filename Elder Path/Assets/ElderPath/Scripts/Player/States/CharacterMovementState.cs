@@ -1,25 +1,30 @@
 using UnityEngine;
 
-public class CharacterMovementState : PlayerState {
+public class CharacterMovementState : PlayerState
+{
 
     private float currentSpeed;
     private float TargetSpeed => EPInputManager.Instance.MoveInput * configuration.MaxSpeed;
 
-    public override void StateEnter() {
+    public override void StateEnter()
+    {
         currentSpeed = stateMachine.LastState is CharacterIdleState ? 0f : stateMachine.PlayerController.Rigidbody2D.linearVelocityX;
         stateMachine.PlayerController.ChangeAnimation(Constants.PlayerAnimations.RUN_ANIM);
         stateMachine.PlayerController.MovementParticles.Play();
     }
 
-    public override void StateExit() {
+    public override void StateExit()
+    {
         stateMachine.PlayerController.MovementParticles.Stop();
     }
 
-    public override void StateInputs() {
+    public override void StateInputs()
+    {
         if (EPInputManager.Instance.MoveInput == 0 && stateMachine.PlayerController.IsGrounded) stateMachine.SetState(typeof(CharacterIdleState));
         if (EPInputManager.Instance.JumpInputPressed
             && (stateMachine.PlayerController.IsGrounded || stateMachine.PlayerController.CanJumpCoyote)
-            && !stateMachine.PlayerController.IsCeiled) {
+            && !stateMachine.PlayerController.IsCeiled)
+        {
             stateMachine.SetState(typeof(CharacterJumpState));
         }
         if (stateMachine.PlayerController.Rigidbody2D.linearVelocityY < 0f) stateMachine.SetState(typeof(CharacterFallingState));
@@ -28,20 +33,25 @@ public class CharacterMovementState : PlayerState {
         if (stateMachine.PlayerController.CanPushSomething && EPInputManager.Instance.MoveInput != 0) stateMachine.SetState(typeof(CharacterPushingState));
     }
 
-    public override void StateLateStep() {
+    public override void StateLateStep()
+    {
     }
 
-    public override void StatePhysicsStep() {
+    public override void StatePhysicsStep()
+    {
     }
 
-    public override void StateStep() {
+    public override void StateStep()
+    {
         // If direction is changed, conserve current speed,
-        if (IsDirectionChanged(TargetSpeed)) {
+        if (IsDirectionChanged(TargetSpeed))
+        {
             //TODO: Fix this, it is not working all the time
             currentSpeed = Mathf.Sign(TargetSpeed) * Mathf.Max(Mathf.Abs(currentSpeed), configuration.MinSpeedOnDirectionChange);
         }
         // else it will accelerate to target speed.
-        else {
+        else
+        {
             if (!stateMachine.PlayerController.IsFrontBlocked) currentSpeed = Mathf.MoveTowards(currentSpeed, TargetSpeed, configuration.AccelerationRate * Time.deltaTime);
             else currentSpeed = 0f;
         }

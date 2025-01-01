@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class CharacterCollisions : MonoBehaviour {
+public class CharacterCollisions : MonoBehaviour
+{
 
     [Header("References")]
     [SerializeField] private Transform[] groundCheckPositions;
@@ -24,33 +25,40 @@ public class CharacterCollisions : MonoBehaviour {
 
     private RaycastHit2D groundHit;
 
-    private void OnDrawGizmos() {
+    private void OnDrawGizmos()
+    {
         DrawGizmo(Color.red, groundCheckPositions, Vector2.down, groundRayLength);
         DrawGizmo(Color.blue, ceilCheckPositions, Vector2.up, ceilRayLength);
         DrawGizmo(Color.cyan, frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength);
     }
 
-    private void Update() {
+    private void Update()
+    {
         PerformCollisionChecks();
     }
 
-    private void DrawGizmo(Color gizmoColor, Transform[] points, Vector2 direction, float length) {
+    private void DrawGizmo(Color gizmoColor, Transform[] points, Vector2 direction, float length)
+    {
         Gizmos.color = gizmoColor;
-        foreach (Transform point in points) {
+        foreach (Transform point in points)
+        {
             Gizmos.DrawRay(point.position, direction * length);
         }
     }
 
-    private void PerformCollisionChecks() {
+    private void PerformCollisionChecks()
+    {
         IsGrounded = CheckForCollisions(groundCheckPositions, Vector2.down, groundRayLength, groundLayer, out groundHit);
         IsCeiled = CheckForCollisions(ceilCheckPositions, Vector2.up, ceilRayLength, ceilLayer, out _);
         HasSomethingInFrontNotPusheable = CheckForCollisions(frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength, frontObstaclesLayer, out _);
         HasSomethingInFrontPusheable = CheckForCollisions(frontCheckPositions, transform.localScale.x == 1 ? Vector2.right : Vector2.left, frontRayLength, frontPusheableLayer, out _);
     }
 
-    private bool CheckForCollisions(Transform[] points, Vector2 direction, float rayLength, LayerMask layer, out RaycastHit2D hit) {
+    private bool CheckForCollisions(Transform[] points, Vector2 direction, float rayLength, LayerMask layer, out RaycastHit2D hit)
+    {
         hit = new();
-        foreach (Transform point in points) {
+        foreach (Transform point in points)
+        {
             hit = Physics2D.Raycast(point.position, direction, rayLength, layer);
             if (hit.collider != null) return true;
         }

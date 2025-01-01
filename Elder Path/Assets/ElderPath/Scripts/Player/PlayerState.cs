@@ -1,9 +1,11 @@
 using UnityEngine;
 
-public abstract class PlayerState : MonoBehaviour {
+public abstract class PlayerState : MonoBehaviour
+{
     protected PlayerStateMachine stateMachine;
     protected PlayerConfiguration configuration;
-    public void Configure(PlayerStateMachine stateMachine, PlayerConfiguration configuration) { 
+    public void Configure(PlayerStateMachine stateMachine, PlayerConfiguration configuration)
+    {
         this.stateMachine = stateMachine;
         this.configuration = configuration;
     }

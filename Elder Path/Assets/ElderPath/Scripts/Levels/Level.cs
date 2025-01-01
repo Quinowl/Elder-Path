@@ -2,7 +2,8 @@ using System;
 using NaughtyAttributes;
 using UnityEngine;
 
-public class Level : MonoBehaviour {
+public class Level : MonoBehaviour
+{
 
     [SerializeField] private FinalLevelTrigger finalTrigger;
     [field: SerializeField] public int LevelIndex { get; private set; }
@@ -12,8 +13,10 @@ public class Level : MonoBehaviour {
     [field: SerializeField] public Transform InitialPlayerPosition { get; private set; }
     public static Action<Level> OnLevelLoaded;
 
-    private void OnDrawGizmos() {
-        if (MovableCamera) {
+    private void OnDrawGizmos()
+    {
+        if (MovableCamera)
+        {
 
             Gizmos.color = Color.green;
 
@@ -29,7 +32,8 @@ public class Level : MonoBehaviour {
         }
     }
 
-    public void InitializeLevel() {
+    public void InitializeLevel()
+    {
         OnLevelLoaded?.Invoke(this);
         finalTrigger.Configure(this);
     }

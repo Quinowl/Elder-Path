@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseView : MonoBehaviour {
+public class PauseView : MonoBehaviour
+{
 
     [SerializeField] private CanvasGroup canvasGroup;
 
@@ -14,11 +15,13 @@ public class PauseView : MonoBehaviour {
 
     public void Configure(GameMenuMediator mediator) => gameMenuMediator = mediator;
 
-    private void Start() {
+    private void Start()
+    {
         InitializeButtons();
     }
 
-    private void InitializeButtons() {
+    private void InitializeButtons()
+    {
         resumeButton.onClick.RemoveAllListeners();
         restartButton.onClick.RemoveAllListeners();
         settingsButton.onClick.RemoveAllListeners();
@@ -30,7 +33,8 @@ public class PauseView : MonoBehaviour {
         menuButton.onClick.AddListener(OnMenuButton);
     }
 
-    public void Show() {
+    public void Show()
+    {
         canvasGroup.Toggle(true);
         gameMenuMediator.OnUpdateSelectedObjectInEventSystem(resumeButton.gameObject);
     }

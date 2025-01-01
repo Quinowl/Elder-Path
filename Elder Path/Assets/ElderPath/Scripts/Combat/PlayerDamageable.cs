@@ -1,5 +1,6 @@
 using UnityEngine;
 
-public class PlayerDamageable : Damageable {
+public class PlayerDamageable : Damageable
+{
 
 }

@@ -2,7 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class EPSoundsManager : MonoBehaviour {
+public class EPSoundsManager : MonoBehaviour
+{
 
     [SerializeField] private AudioPlayer audioPlayerPrefab;
     [SerializeField] private int initialPoolSize;
@@ -11,13 +12,16 @@ public class EPSoundsManager : MonoBehaviour {
 
     public ObjectPool<AudioPlayer> AudioPlayerPool { get; private set; }
 
-    private void Start() {
+    private void Start()
+    {
         AudioPlayerPool = new ObjectPool<AudioPlayer>(audioPlayerPrefab, initialPoolSize, transform);
         InitializeAudios();
     }
 
-    public void PlaySFX(string sfxID, Transform spawnTransform) {
-        if (!audioDictionary.TryGetValue(sfxID, out Audio audio)) {
+    public void PlaySFX(string sfxID, Transform spawnTransform)
+    {
+        if (!audioDictionary.TryGetValue(sfxID, out Audio audio))
+        {
             Debug.LogWarning($"SFX ID: '{sfxID}' not found.");
             return;
         }
@@ -27,7 +31,8 @@ public class EPSoundsManager : MonoBehaviour {
         audioPlayer.PlayClip(clip);
     }
 
-    private void InitializeAudios() {
+    private void InitializeAudios()
+    {
         Audio[] audios = Resources.LoadAll<Audio>("Audios/SFXs");
         audioDictionary = audios.ToDictionary(a => a.ID);
     }
