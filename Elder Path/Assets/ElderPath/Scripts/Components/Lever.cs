@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Lever : MonoBehaviour, IHittable
+public class Lever : MonoBehaviour, IHittable, ISoundEmitter
 {
 
     [SerializeField] private Sprite activatedSprite;
@@ -9,6 +9,8 @@ public class Lever : MonoBehaviour, IHittable
     [SerializeField] private LeverWall[] lasersAssociated;
 
     private bool isActivated;
+
+    public AudioClip AudioClip { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
     private void OnDrawGizmos()
     {

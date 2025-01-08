@@ -31,6 +31,13 @@ public class EPSoundsManager : MonoBehaviour
         audioPlayer.PlayClip(clip);
     }
 
+    public void PlayClip(AudioClip clip, Transform spawnTransform)
+    {
+        AudioPlayer audioPlayer = AudioPlayerPool.Get();
+        audioPlayer.transform.position = spawnTransform.position;
+        audioPlayer.PlayClip(clip);
+    }
+
     private void InitializeAudios()
     {
         Audio[] audios = Resources.LoadAll<Audio>("Audios/SFXs");

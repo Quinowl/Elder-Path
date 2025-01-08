@@ -1172,7 +1172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba5c914a47b6f3468cad911e13b425e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 0.01
+  speedFactor: 0.02
   followX: 1
   followY: 0
   autoScroll: 0
@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba5c914a47b6f3468cad911e13b425e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 0.02
+  speedFactor: 0.035
   followX: 1
   followY: 0
   autoScroll: 0
@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cba5c914a47b6f3468cad911e13b425e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedFactor: 0.03
+  speedFactor: 0.05
   followX: 1
   followY: 0
   autoScroll: 0
