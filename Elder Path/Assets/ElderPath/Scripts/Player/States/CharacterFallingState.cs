@@ -29,6 +29,10 @@ public class CharacterFallingState : PlayerState
     public override void StateStep()
     {
         stateMachine.PlayerController.TryMoveX(EPInputManager.Instance.MoveInput * configuration.MaxSpeed);
-        if (stateMachine.PlayerController.IsGrounded) stateMachine.SetState(stateMachine.PlayerController.Rigidbody2D.linearVelocityX == 0f ? typeof(CharacterIdleState) : typeof(CharacterMovementState));
+        if (stateMachine.PlayerController.IsGrounded)
+        {
+            stateMachine.PlayerController.LandParticles.Play();
+            stateMachine.SetState(stateMachine.PlayerController.Rigidbody2D.linearVelocityX == 0f ? typeof(CharacterIdleState) : typeof(CharacterMovementState));
+        }
     }
 }
