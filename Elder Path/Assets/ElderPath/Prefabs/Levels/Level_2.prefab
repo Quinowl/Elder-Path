@@ -4731,8 +4731,8 @@ MonoBehaviour:
   finalTrigger: {fileID: 2232486821929602752}
   <LevelIndex>k__BackingField: 5
   <MovableCamera>k__BackingField: 1
-  <MinCameraBounds>k__BackingField: {x: -1.6, y: -1}
-  <MaxCameraBounds>k__BackingField: {x: 4.85, y: 1}
+  <MinCameraBounds>k__BackingField: {x: -1.75, y: -1}
+  <MaxCameraBounds>k__BackingField: {x: 5, y: 1}
   <InitialPlayerPosition>k__BackingField: {fileID: 5802105798191805074}
 --- !u!1 &6010584922670171245
 GameObject:

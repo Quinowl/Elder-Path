@@ -12,5 +12,8 @@ public static partial class Constants
         public const string PRESSURE_PLATE_PRESSED = "pressure-plate-pressed";
         // ===== GENERAL ANIMATORS =====
         public const string COIN_PICK_UP = "coin-pick-up";
+        // ===== LASER =====
+        public const string LASER_DISABLE = "laser-wait";
+        public const string LASER_ENABLE = "laser-base";
     }
 }
