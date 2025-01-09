@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742fe58c144e148e8a74a40e462401dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 1966216567863234413}
   speed: 3
   arrivedDistance: 0.1
 --- !u!95 &5072761121005079004

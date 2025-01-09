@@ -7063,6 +7063,7 @@ Transform:
   - {fileID: 1691165162}
   - {fileID: 721228806}
   - {fileID: 1620755237}
+  - {fileID: 1661711271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &603462793
@@ -14091,6 +14092,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a6c865a605c71a44ade97c02b09682e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1661711270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1661711271}
+  - component: {fileID: 1661711272}
+  m_Layer: 0
+  m_Name: BirdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1661711271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661711270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 544828113}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1661711272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661711270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76205ed75ef1845fa98381af74066b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 519420031}
+  birdPrefab: {fileID: 5493241688938321729, guid: 0066cea5dff704f92bf4505627e4c874, type: 3}
+  outsideCameraDistance: 2
+  spawnInterval: 2
 --- !u!1 &1691165161
 GameObject:
   m_ObjectHideFlags: 0

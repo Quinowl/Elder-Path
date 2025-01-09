@@ -12,6 +12,9 @@ public static class EPFunctionLibrary
         }
     }
 
+    public static float GetHeight(this Camera cam) => 2 * cam.orthographicSize;
+    public static float GetWidth(this Camera cam) => cam.GetHeight() * cam.aspect;
+
     // ===== UI ======
     public static void Toggle(this CanvasGroup canvasGroup, bool enable)
     {
