@@ -46,7 +46,6 @@ public class CharacterMovementState : PlayerState
         // If direction is changed, conserve current speed,
         if (IsDirectionChanged(TargetSpeed))
         {
-            //TODO: Fix this, it is not working all the time
             currentSpeed = Mathf.Sign(TargetSpeed) * Mathf.Max(Mathf.Abs(currentSpeed), configuration.MinSpeedOnDirectionChange);
         }
         // else it will accelerate to target speed.

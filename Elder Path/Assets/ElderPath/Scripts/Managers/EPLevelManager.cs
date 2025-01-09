@@ -63,6 +63,7 @@ public class EPLevelManager : MonoBehaviour
     private void UnloadCurrentLevel()
     {
         if (currentLevel == null) return;
+        //TODO: Hacer que todas las entidades que haya en el nivel se vuelvan a sus pools
         Destroy(currentLevel.gameObject);
         currentLevel = null;
     }
