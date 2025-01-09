@@ -7684,6 +7684,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4483250665041100271, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4574342949075443439, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
       propertyPath: m_Alpha
       value: 0
@@ -7738,6 +7742,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5557071675969631968, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5557071675969631968, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6185141528973941828, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
@@ -7804,16 +7812,32 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7418337829238719166, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8192229844389584140, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192229844389584140, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8629377303399469439, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8629377303399469439, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8811556313442824595, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8811556313442824595, guid: 399c364f5074c014aac2fa73c622810a, type: 3}
+      propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -14138,8 +14162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
   birdPrefab: {fileID: 5493241688938321729, guid: 0066cea5dff704f92bf4505627e4c874, type: 3}
-  outsideCameraDistance: 2
-  spawnInterval: 2
+  outsideCameraDistance: 0.5
+  spawnInterval: 5
 --- !u!1 &1691165161
 GameObject:
   m_ObjectHideFlags: 0
@@ -15419,6 +15443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelManager: {fileID: 721228807}
   gameManager: {fileID: 1620755238}
+  birdsManager: {fileID: 1661711272}
 --- !u!1 &2047051750
 GameObject:
   m_ObjectHideFlags: 0

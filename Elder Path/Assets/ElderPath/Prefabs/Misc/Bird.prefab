@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1966216567863234413}
-  speed: 3
+  speed: 0.2
   arrivedDistance: 0.1
 --- !u!95 &5072761121005079004
 Animator:
@@ -223,8 +223,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -631612745
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 9087613101874884219, guid: 16a754c401a2e3e4a86efcd7397c0bef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

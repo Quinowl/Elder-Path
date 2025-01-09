@@ -56,6 +56,7 @@ public class EPLevelManager : MonoBehaviour
         if (elapsedTime < configuration.TransitionDuration) yield return new WaitForSeconds(configuration.TransitionDuration - elapsedTime);
         currentLevel.InitializeLevel();
         cameraRig.Configure(currentLevel.MovableCamera, currentLevel.MinCameraBounds, currentLevel.MaxCameraBounds);
+        ServiceLocator.Instance.GetService<BirdsManager>().transform.ClearChilds();
         ServiceLocator.Instance.GetService<EPGameManager>().LevelChanged(levelIndex + 1, configuration.Levels.Length);
         ServiceLocator.Instance.GetService<LoadingScreen>().StopLoading();
     }
@@ -63,7 +64,6 @@ public class EPLevelManager : MonoBehaviour
     private void UnloadCurrentLevel()
     {
         if (currentLevel == null) return;
-        //TODO: Hacer que todas las entidades que haya en el nivel se vuelvan a sus pools
         Destroy(currentLevel.gameObject);
         currentLevel = null;
     }

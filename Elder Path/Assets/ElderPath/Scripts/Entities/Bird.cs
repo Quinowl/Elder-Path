@@ -32,7 +32,7 @@ public class Bird : MonoBehaviour
     private void HandleMovement()
     {
         if (targetPosition == Vector2.zero) return;
-        Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
     }
 
     private void CheckArrival()
