@@ -10,7 +10,7 @@ public class CameraRig : MonoBehaviour
     [Header("Configuration")]
     [SerializeField] private float followSpeed = 2f;
 
-    private bool canMove;
+    private bool canMove = false;
     private float halfCameraWidth;
     private float halfCameraHeight;
     private Vector2 minBounds;
@@ -20,18 +20,20 @@ public class CameraRig : MonoBehaviour
     {
         if (!mainCamera) mainCamera = Camera.main;
         if (!target) Debug.LogError("Camera rig has no target associated.");
-        halfCameraHeight = mainCamera.orthographicSize;
-        halfCameraWidth = halfCameraHeight * Screen.width / Screen.height;
+
+        CalculateCameraDimensions();
     }
 
     private void FixedUpdate()
     {
-        if (!canMove) return;
-        if (!target) return;
+        if (!canMove || !target) return;
+
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, target.position, followSpeed * Time.deltaTime);
-        float xClamp = Mathf.Clamp(smoothedPosition.x, minBounds.x + halfCameraWidth, maxBounds.x - halfCameraWidth);
-        float yClamp = Mathf.Clamp(smoothedPosition.y, minBounds.y + halfCameraHeight, maxBounds.y - halfCameraHeight);
-        transform.position = new Vector3(xClamp, yClamp, transform.position.z);
+
+        float clampedX = Mathf.Clamp(smoothedPosition.x, minBounds.x + halfCameraWidth, maxBounds.x - halfCameraWidth);
+        float clampedY = Mathf.Clamp(smoothedPosition.y, minBounds.y + halfCameraHeight, maxBounds.y - halfCameraHeight);
+
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 
     public void Configure(bool canMove, Vector2 minBounds, Vector2 maxBounds)
@@ -39,5 +41,19 @@ public class CameraRig : MonoBehaviour
         this.canMove = canMove;
         this.minBounds = minBounds;
         this.maxBounds = maxBounds;
+
+        CalculateCameraDimensions();
+    }
+
+    public void UpdateBounds(Vector2 newMinBounds, Vector2 newMaxBounds)
+    {
+        minBounds = newMinBounds;
+        maxBounds = newMaxBounds;
+    }
+
+    private void CalculateCameraDimensions()
+    {
+        halfCameraHeight = mainCamera.orthographicSize;
+        halfCameraWidth = halfCameraHeight * mainCamera.aspect;
     }
 }

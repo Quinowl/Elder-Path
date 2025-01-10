@@ -9,6 +9,7 @@ public class BirdsManager : MonoBehaviour
     [Header("Configuration")]
     [SerializeField] private float outsideCameraDistance = 2f;
     [SerializeField] private float spawnInterval = 2f;
+    [SerializeField] private float despawnBuffer = 5f;
 
     private float timer;
 
@@ -16,6 +17,11 @@ public class BirdsManager : MonoBehaviour
     {
         if (!cam) cam = Camera.main;
         timer = spawnInterval;
+    }
+
+    private void Start()
+    {
+        SpawnBird();
     }
 
     private void Update()
@@ -37,15 +43,20 @@ public class BirdsManager : MonoBehaviour
 
     private Vector2 GetSpawnPoint(bool spawnOnLeft)
     {
-        float xSpawn = spawnOnLeft ? -cam.GetWidth() / 2 - outsideCameraDistance : cam.GetWidth() / 2 + outsideCameraDistance;
-        float ySpawn = Random.Range(-cam.GetHeight() / 2, cam.GetHeight() / 2);
+        Vector3 cameraPosition = cam.transform.position;
+        float xSpawn = spawnOnLeft ? cameraPosition.x - cam.GetWidth() / 2 - outsideCameraDistance
+                                   : cameraPosition.x + cam.GetWidth() / 2 + outsideCameraDistance;
+        float ySpawn = Random.Range(cameraPosition.y - cam.GetHeight() / 2, cameraPosition.y + cam.GetHeight() / 2);
         return new Vector2(xSpawn, ySpawn);
     }
 
     private Vector2 GetTargetPoint(bool spawnOnLeft)
     {
-        float xTarget = spawnOnLeft ? cam.GetWidth() / 2 + outsideCameraDistance : -cam.GetWidth() / 2 - outsideCameraDistance;
-        float yTarget = Random.Range(-cam.GetHeight() / 2, cam.GetHeight() / 2);
+        Vector3 cameraPosition = cam.transform.position;
+        float xTarget = spawnOnLeft ? cameraPosition.x + cam.GetWidth() / 2 + despawnBuffer
+                                    : cameraPosition.x - cam.GetWidth() / 2 - despawnBuffer;
+        float yTarget = Random.Range(cameraPosition.y - cam.GetHeight() / 2 - despawnBuffer,
+                                     cameraPosition.y + cam.GetHeight() / 2 + despawnBuffer);
         return new Vector2(xTarget, yTarget);
     }
 }
