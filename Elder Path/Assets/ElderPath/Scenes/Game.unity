@@ -14164,6 +14164,7 @@ MonoBehaviour:
   birdPrefab: {fileID: 5493241688938321729, guid: 0066cea5dff704f92bf4505627e4c874, type: 3}
   outsideCameraDistance: 0.5
   spawnInterval: 5
+  despawnBuffer: 5
 --- !u!1 &1691165161
 GameObject:
   m_ObjectHideFlags: 0
